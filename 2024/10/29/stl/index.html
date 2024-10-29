@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>C++ STL常用内容总结 | Zenith</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/yellow.jpg');
+ --light-background: url('/img/green.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸红心效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script><meta name="generator" content="Hexo 7.3.0"></head><body><script>(function () {  
+    var a_idx = 0;  
+    window.onclick = function (event) {  
+        var a = new Array("这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "曾经有人让我听这首歌","可是那时的我还不谙情事","也没有真正认真的听完整首歌","直到后来","分开后再听时才发现","原来我错过了","曾经的阿芒","你还好吗");  
+
+        var heart = document.createElement("p"); // 创建p元素，这里从b改为p  
+        heart.onselectstart = function() { return false; }; // 简化防止拖动的代码  
+
+        document.body.appendChild(heart).textContent = a[a_idx]; // 使用textContent代替innerHTML，因为这里只是文本  
+        a_idx = (a_idx + 1) % a.length;  
+        heart.style.cssText = "position: fixed;left:-100%;"; // 初始位置  
+
+        var f = 16, // 字体大小  
+            x = event.clientX - f / 2, // 横坐标  
+            y = event.clientY - f, // 纵坐标  
+            c = randomColor(), // 随机颜色  
+            a = 1, // 透明度  
+            s = 1.2; // 放大缩小比例  
+
+        var timer = setInterval(function () { // 添加定时器  
+            if (a <= 0) {  
+                document.body.removeChild(heart);  
+                clearInterval(timer);  
+            } else {  
+                heart.style.cssText = "font-size:" + f + "px;cursor: default;position: fixed;color:" +  
+                    c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +  
+                    s + ");";  
+
+                y--;  
+                a -= 0.016;  
+                s += 0.002;  
+            }  
+        }, 15);  
+    }  
+
+    // 随机颜色函数  
+    function randomColor() {  
+        //- return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";  
+        return "(255,240,245)";
+    }  
+}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>C++ STL常用内容总结</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2024-10-28T16:00:00.000Z" id="date"> 2024-10-29</time></div></span><br><span>Last Update: <div class="control"><time datetime="2024-10-29T15:37:10.985Z" id="updated"> 2024-10-29</time></div></span><br><span>Word Count: <div class="control">1.8k</div></span><br><span>Read Time: <div class="control">7 min</div></span></div></div><hr><div id="post-content"><h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>这是关于C++ STL常用内容总结</p>
+<p><strong>强调使用方法</strong>，并不强调原理</p>
+<p>本篇博客是我用于个人学习总结用的</p>
+<span id="more"></span>
+
+<p>大部分内容来源于<a target="_blank" rel="noopener" href="https://wyqz.top/p/870124582.html">网络</a>和书本，因为是个人整理复习用所以就先不加了，如果后期看的人多我会加上的</p>
+<p>因为还有挺多课的，而且还有比赛和组里的任务，所以可能会不定期不定量更新</p>
+<p>内容可能有不全的，或错误的，欢迎批评指正</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>主要包含下面几个STL函数</p>
+<blockquote>
+<ul>
+<li>vector 动态数组</li>
+<li>stack 栈</li>
+<li>queue 队列</li>
+<li>deque 双端队列</li>
+<li>priority_queue 优先队列</li>
+<li>map 映射</li>
+<li>set 集合</li>
+<li>pair 二元组</li>
+<li>string 字符串</li>
+<li>bitset</li>
+<li>array 数组</li>
+<li>tuple 元组</li>
+<li>……</li>
+</ul>
+</blockquote>
+<p>这是目前的安排，计划在11.03前赶完，因为11.03要比赛，11.10还要考<a href="https://smallgoodgood.top/hide/discrete-mathematics">离散</a>，中间还要把几次练习赛的题补了。（好忙）</p>
+<p>话不多说，接下来进入正题吧</p>
+<h2 id="vector-动态数组"><a href="#vector-动态数组" class="headerlink" title="vector 动态数组"></a>vector 动态数组</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p><code>vector</code>为可变长数组（动态数组），定义的<code>vector</code>数组可以随时添加数值和删除元素。</p>
+<blockquote>
+<p>注意：<strong>在局部区域中（比如局部函数里面）开vector数组，是在 堆空间 里面开的。</strong></p>
+<p>在局部区域开 数组 是在 栈空间 开的，而栈空间比较小，如果开了非常长的数组就会发生爆栈。</p>
+<p>故局部区域 <strong>不可以</strong> 开大长度数组，但是可以开大长度<code>vector</code>。</p>
+</blockquote>
+<ul>
+<li><p>头文件：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>一维初始化：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-type">int</span>&gt; a; <span class="hljs-comment">//定义了一个名为a的一维数组,数组存储int类型数据</span><br>vector&lt;<span class="hljs-type">double</span>&gt; b;<span class="hljs-comment">//定义了一个名为b的一维数组，数组存储double类型数据</span><br>vector&lt;node&gt; c;<span class="hljs-comment">//定义了一个名为c的一维数组，数组存储结构体类型数据，node是结构体类型</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>指定<strong>长度</strong>和<strong>初始值</strong>的初始化</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">v</span><span class="hljs-params">(n)</span></span>;<span class="hljs-comment">// 定义一个长度为n的数组，初始值默认为0，下标范围 [0, n - 1]</span><br><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">v</span><span class="hljs-params">(n, <span class="hljs-number">1</span>)</span></span>;<span class="hljs-comment">//定义一个长度为n的数组，下标范围 [0, n - 1], v[0] 到 v[n - 1]所有的元素初始值均为1</span><br><span class="hljs-comment">//注意：指定数组长度之后（指定长度后的数组就相当于正常的数组了）</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>初始化中有多个元素</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-type">int</span>&gt; a&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>&#125;;<span class="hljs-comment">//数组a中有五个元素，数组长度就为5</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>拷贝初始化</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">a</span><span class="hljs-params">(n + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>)</span></span>;<br><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">b</span><span class="hljs-params">(a)</span></span>; <span class="hljs-comment">// 两个数组中的类型必须相同,a和b都是长度为n+1，初始值都为0的数组</span><br>vector&lt;<span class="hljs-type">int</span>&gt; c = a; <span class="hljs-comment">// 也是拷贝初始化,c和a是完全一样的数组</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>二维初始化</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//定义第一维固定长度为5，第二维可变化的二维数组</span><br>vector&lt;<span class="hljs-type">int</span>&gt; v[<span class="hljs-number">5</span>];<span class="hljs-comment">//定义可变长二维数组</span><br><span class="hljs-comment">//注意：行不可变（只有5行）, 而列可变,可以在指定行添加元素</span><br><span class="hljs-comment">//第一维固定长度为5，第二维长度可以改变</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<blockquote>
+<p><code>vector&lt;int&gt; v[5]</code>可以这样理解：长度为5的v数组，数组中存储的是<code>vector&lt;int&gt; </code>数据类型，而该类型就是数组形式，故<code>v</code>为二维数组。其中每个数组元素均为空，因为没有指定长度，所以第二维可变长。可以进行下述操作：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">v[<span class="hljs-number">1</span>].<span class="hljs-built_in">push_back</span>(<span class="hljs-number">2</span>);<span class="hljs-comment">//第二行尾部增加一个元素 2</span><br>v[<span class="hljs-number">2</span>].<span class="hljs-built_in">push_back</span>(<span class="hljs-number">3</span>);<span class="hljs-comment">//第三行尾部增加一个元素 3</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li><p>行列均可变</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//初始化二维均可变长数组</span><br>vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; v;<span class="hljs-comment">//定义一个行和列均可变的二维数组</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>应用：可以在<code>v</code>数组里面装多个数组</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-type">int</span>&gt; t1&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>&#125;;<br>vector&lt;<span class="hljs-type">int</span>&gt; t2&#123;<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>&#125;;<br>v.<span class="hljs-built_in">push_back</span>(t1);<br>v.<span class="hljs-built_in">push_back</span>(t2);<br>v.<span class="hljs-built_in">push_back</span>(&#123;<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>&#125;) <span class="hljs-comment">// &#123;3, 4, 5, 6&#125;可以作为vector的初始化,相当于一个无名vector</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>行列长度均固定</p>
+<blockquote>
+<p><code>n + 1</code>行  <code>m + 1</code>列  初始值为0</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">a</span>(n + <span class="hljs-number">1</span>, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(m + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>));<span class="hljs-comment">//定义一个长度为 n+1 的数组，下标范围 [0, n - 1], a[0] 到 a[n - 1]所有的元素初始值均为vector&lt;int&gt;(m + 1, 0)</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>c++17及以上支持的形式（定义模板类的对象时，可以不指定模板参数，但必须要在构造函数中能推导出模板参数）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector a&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>&#125;; <span class="hljs-comment">// 声明一个int类型动态数组，初识元素自己指定</span><br><span class="hljs-function">vector <span class="hljs-title">a</span><span class="hljs-params">(n + <span class="hljs-number">1</span>, vector(m + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>))</span></span>;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="方法函数"><a href="#方法函数" class="headerlink" title="方法函数"></a>方法函数</h3><p>个人认为vector和数组的差距首先是存储位置不一样，vector是在堆空间，数组是在栈空间，其次就是vector中有许多方法函数，这些方法函数可以极大的方便我们编程，解题，不仅仅vector是这样的，其他STL函数也是。但是因为我才刚刚入门，这只是我的一种感觉，具体怎么等我多学一些，学深一些再来补充。先占个坑。</p>
+<p>知道了如何定义初始化可变数组，下面就需要知道如何添加，删除，修改数据。</p>
+<p><strong>c指定为数组名称</strong>，含义中会注明算法复杂度。</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>代码</strong></th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">c.front()</td>
+<td align="center">返回第一个数据O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">c.back()</td>
+<td align="center">返回数组中的最后一个数据 O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">c.pop_back()</td>
+<td align="center">删除最后一个数据O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">c.push_back(element)</td>
+<td align="center">在尾部加一个数据O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">c.size()</td>
+<td align="center">返回实际数据个数（unsigned类型）O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">c.clear()</td>
+<td align="center">清除元素个数O ( N )，N为元素个数</td>
+</tr>
+<tr>
+<td align="center">c.resize(n, v)</td>
+<td align="center">改变数组大小为n,n个空间数值赋为v，如果没有默认赋值为0</td>
+</tr>
+<tr>
+<td align="center">c.insert(it, x)</td>
+<td align="center">向任意迭代器it（通俗来说就是地址）插入一个元素x ，O ( N )</td>
+</tr>
+<tr>
+<td align="center">c.erase(first,last)</td>
+<td align="center">删除[first,last)的所有元素，O ( N )</td>
+</tr>
+<tr>
+<td align="center">c.begin()</td>
+<td align="center">返回首元素的迭代器（通俗来说就是地址）O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">c.end()</td>
+<td align="center">返回最后一个元素后一个位置的迭代器（地址）O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">c.empty()</td>
+<td align="center">判断是否为空，为空返回真，反之返回假 O ( 1 )</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意：</p>
+<ul>
+<li><p><code>end()</code>返回的是最后一个元素的后一个位置的地址，不是最后一个元素的地址，<strong>所有STL容器均是如此</strong></p>
+</li>
+<li><p>使用 <code>vi.resize(n, v)</code> 函数时，若 <code>vi</code> 之前指定过大小为 <code>pre</code></p>
+<ul>
+<li><code>pre &gt; n</code> ：即数组大小变小了，数组会保存前 <code>n</code> 个元素，前 <code>n</code> 个元素值为原来的值，不都变为 <code>v</code></li>
+<li><code>pre &lt; n</code> ：即数组大小变大了，数组会在后面插入 <code>n - pre</code> 个值为 <code>v</code> 的元素</li>
+</ul>
+<p>也就是说，这个初始值 <code>v</code> 只对新插入的元素生效。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">out</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;a)</span> </span>&#123; <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;x: a) cout &lt;&lt; x &lt;&lt; <span class="hljs-string">&quot; &quot;</span>; cout &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>; &#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">a</span><span class="hljs-params">(<span class="hljs-number">5</span>, <span class="hljs-number">1</span>)</span></span>;<br>	<span class="hljs-built_in">out</span>(a); <span class="hljs-comment">// 1 1 1 1 1</span><br>	a.<span class="hljs-built_in">resize</span>(<span class="hljs-number">10</span>, <span class="hljs-number">2</span>);<br>	<span class="hljs-built_in">out</span>(a); <span class="hljs-comment">// 1 1 1 1 1 2 2 2 2 2</span><br>	a.<span class="hljs-built_in">resize</span>(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>);<br>	<span class="hljs-built_in">out</span>(a); <span class="hljs-comment">// 1 1 1</span><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+</blockquote>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/10/28/birdking-is-so-cool/">祝birdking生日快乐！！！ Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Zenith</a></h1><div id="description"><p>未经审视的人生是不值得过的人生</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">2.</span> <span class="toc-text">目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vector-%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84"><span class="toc-number">2.1.</span> <span class="toc-text">vector 动态数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.1.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%87%BD%E6%95%B0"><span class="toc-number">2.1.2.</span> <span class="toc-text">方法函数</span></a></li></ol></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">♖</span><a class="icp-content" href="https://smallgoodgood.top/about/">关于本站</a></nobr><br><nobr>Pubulished by <a href="http://smallgoodgood.top">Zenith <br></a></nobr><wbr><!-- 添加网站运行时间 --><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now = new Date();
+
+function createtime() {
+  var grt = new Date("02/09/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间 
+  now.setTime(now.getTime() + 250);
+  days = (now - grt) / 1000 / 60 / 60 / 24;
+  dnum = Math.floor(days);
+  hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+  hnum = Math.floor(hours);
+  if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+  }
+  minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+  mnum = Math.floor(minutes);
+  if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+  }
+  seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+  snum = Math.round(seconds);
+  if (String(snum).length == 1) {
+      snum = "0" + snum;
+  }
+  document.getElementById("timeDate").innerHTML = " | 本站已安全运行 " + dnum + " 天 ";
+  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+}
+setInterval("createtime()", 250);
+<!-- 添加网站运行时间 -->
+
+</script></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
