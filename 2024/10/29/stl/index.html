@@ -108,7 +108,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
         //- return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";  
         return "(255,240,245)";
     }  
-}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>C++ STL常用内容总结</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-10-28T16:00:00.000Z" id="date"> 2024-10-29</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2024-10-29T15:54:15.790Z" id="updated"> 2024-10-29</time></div></span><br><span>文章总字数: <div class="control">2.5k</div></span><br><span>预计阅读时间: <div class="control">10 分钟</div></span></div></div><hr><div id="post-content"><h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>这是关于C++ STL常用内容总结</p>
+}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>C++ STL常用内容总结</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-10-28T16:00:00.000Z" id="date"> 2024-10-29</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2024-10-30T16:19:51.872Z" id="updated"> 2024-10-31</time></div></span><br><span>文章总字数: <div class="control">3.5k</div></span><br><span>预计阅读时间: <div class="control">14 分钟</div></span></div></div><hr><div id="post-content"><h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>这是关于C++ STL常用内容总结</p>
 <p><strong>强调使用方法</strong>，并不强调原理</p>
 <p>本篇博客是我用于个人学习总结用的</p>
 <span id="more"></span>
@@ -136,7 +136,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 </blockquote>
 <p>这是目前的安排，计划在11.03前赶完，因为11.03要比赛，11.10还要考<a href="https://smallgoodgood.top/hide/discrete-mathematics">离散</a>，中间还要把几次练习赛的题补了。（好忙）</p>
 <p>话不多说，接下来进入正题吧</p>
-<h2 id="vector-动态数组"><a href="#vector-动态数组" class="headerlink" title="vector 动态数组"></a>vector 动态数组</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p><code>vector</code>为可变长数组（动态数组），定义的<code>vector</code>数组可以随时添加数值和删除元素。</p>
+<h1 id="STL函数总结"><a href="#STL函数总结" class="headerlink" title="STL函数总结"></a>STL函数总结</h1><h2 id="vector-动态数组"><a href="#vector-动态数组" class="headerlink" title="vector 动态数组"></a>vector 动态数组</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p><code>vector</code>为可变长数组（动态数组），定义的<code>vector</code>数组可以随时添加数值和删除元素。</p>
 <blockquote>
 <p>注意：<strong>在局部区域中（比如局部函数里面）开vector数组，是在 堆空间 里面开的。</strong></p>
 <p>在局部区域开 数组 是在 栈空间 开的，而栈空间比较小，如果开了非常长的数组就会发生爆栈。</p>
@@ -300,7 +300,158 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <li><code>vector</code>和<code>string</code>的<code>STL</code>容器支持<code>*(it + i)</code>的元素访问，其它容器可能也可以支持这种方式访问，但用的不多，可自行尝试。</li>
 </ul>
 </blockquote>
-<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/10/28/birdking-is-so-cool/">祝birdking生日快乐！！！ 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Zenith</a></h1><div id="description"><p>未经审视的人生是不值得过的人生</p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">2.</span> <span class="toc-text">目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vector-%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84"><span class="toc-number">2.1.</span> <span class="toc-text">vector 动态数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.1.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%87%BD%E6%95%B0"><span class="toc-number">2.1.2.</span> <span class="toc-text">方法函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE"><span class="toc-number">2.1.3.</span> <span class="toc-text">访问</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E6%A0%87%E8%AE%BF%E9%97%AE"><span class="toc-number">2.1.3.1.</span> <span class="toc-text">下标访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E8%AE%BF%E9%97%AE"><span class="toc-number">2.1.3.2.</span> <span class="toc-text">迭代器访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="toc-number">2.1.3.3.</span> <span class="toc-text">智能指针</span></a></li></ol></li></ol></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">♖</span><a class="icp-content" href="https://smallgoodgood.top/about/">关于本站</a></nobr><br><nobr>Pubulished by <a href="http://smallgoodgood.top">Zenith <br></a></nobr><wbr><!-- 添加网站运行时间 --><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now = new Date();
+<h2 id="stack-栈"><a href="#stack-栈" class="headerlink" title="stack 栈"></a>stack 栈</h2><h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>栈为数据结构的一种，是STL中实现的一个先进后出，后进先出的容器。</p>
+<ul>
+<li><p>头文件</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//头文件需要添加</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stack&gt;</span></span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>声明</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//声明</span><br>stack&lt;<span class="hljs-type">int</span>&gt; s;<br>stack&lt;string&gt; s;<br>stack&lt;node&gt; s;<span class="hljs-comment">//node是结构体类型</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="方法函数-1"><a href="#方法函数-1" class="headerlink" title="方法函数"></a>方法函数</h3><table>
+<thead>
+<tr>
+<th align="center">代码</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">s.push(ele)</td>
+<td align="center">元素ele入栈，增加元素 O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">s.pop()</td>
+<td align="center">移除栈顶元素 O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">s.top()</td>
+<td align="center">取得栈顶元素（但不删除）O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">s.empty()</td>
+<td align="center">检测栈内是否为空，空为真 O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">s.size()</td>
+<td align="center">返回栈内元素的个数 O ( 1 )</td>
+</tr>
+</tbody></table>
+<h3 id="栈遍历"><a href="#栈遍历" class="headerlink" title="栈遍历"></a>栈遍历</h3><h4 id="栈遍历-1"><a href="#栈遍历-1" class="headerlink" title="栈遍历"></a>栈遍历</h4><p>栈只能对栈顶元素进行操作，如果想要进行遍历，只能将栈中元素一个个取出来存在数组中</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp">stack&lt;<span class="hljs-type">int</span>&gt; st;<br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; ++i) st.<span class="hljs-built_in">push</span>(i);<br><span class="hljs-keyword">while</span> (!st.<span class="hljs-built_in">empty</span>()) &#123;<br>    <span class="hljs-type">int</span> tp = st.<span class="hljs-built_in">top</span>(); <span class="hljs-comment">// 栈顶元素</span><br>    st.<span class="hljs-built_in">pop</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="数组模拟栈进行遍历"><a href="#数组模拟栈进行遍历" class="headerlink" title="数组模拟栈进行遍历"></a>数组模拟栈进行遍历</h4><p>通过一个<strong>数组</strong>对栈进行模拟，一个存放下标的变量<code>top</code>模拟指向栈顶的指针。</p>
+<blockquote>
+<p>一般来说单调栈和单调队列写法均可使用额外变量 <code>tt</code> 或 <code>hh</code> 来进行模拟</p>
+</blockquote>
+<p><strong>特点：</strong> 比<code>STL</code>的<code>stack</code>速度更快，遍历元素方便</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> s[<span class="hljs-number">100</span>]; <span class="hljs-comment">// 栈 从左至右为栈底到栈顶</span><br><span class="hljs-type">int</span> tt = <span class="hljs-number">-1</span>; <span class="hljs-comment">// tt 代表栈顶指针,初始栈内无元素，tt为-1</span><br><br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">5</span>; ++i) &#123;<br>	<span class="hljs-comment">//入栈 </span><br>	s[++tt] = i;<br>&#125;<br><span class="hljs-comment">// 出栈</span><br><span class="hljs-type">int</span> top_element = s[tt--]; <br><br><span class="hljs-comment">//入栈操作示意</span><br><span class="hljs-comment">//  0  1  2  3  4  5  </span><br><span class="hljs-comment">//                tt</span><br><span class="hljs-comment">//出栈后示意</span><br><span class="hljs-comment">//  0  1  2  3  4 </span><br><span class="hljs-comment">//              tt</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="queue-队列"><a href="#queue-队列" class="headerlink" title="queue 队列"></a>queue 队列</h2><h3 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h3><p>队列是一种先进先出的数据结构。</p>
+<ul>
+<li><p>头文件</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//头文件</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;queue&gt;</span></span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><em>定义初始化</em></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//定义初始化</span><br>queue&lt;<span class="hljs-type">int</span>&gt; q;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="方法函数-2"><a href="#方法函数-2" class="headerlink" title="方法函数"></a>方法函数</h3><table>
+<thead>
+<tr>
+<th align="center">代码</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">q.front()</td>
+<td align="center">返回队首元素 O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">q.back()</td>
+<td align="center">返回队尾元素 O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">q.push(element)</td>
+<td align="center">尾部添加一个元素element 进队O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">q.pop()</td>
+<td align="center">删除第一个元素 出队 O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">q.size()</td>
+<td align="center">返回队列中元素个数，返回值类型unsigned int O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">q.empty()</td>
+<td align="center">判断是否为空，队列为空，返回true O ( 1 )</td>
+</tr>
+</tbody></table>
+<h3 id="队列模拟"><a href="#队列模拟" class="headerlink" title="队列模拟"></a>队列模拟</h3><p>使用<code>q[]</code>数组模拟队列</p>
+<p><code>hh</code>表示队首元素的下标，初始值为<code>0</code></p>
+<p><code>tt</code>表示队尾元素的下标，初始值为<code>-1</code>，表示刚<strong>开始队列为空</strong></p>
+<blockquote>
+<p>一般来说单调栈和单调队列写法均可使用额外变量 <code>tt</code> 或 <code>hh</code> 来进行模拟</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e5</span> + <span class="hljs-number">5</span>;<br><span class="hljs-type">int</span> q[N];<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-type">int</span> hh = <span class="hljs-number">0</span>,tt = <span class="hljs-number">-1</span>;<br><span class="hljs-comment">//	入队 </span><br>	q[++tt] = <span class="hljs-number">1</span>;<br>	q[++tt] = <span class="hljs-number">2</span>; <br><span class="hljs-comment">//	将所有元素出队 </span><br>	<span class="hljs-keyword">while</span>(hh &lt;= tt) &#123;<br>		<span class="hljs-type">int</span> t = q[hh++];<br>		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>,t);<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br> &#125; <br></code></pre></td></tr></table></figure>
+
+<h2 id="deque-双端队列"><a href="#deque-双端队列" class="headerlink" title="deque  双端队列"></a>deque  双端队列</h2><h3 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h3><p>首尾都可插入和删除的队列为双端队列。</p>
+<ul>
+<li><p><em>头文件</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">//添加头文件<br>#include&lt;deque&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>初始化定义</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//初始化定义</span><br>deque&lt;<span class="hljs-type">int</span>&gt; dq;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="方法函数-3"><a href="#方法函数-3" class="headerlink" title="方法函数"></a>方法函数</h3><blockquote>
+<p>注意双端队列的常数比较大。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">代码</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">push_back(x)&#x2F;push_front(x)</td>
+<td align="center">把x插入队尾后 &#x2F; 队首 O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">back()&#x2F;front()</td>
+<td align="center">返回队尾 &#x2F; 队首元素 O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">pop_back() &#x2F; pop_front()</td>
+<td align="center">删除队尾 &#x2F; 队首元素 O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">erase(iterator it)</td>
+<td align="center">删除双端队列中的某一个元素</td>
+</tr>
+<tr>
+<td align="center">erase(iterator first,iterator last)</td>
+<td align="center">删除双端队列中<code>[first,last)</code>中的元素</td>
+</tr>
+<tr>
+<td align="center">empty()</td>
+<td align="center">判断deque是否空 O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">size()</td>
+<td align="center">返回deque的元素数量 O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">clear()</td>
+<td align="center">清空deque</td>
+</tr>
+</tbody></table>
+<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>deque可以进行排序</p>
+<blockquote>
+<p>双端队列排序一般不用，感觉毫无用处，使用其他<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=STL&spm=1001.2101.3001.7020">STL</a>依然可以实现相同功能</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">//从小到大<br>sort(q.begin(), q.end())<br>//从大到小排序<br>sort(q.begin(), q.end(), greater&lt;int&gt;());//deque里面的类型需要是int型<br>sort(q.begin(), q.end(), greater());//高版本C++才可以用<br></code></pre></td></tr></table></figure>
+
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/10/28/birdking-is-so-cool/">祝birdking生日快乐！！！ 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Zenith</a></h1><div id="description"><p>未经审视的人生是不值得过的人生</p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">2.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">STL函数总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vector-%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84"><span class="toc-number">3.1.</span> <span class="toc-text">vector 动态数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.1.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%87%BD%E6%95%B0"><span class="toc-number">3.1.2.</span> <span class="toc-text">方法函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE"><span class="toc-number">3.1.3.</span> <span class="toc-text">访问</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E6%A0%87%E8%AE%BF%E9%97%AE"><span class="toc-number">3.1.3.1.</span> <span class="toc-text">下标访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E8%AE%BF%E9%97%AE"><span class="toc-number">3.1.3.2.</span> <span class="toc-text">迭代器访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="toc-number">3.1.3.3.</span> <span class="toc-text">智能指针</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stack-%E6%A0%88"><span class="toc-number">3.2.</span> <span class="toc-text">stack 栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-1"><span class="toc-number">3.2.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%87%BD%E6%95%B0-1"><span class="toc-number">3.2.2.</span> <span class="toc-text">方法函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88%E9%81%8D%E5%8E%86"><span class="toc-number">3.2.3.</span> <span class="toc-text">栈遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%88%E9%81%8D%E5%8E%86-1"><span class="toc-number">3.2.3.1.</span> <span class="toc-text">栈遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F%E6%A0%88%E8%BF%9B%E8%A1%8C%E9%81%8D%E5%8E%86"><span class="toc-number">3.2.3.2.</span> <span class="toc-text">数组模拟栈进行遍历</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#queue-%E9%98%9F%E5%88%97"><span class="toc-number">3.3.</span> <span class="toc-text">queue 队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-2"><span class="toc-number">3.3.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%87%BD%E6%95%B0-2"><span class="toc-number">3.3.2.</span> <span class="toc-text">方法函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E6%A8%A1%E6%8B%9F"><span class="toc-number">3.3.3.</span> <span class="toc-text">队列模拟</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#deque-%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97"><span class="toc-number">3.4.</span> <span class="toc-text">deque  双端队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-3"><span class="toc-number">3.4.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%87%BD%E6%95%B0-3"><span class="toc-number">3.4.2.</span> <span class="toc-text">方法函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-number">3.4.3.</span> <span class="toc-text">注意点</span></a></li></ol></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">♖</span><a class="icp-content" href="https://smallgoodgood.top/about/">关于本站</a></nobr><br><nobr>Pubulished by <a href="http://smallgoodgood.top">Zenith <br></a></nobr><wbr><!-- 添加网站运行时间 --><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now = new Date();
 
 function createtime() {
   var grt = new Date("02/09/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间 
