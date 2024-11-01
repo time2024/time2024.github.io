@@ -108,7 +108,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
         //- return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";  
         return "(255,240,245)";
     }  
-}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>C++ STL常用内容总结</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2024-10-28T16:00:00.000Z" id="date"> 2024-10-29</time></div></span><br><span>Last Update: <div class="control"><time datetime="2024-10-30T16:19:51.872Z" id="updated"> 2024-10-31</time></div></span><br><span>Word Count: <div class="control">3.5k</div></span><br><span>Read Time: <div class="control">14 min</div></span></div></div><hr><div id="post-content"><h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>这是关于C++ STL常用内容总结</p>
+}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>C++ STL常用内容总结</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2024-10-28T16:00:00.000Z" id="date"> 2024-10-29</time></div></span><br><span>Last Update: <div class="control"><time datetime="2024-11-01T17:02:17.817Z" id="updated"> 2024-11-02</time></div></span><br><span>Word Count: <div class="control">6.6k</div></span><br><span>Read Time: <div class="control">27 min</div></span></div></div><hr><div id="post-content"><h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>这是关于C++ STL常用内容总结</p>
 <p><strong>强调使用方法</strong>，并不强调原理</p>
 <p>本篇博客是我用于个人学习总结用的</p>
 <span id="more"></span>
@@ -451,7 +451,281 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">//从小到大<br>sort(q.begin(), q.end())<br>//从大到小排序<br>sort(q.begin(), q.end(), greater&lt;int&gt;());//deque里面的类型需要是int型<br>sort(q.begin(), q.end(), greater());//高版本C++才可以用<br></code></pre></td></tr></table></figure>
 
-<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/10/28/birdking-is-so-cool/">祝birdking生日快乐！！！ Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Zenith</a></h1><div id="description"><p>未经审视的人生是不值得过的人生</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">2.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">STL函数总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vector-%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84"><span class="toc-number">3.1.</span> <span class="toc-text">vector 动态数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.1.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%87%BD%E6%95%B0"><span class="toc-number">3.1.2.</span> <span class="toc-text">方法函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE"><span class="toc-number">3.1.3.</span> <span class="toc-text">访问</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E6%A0%87%E8%AE%BF%E9%97%AE"><span class="toc-number">3.1.3.1.</span> <span class="toc-text">下标访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E8%AE%BF%E9%97%AE"><span class="toc-number">3.1.3.2.</span> <span class="toc-text">迭代器访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="toc-number">3.1.3.3.</span> <span class="toc-text">智能指针</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stack-%E6%A0%88"><span class="toc-number">3.2.</span> <span class="toc-text">stack 栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-1"><span class="toc-number">3.2.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%87%BD%E6%95%B0-1"><span class="toc-number">3.2.2.</span> <span class="toc-text">方法函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88%E9%81%8D%E5%8E%86"><span class="toc-number">3.2.3.</span> <span class="toc-text">栈遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%88%E9%81%8D%E5%8E%86-1"><span class="toc-number">3.2.3.1.</span> <span class="toc-text">栈遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F%E6%A0%88%E8%BF%9B%E8%A1%8C%E9%81%8D%E5%8E%86"><span class="toc-number">3.2.3.2.</span> <span class="toc-text">数组模拟栈进行遍历</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#queue-%E9%98%9F%E5%88%97"><span class="toc-number">3.3.</span> <span class="toc-text">queue 队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-2"><span class="toc-number">3.3.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%87%BD%E6%95%B0-2"><span class="toc-number">3.3.2.</span> <span class="toc-text">方法函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E6%A8%A1%E6%8B%9F"><span class="toc-number">3.3.3.</span> <span class="toc-text">队列模拟</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#deque-%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97"><span class="toc-number">3.4.</span> <span class="toc-text">deque  双端队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-3"><span class="toc-number">3.4.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%87%BD%E6%95%B0-3"><span class="toc-number">3.4.2.</span> <span class="toc-text">方法函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-number">3.4.3.</span> <span class="toc-text">注意点</span></a></li></ol></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">♖</span><a class="icp-content" href="https://smallgoodgood.top/about/">关于本站</a></nobr><br><nobr>Pubulished by <a href="http://smallgoodgood.top">Zenith <br></a></nobr><wbr><!-- 添加网站运行时间 --><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now = new Date();
+<h2 id="priority-queue-优先队列"><a href="#priority-queue-优先队列" class="headerlink" title="priority_queue 优先队列"></a>priority_queue 优先队列</h2><h3 id="介绍-4"><a href="#介绍-4" class="headerlink" title="介绍"></a>介绍</h3><p>优先队列是在正常队列的基础上加了优先级，保证每次的队首元素都是优先级最大的。</p>
+<p>可以实现每次从优先队列中取出的元素都是队列中<strong>优先级最大</strong>的一个。</p>
+<p>它的底层是通过<strong>堆</strong>来实现的。</p>
+<ul>
+<li><p>头文件</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//头文件</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;queue&gt;</span></span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>初始化</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//初始化定义</span><br>priority_queue&lt;<span class="hljs-type">int</span>&gt; q;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="函数方法"><a href="#函数方法" class="headerlink" title="函数方法"></a>函数方法</h3><table>
+<thead>
+<tr>
+<th align="center">代码</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">q.top()</td>
+<td align="center">访问队首元素 O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">q.push()</td>
+<td align="center">入队 O ( l o g N )</td>
+</tr>
+<tr>
+<td align="center">q.pop()</td>
+<td align="center">堆顶（队首）元素出队 O ( l o g N )</td>
+</tr>
+<tr>
+<td align="center">q.size()</td>
+<td align="center">队列元素个数 O ( 1 )</td>
+</tr>
+<tr>
+<td align="center">q.empty()</td>
+<td align="center">是否为空 O ( 1 )</td>
+</tr>
+</tbody></table>
+<p><strong>注意</strong>没有<code>clear()</code>！不提供该方法</p>
+<p>优先队列只能通过<code>top()</code>访问队首元素（优先级最高的元素）</p>
+<h3 id="设置优先级"><a href="#设置优先级" class="headerlink" title="设置优先级"></a>设置优先级</h3><h4 id="基本数据类型的优先级"><a href="#基本数据类型的优先级" class="headerlink" title="基本数据类型的优先级"></a>基本数据类型的优先级</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp">priority_queue&lt;<span class="hljs-type">int</span>&gt; pq; <span class="hljs-comment">// 默认大根堆, 即每次取出的元素是队列中的最大值</span><br>priority_queue&lt;<span class="hljs-type">int</span>, vector&lt;<span class="hljs-type">int</span>&gt;, greater&lt;<span class="hljs-type">int</span>&gt;&gt; q; <span class="hljs-comment">// 小根堆, 每次取出的元素是队列中的最小值</span><br><br></code></pre></td></tr></table></figure>
+
+<p>参数解释：</p>
+<ul>
+<li><p>第一个参数：就是优先队列中存储的数据类型</p>
+</li>
+<li><p>第二个参数：</p>
+<p><code>vector&lt;int&gt;</code> 是用来承载底层数据结构堆的容器，若优先队列中存放的是<code>double</code>型数据，就要填<code>vector&lt;double&gt;</code><br><strong>总之存的是什么类型的数据，就相应的填写对应类型。同时也要改动第三个参数里面的对应类型。</strong></p>
+</li>
+<li><p>第三个参数：</p>
+<p><code>less&lt;int&gt;</code> 表示数字大的优先级大，堆顶为最大的数字<br><code>greater&lt;int&gt;</code>表示数字小的优先级大，堆顶为最小的数字<br><strong>int代表的是数据类型，也要填优先队列中存储的数据类型</strong></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>基础写法（非常常用）：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp">priority_queue&lt;<span class="hljs-type">int</span>&gt; q1; <span class="hljs-comment">// 默认大根堆, 即每次取出的元素是队列中的最大值</span><br>priority_queue&lt;<span class="hljs-type">int</span>, vector&lt;<span class="hljs-type">int</span>&gt;, less&lt;<span class="hljs-type">int</span>&gt; &gt; q2; <span class="hljs-comment">// 大根堆, 每次取出的元素是队列中的最大值，同第一行</span><br><br>priority_queue&lt;<span class="hljs-type">int</span>, vector&lt;<span class="hljs-type">int</span>&gt;, greater&lt;<span class="hljs-type">int</span>&gt; &gt; q3; <span class="hljs-comment">// 小根堆, 每次取出的元素是队列中的最小值</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>自定义排序（不常见，主要是写着麻烦）：</p>
+<p>下面的代码比较长，基础类型优先级写着太麻烦，用基础写法即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">cmp1</span> &#123;<br>	<span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">operator</span><span class="hljs-params">()</span><span class="hljs-params">(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y)</span> </span>&#123;<br>		<span class="hljs-keyword">return</span> x &gt; y;<br>	&#125;<br>&#125;;<br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">cmp2</span> &#123;<br>	<span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">operator</span><span class="hljs-params">()</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">int</span> x, <span class="hljs-type">const</span> <span class="hljs-type">int</span> y)</span> </span>&#123;<br>		<span class="hljs-keyword">return</span> x &lt; y;<br>	&#125;<br>&#125;;<br>priority_queue&lt;<span class="hljs-type">int</span>, vector&lt;<span class="hljs-type">int</span>&gt;, cmp1&gt; q1; <span class="hljs-comment">// 小根堆</span><br>priority_queue&lt;<span class="hljs-type">int</span>, vector&lt;<span class="hljs-type">int</span>&gt;, cmp2&gt; q2; <span class="hljs-comment">// 大根堆</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="高级数据类型-结构体-优先级"><a href="#高级数据类型-结构体-优先级" class="headerlink" title="高级数据类型(结构体)优先级"></a>高级数据类型(结构体)优先级</h4><blockquote>
+<p>即优先队列中存储结构体类型，必须要设置优先级，即结构体的比较运算（因为优先队列的堆中要比较大小，才能将对应最大或者最小元素移到堆顶）。</p>
+</blockquote>
+<p>优先级设置可以定义在<strong>结构体内</strong>进行小于号重载，也可以定义在<strong>结构体外</strong>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//要排序的结构体（存储在优先队列里面的）</span><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Point</span> &#123;<br>	<span class="hljs-type">int</span> x, y;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>版本一：自定义全局比较规则</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//定义的比较结构体</span><br><span class="hljs-comment">//注意：cmp是个结构体 </span><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">cmp</span> &#123;<span class="hljs-comment">//自定义堆的排序规则 </span><br>	<span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">operator</span><span class="hljs-params">()</span><span class="hljs-params">(<span class="hljs-type">const</span> Point&amp; a,<span class="hljs-type">const</span> Point&amp; b)</span> </span>&#123;<br>		<span class="hljs-keyword">return</span> a.x &lt; b.x;<br>	&#125;<br>&#125;;<br><br><span class="hljs-comment">//初始化定义， </span><br>priority_queue&lt;Point, vector&lt;Point&gt;, cmp&gt; q; <span class="hljs-comment">// x大的在堆顶</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>版本二：直接在结构体里面写</strong></p>
+<blockquote>
+<p>因为是在结构体内部自定义的规则，一旦需要比较结构体，自动调用结构体内部重载运算符规则。</p>
+</blockquote>
+<p>结构体内部有两种方式：</p>
+<ul>
+<li><p><strong>方式一</strong> ：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">node</span> &#123;<br>	<span class="hljs-type">int</span> x, y;<br>	<span class="hljs-keyword">friend</span> <span class="hljs-type">bool</span> <span class="hljs-keyword">operator</span> &lt; (Point a, Point b) &#123;<span class="hljs-comment">//为两个结构体参数，结构体调用一定要写上friend</span><br>		<span class="hljs-keyword">return</span> a.x &lt; b.x;<span class="hljs-comment">//按x从小到大排，x大的在堆顶</span><br>	&#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>方式二</strong> ：（推荐此种）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">node</span> &#123;<br>    <span class="hljs-type">int</span> x, y;<br>    <span class="hljs-type">bool</span> <span class="hljs-keyword">operator</span> &lt; (<span class="hljs-type">const</span> Point &amp;a) <span class="hljs-type">const</span> &#123;<span class="hljs-comment">//直接传入一个参数，不必要写friend</span><br>        <span class="hljs-keyword">return</span> x &lt; a.x;<span class="hljs-comment">//按x升序排列，x大的在堆顶</span><br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<p>优先队列的定义</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">priority_queue&lt;Point&gt; q;<br></code></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong> 优先队列自定义排序规则和<code>sort()</code>函数定义<code>cmp</code>函数很相似，但是最后返回的情况是<strong>相反</strong>的。即相同的符号，最后定义的排列顺序是完全相反的。<br>所以只需要记住<code>sort</code>的排序规则和优先队列的排序规则是相反的就可以了。</p>
+<blockquote>
+<p>当理解了堆的原理就会发现，堆调整时比较顺序是孩子和父亲节点进行比较，如果是 <code>&gt;</code> ，那么孩子节点要大于父亲节点，堆顶自然是最小值。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="存储特殊类型的优先级"><a href="#存储特殊类型的优先级" class="headerlink" title="存储特殊类型的优先级"></a>存储特殊类型的优先级</h3><h4 id="存储pair类型"><a href="#存储pair类型" class="headerlink" title="存储pair类型"></a>存储pair类型</h4><ul>
+<li><p>排序规则：<br>默认先对<code>pair</code>的<code>first</code>进行降序排序，然后再对<code>second</code>降序排序<br>对<code>first</code>先排序，大的排在前面，如果<code>first</code>元素相同，再对<code>second</code>元素排序，保持大的在前面。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    priority_queue&lt;pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; &gt;q;<br>	q.<span class="hljs-built_in">push</span>(&#123;<span class="hljs-number">7</span>, <span class="hljs-number">8</span>&#125;);<br>	q.<span class="hljs-built_in">push</span>(&#123;<span class="hljs-number">7</span>, <span class="hljs-number">9</span>&#125;);<br>	q.<span class="hljs-built_in">push</span>(<span class="hljs-built_in">make_pair</span>(<span class="hljs-number">8</span>, <span class="hljs-number">7</span>));<br>    <span class="hljs-keyword">while</span>(!q.<span class="hljs-built_in">empty</span>()) &#123;<br>        cout &lt;&lt; q.<span class="hljs-built_in">top</span>().first &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; q.<span class="hljs-built_in">top</span>().second &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>        q.<span class="hljs-built_in">pop</span>();<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>结果：<br>8 7<br>7 9<br>7 8</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="map-映射"><a href="#map-映射" class="headerlink" title="map 映射"></a>map 映射</h2><h3 id="介绍-5"><a href="#介绍-5" class="headerlink" title="介绍"></a>介绍</h3><p>映射类似于函数的对应关系，每个<code>x</code>对应一个<code>y</code>，而<code>map</code>是每个键对应一个值。会python的朋友学习后就会知道这和python的字典非常类似。</p>
+<blockquote>
+<p>比如说：学习 对应 看书，学习 是键，看书 是值。<br>学习-&gt;看书<br>玩耍 对应 打游戏，玩耍 是键，打游戏 是值。<br>玩耍-&gt;打游戏</p>
+</blockquote>
+<ul>
+<li><p>头文件</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//头文件</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;map&gt;</span></span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>初始化</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//初始化定义</span><br>map&lt;string, string&gt; mp;<br>map&lt;string, <span class="hljs-type">int</span>&gt; mp;<br>map&lt;<span class="hljs-type">int</span>, node&gt; mp;<span class="hljs-comment">//node是结构体类型</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>map特性：map会按照键的顺序从小到大自动排序，键的类型必须可以比较大小</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="函数方法-1"><a href="#函数方法-1" class="headerlink" title="函数方法"></a>函数方法</h3><table>
+<thead>
+<tr>
+<th align="center">代码</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">mp.find(key)</td>
+<td align="center">返回键为key的映射的迭代器 $O(logN) $ 注意：用find函数来定位数据出现位置，它返回一个迭代器。当数据存在时，返回数据所在位置的迭代器，数据不存在时，返回mp.end ( )</td>
+</tr>
+<tr>
+<td align="center">mp.erase(it)</td>
+<td align="center">删除迭代器对应的键和值 O ( l o g N )</td>
+</tr>
+<tr>
+<td align="center">mp.erase(key)</td>
+<td align="center">根据映射的键删除键和值 O ( l o g N )</td>
+</tr>
+<tr>
+<td align="center">mp.erase(first,last)</td>
+<td align="center">删除左闭右开区间迭代器对应的键和值 O ( l a s t − f i r s t )</td>
+</tr>
+<tr>
+<td align="center">mp.size()</td>
+<td align="center">返回映射的对数 O (1)</td>
+</tr>
+<tr>
+<td align="center">mp.clear()</td>
+<td align="center">清空map中的所有元素 O ( N )</td>
+</tr>
+<tr>
+<td align="center">mp.insert()</td>
+<td align="center">插入元素，插入时要构造键值对</td>
+</tr>
+<tr>
+<td align="center">mp.empty()</td>
+<td align="center">如果map为空，返回true，否则返回false</td>
+</tr>
+<tr>
+<td align="center">mp.begin()</td>
+<td align="center">返回指向map第一个元素的迭代器（地址）</td>
+</tr>
+<tr>
+<td align="center">mp.end()</td>
+<td align="center">返回指向map尾部的迭代器（最后一个元素的<strong>下一个</strong>地址）</td>
+</tr>
+<tr>
+<td align="center">mp.rbegin()</td>
+<td align="center">返回指向map最后一个元素的迭代器（地址）</td>
+</tr>
+<tr>
+<td align="center">mp.rend()</td>
+<td align="center">返回指向map第一个元素前面(上一个）的逆向迭代器（地址）</td>
+</tr>
+<tr>
+<td align="center">mp.count(key)</td>
+<td align="center">查看元素是否存在，因为map中键是唯一的，所以存在返回1，不存在返回0</td>
+</tr>
+<tr>
+<td align="center">mp.lower_bound()</td>
+<td align="center">返回一个迭代器，指向键值&gt;&#x3D; <strong>key</strong>的第一个元素</td>
+</tr>
+<tr>
+<td align="center">mp.upper_bound()</td>
+<td align="center">返回一个迭代器，指向键值&gt; key的第一个元素</td>
+</tr>
+</tbody></table>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p><strong>下面说明部分函数方法的注意点</strong></p>
+<blockquote>
+<p>注意：<br>查找元素<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8&spm=1001.2101.3001.7020">是否存在</a>时，可以使用<br>①<code>mp.find()</code> ② <code>mp.count()</code> ③ <code>mp[key]</code><br>但是第三种情况，如果不存在对应的<code>key</code>时，会自动创建一个<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E9%94%AE%E5%80%BC%E5%AF%B9&spm=1001.2101.3001.7020">键值对</a>（产生一个额外的键值对空间）<br>所以为了不增加额外的空间负担，最好使用前两种方法</p>
+</blockquote>
+<h4 id="迭代器进行正反向遍历"><a href="#迭代器进行正反向遍历" class="headerlink" title="迭代器进行正反向遍历"></a>迭代器进行正反向遍历</h4><ul>
+<li><p><code>mp.begin()</code>和<code>mp.end()</code>用法：</p>
+<p><strong>用于正向遍历map</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp">map&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt; mp;<br>mp[<span class="hljs-number">1</span>] = <span class="hljs-number">2</span>;<br>mp[<span class="hljs-number">2</span>] = <span class="hljs-number">3</span>;<br>mp[<span class="hljs-number">3</span>] = <span class="hljs-number">4</span>;<br><span class="hljs-keyword">auto</span> it = mp.<span class="hljs-built_in">begin</span>();<br><span class="hljs-keyword">while</span>(it != mp.<span class="hljs-built_in">end</span>()) &#123;<br>	cout &lt;&lt; it-&gt;first &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; it-&gt;second &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>	it ++;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">1</span> <span class="hljs-number">2</span><br><span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-number">3</span> <span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>mp.rbegin()</code>和<code>mp.rend()</code>用法：</p>
+<p><strong>用于逆向遍历map</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp">map&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt; mp;<br>mp[<span class="hljs-number">1</span>] = <span class="hljs-number">2</span>;<br>mp[<span class="hljs-number">2</span>] = <span class="hljs-number">3</span>;<br>mp[<span class="hljs-number">3</span>] = <span class="hljs-number">4</span>;<br><span class="hljs-keyword">auto</span> it = mp.<span class="hljs-built_in">rbegin</span>();<br><span class="hljs-keyword">while</span>(it != mp.<span class="hljs-built_in">rend</span>()) &#123;<br>	cout &lt;&lt; it-&gt;first &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; it-&gt;second &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>	it ++;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">3</span> <span class="hljs-number">4</span><br><span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-number">1</span> <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h4><p>二分查找<code>lower_bound() upper_bound()</code></p>
+<blockquote>
+<p>map的二分查找以第一个元素（即键为准），对<strong>键</strong>进行二分查找<br>返回值为map迭代器类型</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	map&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; m&#123;&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>&#125;, &#123;<span class="hljs-number">2</span>, <span class="hljs-number">2</span>&#125;, &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>&#125;, &#123;<span class="hljs-number">8</span>, <span class="hljs-number">2</span>&#125;, &#123;<span class="hljs-number">6</span>, <span class="hljs-number">2</span>&#125;&#125;;<span class="hljs-comment">//有序</span><br>	map&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt;::iterator it1 = m.<span class="hljs-built_in">lower_bound</span>(<span class="hljs-number">2</span>);<br>	cout &lt;&lt; it1-&gt;first &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<span class="hljs-comment">//it1-&gt;first=2</span><br>	map&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt;::iterator it2 = m.<span class="hljs-built_in">upper_bound</span>(<span class="hljs-number">2</span>);<br>	cout &lt;&lt; it2-&gt;first &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<span class="hljs-comment">//it2-&gt;first=6</span><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><br></code></pre></td></tr></table></figure>
+
+<h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//先声明</span><br>map&lt;string, string&gt; mp;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>方式一：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">mp[<span class="hljs-string">&quot;学习&quot;</span>] = <span class="hljs-string">&quot;看书&quot;</span>;<br>mp[<span class="hljs-string">&quot;玩耍&quot;</span>] = <span class="hljs-string">&quot;打游戏&quot;</span>;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>方式二：插入元素构造键值对</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">mp.<span class="hljs-built_in">insert</span>(<span class="hljs-built_in">make_pair</span>(<span class="hljs-string">&quot;vegetable&quot;</span>,<span class="hljs-string">&quot;蔬菜&quot;</span>));<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>方式三：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">mp.<span class="hljs-built_in">insert</span>(<span class="hljs-built_in">pair</span>&lt;string,string&gt;(<span class="hljs-string">&quot;fruit&quot;</span>,<span class="hljs-string">&quot;水果&quot;</span>));<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>方式四:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">mp.insert(&#123;&quot;hahaha&quot;,&quot;wawawa&quot;&#125;);<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="访问元素"><a href="#访问元素" class="headerlink" title="访问元素"></a>访问元素</h3><h4 id="下标访问-1"><a href="#下标访问-1" class="headerlink" title="下标访问"></a>下标访问</h4><p>(大部分情况用于访问单个元素)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">mp[<span class="hljs-string">&quot;菜哇菜&quot;</span>] = <span class="hljs-string">&quot;强哇强&quot;</span>;<br>cout &lt;&lt; mp[<span class="hljs-string">&quot;菜哇菜&quot;</span>] &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<span class="hljs-comment">//只是简写的一个例子，程序并不完整</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="遍历访问"><a href="#遍历访问" class="headerlink" title="遍历访问"></a>遍历访问</h4><ul>
+<li><p>方式一：迭代器访问</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp">map&lt;string,string&gt;::iterator it;<br><span class="hljs-keyword">for</span>(it = mp.<span class="hljs-built_in">begin</span>(); it != mp.<span class="hljs-built_in">end</span>(); it++) &#123;<br>	<span class="hljs-comment">//      键                 值 </span><br>	<span class="hljs-comment">// it是结构体指针访问所以要用 -&gt; 访问</span><br>	cout &lt;&lt; it-&gt;first &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; it-&gt;second &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>	<span class="hljs-comment">//*it是结构体变量 访问要用 . 访问</span><br>	<span class="hljs-comment">//cout&lt;&lt;(*it).first&lt;&lt;&quot; &quot;&lt;&lt;(*it).second;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>方式二：智能指针访问</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> i : mp)<br>cout &lt;&lt; i.first &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; i.second &lt;&lt; endl;<span class="hljs-comment">//键，值</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>方式三：对指定单个元素访问</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">map&lt;<span class="hljs-type">char</span>,<span class="hljs-type">int</span>&gt;::iterator it = mp.<span class="hljs-built_in">find</span>(<span class="hljs-string">&#x27;a&#x27;</span>);<br>cout &lt;&lt; it -&gt; first &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt;  it-&gt;second &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>方式四：c++17特性才具有</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> [x, y] : mp)<br>	cout &lt;&lt; x &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; y &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br><span class="hljs-comment">//x,y对应键和值</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="与unordered-map的比较"><a href="#与unordered-map的比较" class="headerlink" title="与unordered_map的比较"></a>与unordered_map的比较</h3><p>这里就不单开一个大目录讲unordered_map了，直接在map里面讲了。</p>
+<h4 id="内部实现原理"><a href="#内部实现原理" class="headerlink" title="内部实现原理"></a>内部实现原理</h4><p><strong>map</strong>：内部用<strong>红黑树</strong>实现，具有<strong>自动排序</strong>（按键从小到大）功能。</p>
+<p><strong>unordered_map</strong>：内部用<strong>哈希表</strong>实现，内部元素无序杂乱。</p>
+<h4 id="效率比较"><a href="#效率比较" class="headerlink" title="效率比较"></a>效率比较</h4><p>map：</p>
+<ul>
+<li>优点：内部用红黑树实现，内部元素具有有序性，查询删除等操作复杂度为O ( l o g N)</li>
+<li>缺点：占用空间，红黑树里每个节点需要保存父子节点和红黑性质等信息，空间占用较大。</li>
+</ul>
+<p>unordered_map：</p>
+<ul>
+<li>优点：内部用哈希表实现，查找速度非常快（适用于大量的查询操作）。</li>
+<li>缺点：建立哈希表比较耗时。</li>
+</ul>
+<blockquote>
+<p>两者方法函数基本一样，差别不大。</p>
+<p>注意：</p>
+<ul>
+<li><p>随着内部元素越来越多，两种容器的插入删除查询操作的时间都会逐渐变大，效率逐渐变低。</p>
+</li>
+<li><p>使用<code>[]</code>查找元素时，如果元素不存在，两种容器<strong>都是</strong>创建一个空的元素；如果存在，会正常索引对应的值。所以如果查询过多的不存在的元素值，容器内部会创建大量的空的键值对，后续查询创建删除效率会<strong>大大降低</strong>。</p>
+</li>
+<li><p>查询容器内部元素的最优方法是：先判断存在与否，再索引对应值（适用于这两种容器）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 以 map 为例</span><br>map&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; mp;<br><span class="hljs-type">int</span> x = <span class="hljs-number">999999999</span>;<br><span class="hljs-keyword">if</span>(mp.<span class="hljs-built_in">count</span>(x)) <span class="hljs-comment">// 此处判断是否存在x这个键</span><br>    cout &lt;&lt; mp[x] &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;   <span class="hljs-comment">// 只有存在才会索引对应的值，避免不存在x时多余空元素的创建</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</blockquote>
+<p>另外：</p>
+<blockquote>
+<p>还有一种映射：<code>multimap</code></p>
+<p>键可以重复，即一个键对应多个值，如要了解，可以自行搜索。</p>
+</blockquote>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/10/28/birdking-is-so-cool/">祝birdking生日快乐！！！ Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Zenith</a></h1><div id="description"><p>未经审视的人生是不值得过的人生</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">2.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">STL函数总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vector-%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84"><span class="toc-number">3.1.</span> <span class="toc-text">vector 动态数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.1.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%87%BD%E6%95%B0"><span class="toc-number">3.1.2.</span> <span class="toc-text">方法函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE"><span class="toc-number">3.1.3.</span> <span class="toc-text">访问</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E6%A0%87%E8%AE%BF%E9%97%AE"><span class="toc-number">3.1.3.1.</span> <span class="toc-text">下标访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E8%AE%BF%E9%97%AE"><span class="toc-number">3.1.3.2.</span> <span class="toc-text">迭代器访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="toc-number">3.1.3.3.</span> <span class="toc-text">智能指针</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stack-%E6%A0%88"><span class="toc-number">3.2.</span> <span class="toc-text">stack 栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-1"><span class="toc-number">3.2.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%87%BD%E6%95%B0-1"><span class="toc-number">3.2.2.</span> <span class="toc-text">方法函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88%E9%81%8D%E5%8E%86"><span class="toc-number">3.2.3.</span> <span class="toc-text">栈遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%88%E9%81%8D%E5%8E%86-1"><span class="toc-number">3.2.3.1.</span> <span class="toc-text">栈遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F%E6%A0%88%E8%BF%9B%E8%A1%8C%E9%81%8D%E5%8E%86"><span class="toc-number">3.2.3.2.</span> <span class="toc-text">数组模拟栈进行遍历</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#queue-%E9%98%9F%E5%88%97"><span class="toc-number">3.3.</span> <span class="toc-text">queue 队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-2"><span class="toc-number">3.3.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%87%BD%E6%95%B0-2"><span class="toc-number">3.3.2.</span> <span class="toc-text">方法函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E6%A8%A1%E6%8B%9F"><span class="toc-number">3.3.3.</span> <span class="toc-text">队列模拟</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#deque-%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97"><span class="toc-number">3.4.</span> <span class="toc-text">deque  双端队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-3"><span class="toc-number">3.4.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%87%BD%E6%95%B0-3"><span class="toc-number">3.4.2.</span> <span class="toc-text">方法函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-number">3.4.3.</span> <span class="toc-text">注意点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#priority-queue-%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97"><span class="toc-number">3.5.</span> <span class="toc-text">priority_queue 优先队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-4"><span class="toc-number">3.5.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%96%B9%E6%B3%95"><span class="toc-number">3.5.2.</span> <span class="toc-text">函数方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">3.5.3.</span> <span class="toc-text">设置优先级</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">3.5.3.1.</span> <span class="toc-text">基本数据类型的优先级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%BB%93%E6%9E%84%E4%BD%93-%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">3.5.3.2.</span> <span class="toc-text">高级数据类型(结构体)优先级</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E7%89%B9%E6%AE%8A%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">3.5.4.</span> <span class="toc-text">存储特殊类型的优先级</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E5%82%A8pair%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.5.4.1.</span> <span class="toc-text">存储pair类型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map-%E6%98%A0%E5%B0%84"><span class="toc-number">3.6.</span> <span class="toc-text">map 映射</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-5"><span class="toc-number">3.6.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%96%B9%E6%B3%95-1"><span class="toc-number">3.6.2.</span> <span class="toc-text">函数方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">3.6.2.1.</span> <span class="toc-text">注意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E8%BF%9B%E8%A1%8C%E6%AD%A3%E5%8F%8D%E5%90%91%E9%81%8D%E5%8E%86"><span class="toc-number">3.6.2.2.</span> <span class="toc-text">迭代器进行正反向遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="toc-number">3.6.2.3.</span> <span class="toc-text">二分查找</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="toc-number">3.6.3.</span> <span class="toc-text">添加元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%85%83%E7%B4%A0"><span class="toc-number">3.6.4.</span> <span class="toc-text">访问元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E6%A0%87%E8%AE%BF%E9%97%AE-1"><span class="toc-number">3.6.4.1.</span> <span class="toc-text">下标访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E8%AE%BF%E9%97%AE"><span class="toc-number">3.6.4.2.</span> <span class="toc-text">遍历访问</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8Eunordered-map%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-number">3.6.5.</span> <span class="toc-text">与unordered_map的比较</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-number">3.6.5.1.</span> <span class="toc-text">内部实现原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%88%E7%8E%87%E6%AF%94%E8%BE%83"><span class="toc-number">3.6.5.2.</span> <span class="toc-text">效率比较</span></a></li></ol></li></ol></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">♖</span><a class="icp-content" href="https://smallgoodgood.top/about/">关于本站</a></nobr><br><nobr>Pubulished by <a href="http://smallgoodgood.top">Zenith <br></a></nobr><wbr><!-- 添加网站运行时间 --><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now = new Date();
 
 function createtime() {
   var grt = new Date("02/09/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间 
