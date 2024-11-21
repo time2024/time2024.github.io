@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>APMCM_C_Problem_1_2 | Zenith</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/yellow.jpg');
+ --light-background: url('/img/green.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸红心效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><script>(function () {  
+    var a_idx = 0;  
+    window.onclick = function (event) {  
+        var a = new Array("这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "曾经有人让我听这首歌","可是那时的我还不谙情事","也没有真正认真的听完整首歌","直到后来","分开后再听时才发现","原来我错过了","曾经的阿芒","你还好吗");  
+
+        var heart = document.createElement("p"); // 创建p元素，这里从b改为p  
+        heart.onselectstart = function() { return false; }; // 简化防止拖动的代码  
+
+        document.body.appendChild(heart).textContent = a[a_idx]; // 使用textContent代替innerHTML，因为这里只是文本  
+        a_idx = (a_idx + 1) % a.length;  
+        heart.style.cssText = "position: fixed;left:-100%;"; // 初始位置  
+
+        var f = 16, // 字体大小  
+            x = event.clientX - f / 2, // 横坐标  
+            y = event.clientY - f, // 纵坐标  
+            c = randomColor(), // 随机颜色  
+            a = 1, // 透明度  
+            s = 1.2; // 放大缩小比例  
+
+        var timer = setInterval(function () { // 添加定时器  
+            if (a <= 0) {  
+                document.body.removeChild(heart);  
+                clearInterval(timer);  
+            } else {  
+                heart.style.cssText = "font-size:" + f + "px;cursor: default;position: fixed;color:" +  
+                    c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +  
+                    s + ");";  
+
+                y--;  
+                a -= 0.016;  
+                s += 0.002;  
+            }  
+        }, 15);  
+    }  
+
+    // 随机颜色函数  
+    function randomColor() {  
+        //- return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";  
+        return "(255,240,245)";
+    }  
+}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>APMCM_C_Problem_1_2</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2024-11-20T16:00:00.000Z" id="date"> 2024-11-21</time></div></span><br><span>Last Update: <div class="control"><time datetime="2024-11-21T11:57:16.676Z" id="updated"> 2024-11-21</time></div></span><br><span>Word Count: <div class="control">1.1k</div></span><br><span>Read Time: <div class="control">4 min</div></span></div></div><hr><div id="post-content"><p>以下是一个适用于多元线性回归的详细Python代码框架，涵盖了从数据加载到模型评估的全过程，并附有详细注释。通过这个框架，你可以轻松实现多元回归分析。</p>
+<hr>
+<h3 id="第一步：安装必要的库"><a href="#第一步：安装必要的库" class="headerlink" title="第一步：安装必要的库"></a>第一步：安装必要的库</h3><p>确保你安装了以下库，如果尚未安装，可以运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install pandas numpy matplotlib scikit-learn<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="第二步：导入库"><a href="#第二步：导入库" class="headerlink" title="第二步：导入库"></a>第二步：导入库</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">from</span> sklearn.model_selection <span class="hljs-keyword">import</span> train_test_split<br><span class="hljs-keyword">from</span> sklearn.linear_model <span class="hljs-keyword">import</span> LinearRegression<br><span class="hljs-keyword">from</span> sklearn.metrics <span class="hljs-keyword">import</span> mean_squared_error, r2_score<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="第三步：多元回归代码框架"><a href="#第三步：多元回归代码框架" class="headerlink" title="第三步：多元回归代码框架"></a>第三步：多元回归代码框架</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 1. 加载数据</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">load_data</span>(<span class="hljs-params">filepath</span>):<br>    <span class="hljs-string">"""</span><br><span class="hljs-string">    加载数据集</span><br><span class="hljs-string">    filepath: 数据文件路径</span><br><span class="hljs-string">    返回：数据集的 pandas DataFrame</span><br><span class="hljs-string">    """</span><br>    df = pd.read_csv(filepath)<br>    <span class="hljs-keyword">return</span> df<br><br><span class="hljs-comment"># 2. 数据预览</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">preview_data</span>(<span class="hljs-params">df</span>):<br>    <span class="hljs-string">"""</span><br><span class="hljs-string">    预览数据集信息</span><br><span class="hljs-string">    df: 数据集</span><br><span class="hljs-string">    """</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">"数据集前五行："</span>)<br>    <span class="hljs-built_in">print</span>(df.head())<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">"\n数据描述："</span>)<br>    <span class="hljs-built_in">print</span>(df.describe())<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">"\n缺失值统计："</span>)<br>    <span class="hljs-built_in">print</span>(df.isnull().<span class="hljs-built_in">sum</span>())<br><br><span class="hljs-comment"># 3. 数据可视化</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">visualize_correlations</span>(<span class="hljs-params">df</span>):<br>    <span class="hljs-string">"""</span><br><span class="hljs-string">    可视化特征之间的相关性（热图）</span><br><span class="hljs-string">    df: 数据集</span><br><span class="hljs-string">    """</span><br>    correlation_matrix = df.corr()<br>    plt.figure(figsize=(<span class="hljs-number">10</span>, <span class="hljs-number">8</span>))<br>    plt.matshow(correlation_matrix, fignum=<span class="hljs-number">1</span>, cmap=<span class="hljs-string">'coolwarm'</span>)<br>    plt.colorbar()<br>    plt.title(<span class="hljs-string">'Feature Correlations'</span>, pad=<span class="hljs-number">20</span>)<br>    plt.show()<br><br><span class="hljs-comment"># 4. 数据预处理</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">preprocess_data</span>(<span class="hljs-params">df, feature_columns, target_column</span>):<br>    <span class="hljs-string">"""</span><br><span class="hljs-string">    数据预处理：拆分特征与目标变量</span><br><span class="hljs-string">    df: 数据集</span><br><span class="hljs-string">    feature_columns: 特征列名列表</span><br><span class="hljs-string">    target_column: 目标列名</span><br><span class="hljs-string">    返回：特征矩阵 X 和目标变量 y</span><br><span class="hljs-string">    """</span><br>    X = df[feature_columns].values  <span class="hljs-comment"># 特征矩阵</span><br>    y = df[target_column].values    <span class="hljs-comment"># 目标变量</span><br>    <span class="hljs-keyword">return</span> X, y<br><br><span class="hljs-comment"># 5. 拆分训练集和测试集</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">split_data</span>(<span class="hljs-params">X, y, test_size=<span class="hljs-number">0.2</span>, random_state=<span class="hljs-number">42</span></span>):<br>    <span class="hljs-string">"""</span><br><span class="hljs-string">    拆分数据集为训练集和测试集</span><br><span class="hljs-string">    X: 特征矩阵</span><br><span class="hljs-string">    y: 目标变量</span><br><span class="hljs-string">    test_size: 测试集比例</span><br><span class="hljs-string">    random_state: 随机种子</span><br><span class="hljs-string">    返回：训练集和测试集</span><br><span class="hljs-string">    """</span><br>    <span class="hljs-keyword">return</span> train_test_split(X, y, test_size=test_size, random_state=random_state)<br><br><span class="hljs-comment"># 6. 构建和训练线性回归模型</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">train_model</span>(<span class="hljs-params">X_train, y_train</span>):<br>    <span class="hljs-string">"""</span><br><span class="hljs-string">    训练多元线性回归模型</span><br><span class="hljs-string">    X_train: 训练集特征</span><br><span class="hljs-string">    y_train: 训练集目标变量</span><br><span class="hljs-string">    返回：训练好的线性回归模型</span><br><span class="hljs-string">    """</span><br>    model = LinearRegression()<br>    model.fit(X_train, y_train)<br>    <span class="hljs-keyword">return</span> model<br><br><span class="hljs-comment"># 7. 打印模型系数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">print_model_coefficients</span>(<span class="hljs-params">model, feature_columns</span>):<br>    <span class="hljs-string">"""</span><br><span class="hljs-string">    打印模型的回归系数和截距</span><br><span class="hljs-string">    model: 已训练的回归模型</span><br><span class="hljs-string">    feature_columns: 特征列名列表</span><br><span class="hljs-string">    """</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">"回归系数："</span>)<br>    <span class="hljs-keyword">for</span> feature, coef <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(feature_columns, model.coef_):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f"<span class="hljs-subst">{feature}</span>: <span class="hljs-subst">{coef}</span>"</span>)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f"\n截距（Intercept）：<span class="hljs-subst">{model.intercept_}</span>"</span>)<br><br><span class="hljs-comment"># 8. 模型预测</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">predict</span>(<span class="hljs-params">model, X_test</span>):<br>    <span class="hljs-string">"""</span><br><span class="hljs-string">    使用模型进行预测</span><br><span class="hljs-string">    model: 已训练的回归模型</span><br><span class="hljs-string">    X_test: 测试集特征</span><br><span class="hljs-string">    返回：预测结果</span><br><span class="hljs-string">    """</span><br>    <span class="hljs-keyword">return</span> model.predict(X_test)<br><br><span class="hljs-comment"># 9. 模型评估</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">evaluate_model</span>(<span class="hljs-params">y_test, y_pred</span>):<br>    <span class="hljs-string">"""</span><br><span class="hljs-string">    评估模型性能</span><br><span class="hljs-string">    y_test: 测试集真实值</span><br><span class="hljs-string">    y_pred: 测试集预测值</span><br><span class="hljs-string">    """</span><br>    mse = mean_squared_error(y_test, y_pred)<br>    r2 = r2_score(y_test, y_pred)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f"Mean Squared Error (MSE): <span class="hljs-subst">{mse}</span>"</span>)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f"R-squared (R²): <span class="hljs-subst">{r2}</span>"</span>)<br><br><span class="hljs-comment"># 10. 可视化预测结果</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">visualize_predictions</span>(<span class="hljs-params">y_test, y_pred</span>):<br>    <span class="hljs-string">"""</span><br><span class="hljs-string">    可视化预测结果与真实值</span><br><span class="hljs-string">    y_test: 测试集真实值</span><br><span class="hljs-string">    y_pred: 测试集预测值</span><br><span class="hljs-string">    """</span><br>    plt.figure(figsize=(<span class="hljs-number">10</span>, <span class="hljs-number">6</span>))<br>    plt.scatter(<span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(y_test)), y_test, color=<span class="hljs-string">'blue'</span>, label=<span class="hljs-string">'Actual Values'</span>)<br>    plt.scatter(<span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(y_pred)), y_pred, color=<span class="hljs-string">'red'</span>, label=<span class="hljs-string">'Predicted Values'</span>)<br>    plt.title(<span class="hljs-string">'Actual vs Predicted Values'</span>)<br>    plt.xlabel(<span class="hljs-string">'Index'</span>)<br>    plt.ylabel(<span class="hljs-string">'Value'</span>)<br>    plt.legend()<br>    plt.show()<br><br><span class="hljs-comment"># 11. 主程序</span><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:<br>    filepath = <span class="hljs-string">'your_multivariate_data.csv'</span>  <span class="hljs-comment"># 替换为你的数据文件路径</span><br>    df = load_data(filepath)<br>    <br>    <span class="hljs-comment"># 预览数据集信息</span><br>    preview_data(df)<br>    <br>    <span class="hljs-comment"># 可视化特征相关性</span><br>    visualize_correlations(df)<br>    <br>    <span class="hljs-comment"># 假设数据包含多列特征和一个目标列</span><br>    feature_columns = [<span class="hljs-string">'feature1'</span>, <span class="hljs-string">'feature2'</span>, <span class="hljs-string">'feature3'</span>]  <span class="hljs-comment"># 替换为实际特征列名</span><br>    target_column = <span class="hljs-string">'target'</span>                                <span class="hljs-comment"># 替换为实际目标列名</span><br>    <br>    <span class="hljs-comment"># 数据预处理</span><br>    X, y = preprocess_data(df, feature_columns, target_column)<br>    <br>    <span class="hljs-comment"># 拆分训练集和测试集</span><br>    X_train, X_test, y_train, y_test = split_data(X, y)<br>    <br>    <span class="hljs-comment"># 构建并训练模型</span><br>    model = train_model(X_train, y_train)<br>    <br>    <span class="hljs-comment"># 打印模型系数</span><br>    print_model_coefficients(model, feature_columns)<br>    <br>    <span class="hljs-comment"># 进行预测</span><br>    y_pred = predict(model, X_test)<br>    <br>    <span class="hljs-comment"># 评估模型</span><br>    evaluate_model(y_test, y_pred)<br>    <br>    <span class="hljs-comment"># 可视化预测结果</span><br>    visualize_predictions(y_test, y_pred)<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="第四步：如何使用框架"><a href="#第四步：如何使用框架" class="headerlink" title="第四步：如何使用框架"></a>第四步：如何使用框架</h3><ol>
+<li><strong>准备数据</strong>：<ul>
+<li>数据文件应为 <code>.csv</code> 格式，包含多个特征列（例如 <code>feature1, feature2, feature3</code>）和目标列（例如 <code>target</code>）。</li>
+<li>确保数据中没有缺失值或异常值。</li>
+</ul>
+</li>
+<li><strong>数据探索</strong>：<ul>
+<li>使用 <code>preview_data</code> 查看数据集基本信息。</li>
+<li>使用 <code>visualize_correlations</code> 查看特征之间的相关性热图，帮助选择显著相关的特征。</li>
+</ul>
+</li>
+<li><strong>特征选择</strong>：<ul>
+<li>根据数据列名，替换 <code>feature_columns</code> 和 <code>target_column</code>。</li>
+<li>特征应尽量与目标变量呈现线性关系。</li>
+</ul>
+</li>
+<li><strong>训练和评估模型</strong>：<ul>
+<li>通过MSE和R²评估模型性能。</li>
+<li>打印回归系数，分析每个特征对目标变量的影响。</li>
+</ul>
+</li>
+<li><strong>预测新数据</strong>：<ul>
+<li>使用 <code>model.predict()</code> 方法对新数据进行预测。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="示例数据"><a href="#示例数据" class="headerlink" title="示例数据"></a>示例数据</h3><p>假设数据如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs csv">feature1,feature2,feature3,target<br>1,2,3,10<br>2,3,4,15<br>3,4,5,20<br>4,5,6,25<br>5,6,7,30<br></code></pre></td></tr></table></figure>
+
+<p>运行后可以看到：</p>
+<ul>
+<li>特征相关性热图；</li>
+<li>实际值和预测值的对比；</li>
+<li>模型性能评估结果。</li>
+</ul>
+<div id="paginator"></div></div><div id="post-footer"></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Zenith</a></h1><div id="description"><p>未经审视的人生是不��得过的人生</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%AE%89%E8%A3%85%E5%BF%85%E8%A6%81%E7%9A%84%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">第一步：安装必要的库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E5%AF%BC%E5%85%A5%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">第二步：导入库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E5%A4%9A%E5%85%83%E5%9B%9E%E5%BD%92%E4%BB%A3%E7%A0%81%E6%A1%86%E6%9E%B6"><span class="toc-number">3.</span> <span class="toc-text">第三步：多元回归代码框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%EF%BC%9A%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E6%A1%86%E6%9E%B6"><span class="toc-number">4.</span> <span class="toc-text">第四步：如何使用框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E6%95%B0%E6%8D%AE"><span class="toc-number">5.</span> <span class="toc-text">示例数据</span></a></li></ol></div></div><footer><nobr><span class="icp-title">♖</span><a class="icp-content" href="https://smallgoodgood.top/about/">关于本站</a></nobr><br><nobr>Pubulished by <a href="http://smallgoodgood.top">Zenith <br></a></nobr><wbr><!-- 添加网站运行时间 --><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now = new Date();
+
+function createtime() {
+  var grt = new Date("02/09/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间 
+  now.setTime(now.getTime() + 250);
+  days = (now - grt) / 1000 / 60 / 60 / 24;
+  dnum = Math.floor(days);
+  hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+  hnum = Math.floor(hours);
+  if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+  }
+  minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+  mnum = Math.floor(minutes);
+  if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+  }
+  seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+  snum = Math.round(seconds);
+  if (String(snum).length == 1) {
+      snum = "0" + snum;
+  }
+  document.getElementById("timeDate").innerHTML = " | 本站已安全运行 " + dnum + " 天 ";
+  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+}
+setInterval("createtime()", 250);
+<!-- 添加网站运行时间 -->
+
+</script></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
