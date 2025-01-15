@@ -1,0 +1,364 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>基于华为云与frp实现内网穿透连接树莓派 | Zenith</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/yellow.jpg');
+ --light-background: url('/img/green.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸红心效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script><meta name="generator" content="Hexo 7.3.0"></head><body><script>(function () {  
+    var a_idx = 0;  
+    window.onclick = function (event) {  
+        var a = new Array("这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "曾经有人让我听这首歌","可是那时的我还不谙情事","也没有真正认真的听完整首歌","直到后来","分开后再听时才发现","原来我错过了","曾经的阿芒","你还好吗");  
+
+        var heart = document.createElement("p"); // 创建p元素，这里从b改为p  
+        heart.onselectstart = function() { return false; }; // 简化防止拖动的代码  
+
+        document.body.appendChild(heart).textContent = a[a_idx]; // 使用textContent代替innerHTML，因为这里只是文本  
+        a_idx = (a_idx + 1) % a.length;  
+        heart.style.cssText = "position: fixed;left:-100%;"; // 初始位置  
+
+        var f = 16, // 字体大小  
+            x = event.clientX - f / 2, // 横坐标  
+            y = event.clientY - f, // 纵坐标  
+            c = randomColor(), // 随机颜色  
+            a = 1, // 透明度  
+            s = 1.2; // 放大缩小比例  
+
+        var timer = setInterval(function () { // 添加定时器  
+            if (a <= 0) {  
+                document.body.removeChild(heart);  
+                clearInterval(timer);  
+            } else {  
+                heart.style.cssText = "font-size:" + f + "px;cursor: default;position: fixed;color:" +  
+                    c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +  
+                    s + ");";  
+
+                y--;  
+                a -= 0.016;  
+                s += 0.002;  
+            }  
+        }, 15);  
+    }  
+
+    // 随机颜色函数  
+    function randomColor() {  
+        //- return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";  
+        return "(255,240,245)";
+    }  
+}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>基于华为云与frp实现内网穿透连接树莓派</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-01-15T16:00:00.000Z" id="date"> 2025-01-16</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-01-15T18:10:46.276Z" id="updated"> 2025-01-16</time></div></span><br><span>文章总字数: <div class="control">2k</div></span><br><span>预计阅读时间: <div class="control">7 分钟</div></span></div></div><hr><div id="post-content"><p>放寒假了~ 买了好久的树莓派，终于可以开始玩了。</p>
+<p>首先就是通过raspberry pi imager进行基本的系统下载，在下载系统时设置好wifi并打开ssh连接，然后树莓派开机连接wifi后就能用同一网络下的电脑使用ssh连接树莓派了，进一步的，如果下载的是有图形化界面的系统，就可以用VNC进行远程桌面操控。<span class="hide"><object><p>因为没有显示屏，所以不得不使用这种方法连接树莓派咳咳</p></object></span></p>
+<p>接着，就想到这种方法只能在同一局域网下通过电脑连接树莓派，如果我在其他地方要远程控制树莓派就行不通了。因此，就需要内网穿透技术，下面我将基于华为云服务器实现内网穿透通过ssh连接树莓派。</p>
+<h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1.准备工作"></a><strong>1.准备工作</strong></h2><ol>
+<li><p><strong>一台具有公网IP的服务器</strong>：</p>
+<p>用于运行frp服务端（例如华为云服务器）。</p>
+<ul>
+<li>在购买华为云服务器时需要购买并绑定相应的弹性公网ip才能有网络连接</li>
+<li>华为云服务器的安全组的对应端口要打开，后面会提到</li>
+</ul>
+</li>
+<li><p><strong>树莓派</strong>：</p>
+<p>确保树莓派已连接到网络，并启用SSH。</p>
+</li>
+<li><p><strong>下载frp</strong>：</p>
+<p>访问 <a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases">frp GitHub Releases</a> 下载适合树莓派和服务器的版本。</p>
+<ul>
+<li>树莓派（ARM架构）：<code>frp_0.xx.0_linux_arm.tar.gz</code>（我下载时最新的版本是<code>frp_0.61.1_linux_arm.tar.gz</code>）</li>
+<li>服务器（x86架构）：<code>frp_0.xx.0_linux_amd64.tar.gz</code>（我下载时最新的版本是<code> frp_0.61.1_linux_amd64.tar.gz</code>）</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-在服务器上配置frp服务端"><a href="#2-在服务器上配置frp服务端" class="headerlink" title="2.在服务器上配置frp服务端"></a><strong>2.在服务器上配置frp服务端</strong></h2><ol>
+<li><p><strong>登录服务器</strong>：</p>
+<p> 使用SSH连接到你的公网服务器。</p>
+</li>
+<li><p><strong>下载并解压frp</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget https://github.com/fatedier/frp/releases/download/v0.61.1/frp_0.61.1_linux_amd64.tar.gz<br>tar -zxvf frp_0.61.1_linux_amd64.tar.gz<br><span class="hljs-built_in">cd</span> frp_0.61.1_linux_amd64<br></code></pre></td></tr></table></figure>
+<p>注意，<code>wget</code> 在尝试下载 <code>frp</code> 时有几率遇到连接问题，可能是由于网络问题或 GitHub 的访问限制。此时可以在自己的电脑上下载，下载完后通过winSCP将文件传给华为云服务器，或者通过scp命令将文件传给服务器。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">scp frp_0.61.1_linux_amd64.tar.gz root@服务器公网IP:/root/<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>配置frp服务端</strong>：</p>
+<p>编辑 <code>frps.ini</code> 文件：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nano frps.ini<br></code></pre></td></tr></table></figure>
+
+<p> 添加以下内容：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">[common]<br>bind_port = 7000<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>bind_port</code> 是frp服务端监听的端口。</p>
+</li>
+<li><p>注意，此处的7000可以改成其他的端口，只要不冲突就行，也建议进行修改，在后续的安全组配置中要改成对应的端口号。</p>
+</li>
+</ul>
+<p>保存并退出：</p>
+<ol>
+<li><p>保存文件：</p>
+<p>按下 <code>Ctrl + O</code>（即按住 <code>Ctrl</code> 键，然后按 <code>O</code> 键）。</p>
+<p>按 <code>Enter</code> 确认保存。</p>
+</li>
+<li><p>退出 <code>nano</code>：</p>
+<p>   按下 <code>Ctrl + X</code> 退出编辑器。</p>
+</li>
+</ol>
+</li>
+<li><p><strong>启动frp服务端</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./frps -c frps.ini<br></code></pre></td></tr></table></figure>
+
+<p>服务端会监听 <code>7000</code> 端口，等待客户端连接。</p>
+</li>
+<li><p><strong>保持服务端运行</strong>：</p>
+<p>可以使用 <code>nohup</code> 或 <code>systemd</code> 让frp服务端在后台运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">nohup</span> ./frps -c frps.ini &gt; frps.log 2&gt;&amp;1 &amp;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>配置华为云安全组</strong>：</p>
+<ul>
+<li><p>登录华为云控制台，找到你的服务器实例。</p>
+</li>
+<li><p>进入“安全组”配置，添加以下规则：</p>
+<ul>
+<li>协议：TCP</li>
+<li>端口范围：7000（或者更改为其他的合法端口）</li>
+<li>源地址：0.0.0.0&#x2F;0（或限制为你的电脑IP）</li>
+</ul>
+</li>
+<li><p>保存规则。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>7.<strong>检查服务端是否运行</strong>：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ps aux | grep frps<br></code></pre></td></tr></table></figure>
+
+<p>如果没有输出，说明 frp 服务端未运行，需要重新启动：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./frps -c frps.ini<br></code></pre></td></tr></table></figure>
+
+<p> 补充：在ssh连接下可以用ctrl+D快速退出ssh连接，也能输入exit退出ssh连接</p>
+<h2 id="3-在树莓派上配置frp客户端"><a href="#3-在树莓派上配置frp客户端" class="headerlink" title="3. 在树莓派上配置frp客户端"></a><strong>3. 在树莓派上配置frp客户端</strong></h2><ol>
+<li><p><strong>登录树莓派</strong>：</p>
+<p>使用SSH连接到树莓派。</p>
+</li>
+<li><p><strong>下载并解压frp</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget https://github.com/fatedier/frp/releases/download/v0.61.1/frp_0.61.1_linux_arm.tar.gz<br>tar -zxvf frp_0.61.1_linux_arm.tar.gz<br><span class="hljs-built_in">cd</span> frp_0.61.1_linux_arm<br></code></pre></td></tr></table></figure>
+<p>注意，此处和上面的问题一样，在下载frp时可能会有一些问题，此时可以在自己的电脑上下载，下载完后通过winSCP将文件传给树莓派，或者通过scp命令将文件传给树莓派。</p>
+<blockquote>
+<p><strong>使用 <code>scp</code> 上传文件</strong></p>
+<p><code>scp</code> 是一个基于 SSH 的文件传输工具，可以将本地文件上传到远程服务器（如树莓派）。</p>
+<p><strong>在本地电脑上执行以下命令</strong>：</p>
+<ol>
+<li><p><strong>Mac&#x2F;Linux</strong>：</p>
+<ul>
+<li><p>打开终端，运行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">scp /path/to/frp_0.61.1_linux_arm.tar.gz pi@树莓派IP:/home/pi/<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>将 <code>/path/to/frp_0.61.1_linux_arm.tar.gz</code> 替换为文件的实际路径。</li>
+<li>将 <code>树莓派IP</code> 替换为树莓派的局域网 IP 地址（如 <code>192.168.1.100</code>）。</li>
+<li>默认上传到树莓派的 <code>/home/pi/</code> 目录。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Windows</strong>：</p>
+<ul>
+<li><p>如果你使用的是 PowerShell，可以运行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">scp C:\Users\username\Downloads\frp_0.61.1_linux_arm.tar.gz pi@树莓派IP:/home/pi/<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>将 <code>C:\Users\username\Downloads\frp_0.61.1_linux_arm.tar.gz</code> 替换为文件的实际路径。</li>
+<li>将 <code>树莓派IP</code> 替换为树莓派的局域网 IP 地址。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>输入密码</strong>：</p>
+<ul>
+<li>系统会提示你输入树莓派的密码（默认密码是 <code>raspberry</code>）。</li>
+<li>输入密码后，文件会上传到树莓派。</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p><strong>配置frp客户端</strong>：</p>
+<p>编辑 <code>frpc.ini</code> 文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nano frpc.ini<br></code></pre></td></tr></table></figure>
+
+<p>添加以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">[common]<br>server_addr = 服务器公网IP<br>server_port = 7000<br><br>[ssh]<br><span class="hljs-built_in">type</span> = tcp<br>local_ip = 127.0.0.1<br>local_port = 22<br>remote_port = 6000<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>server_addr</code>：填写你的服务器公网IP。</li>
+<li><code>server_port</code>：与服务端的 <code>bind_port</code> 一致（默认7000，如果之前有修改，此处也要进行相应的修改）。</li>
+<li><code>[ssh]</code>：定义一个SSH隧道，将服务器的 <code>6000</code> 端口映射到树莓派的 <code>22</code> 端口。</li>
+</ul>
+</li>
+<li><p><strong>启动frp客户端</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./frpc -c frpc.ini<br></code></pre></td></tr></table></figure>
+
+<p>客户端会连接到服务器，并将服务器的 <code>6000</code> 端口映射到树莓派的SSH服务。</p>
+</li>
+<li><p><strong>保持客户端运行</strong>：</p>
+<p> 可以使用 <code>nohup</code> 或 <code>systemd</code> 让frp客户端在后台运行：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">nohup</span> ./frpc -c frpc.ini &gt; frpc.log 2&gt;&amp;1 &amp;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>检查服务端是否运行</strong>：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ps aux | grep frps<br></code></pre></td></tr></table></figure>
+
+<p>  如果没有输出，说明 frp 客户端未运行，需要重新启动：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./frpc -c frpc.ini<br></code></pre></td></tr></table></figure>
+<p>  补充：在ssh连接下可以用ctrl+D快速退出ssh连接，也能输入exit退出ssh连接</p>
+</li>
+<li><p><strong>检查端口监听状态</strong>：</p>
+<p> 运行以下命令，检查 <code>7000</code> 端口是否被 frp 服务端监听：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo netstat -tuln | grep 7000<br></code></pre></td></tr></table></figure>
+
+<p>  如果看到类似以下输出，说明端口已监听：</p>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">tcp        0      0 0.0.0.0:7000            0.0.0.0:*               LISTEN<br></code></pre></td></tr></table></figure>
+
+<p>  如果没有输出，说明 frp 服务端未正确监听端口。</p>
+</li>
+<li><p><strong>检查 frp 客户端日志</strong>：</p>
+<p> 查看 frp 客户端的日志文件：</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">cat frpc.log<br></code></pre></td></tr></table></figure>
+
+<p> 如果日志中有错误信息（如连接失败），请根据错误信息进行排查。</p>
+</li>
+</ol>
+<h2 id="4-远程SSH连接树莓派"><a href="#4-远程SSH连接树莓派" class="headerlink" title="4. 远程SSH连接树莓派"></a><strong>4. 远程SSH连接树莓派</strong></h2><ol>
+<li><p><strong>通过服务器连接树莓派</strong>：</p>
+<ul>
+<li><p>在自己的电脑上使用以下命令通过服务器的公网IP和映射端口连接树莓派：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -p 6000 pi@服务器公网IP<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>输入树莓派的用户名（默认 <code>pi</code>）和密码即可登录。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>直接连接（如果配置了DDNS）</strong>：</p>
+<ul>
+<li><p>如果服务器绑定了域名（如 <code>mypi.ddns.net</code>），可以使用域名连接：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -p 6000 pi@mypi.ddns.net<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<p>至此，应该就可以基于华为云与frp实现内网穿透连接树莓派了，下面给出一些实用性和安全性建议</p>
+<h2 id="5-设置开机自启动"><a href="#5-设置开机自启动" class="headerlink" title="5. 设置开机自启动"></a><strong>5. 设置开机自启动</strong></h2><p>为了确保frp客户端在树莓派重启后自动运行，可以将其设置为系统服务。</p>
+<ol>
+<li><p><strong>创建systemd服务文件</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> nano /etc/systemd/system/frpc.service<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>添加以下内容</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">[Unit]<br>Description=Frp Client Service<br>After=network.target<br><br>[Service]<br>ExecStart=/home/pi/frp_0.61.1_linux_arm/frpc -c /home/pi/frp_0.61.1_linux_arm/frpc.ini<br>Restart=on-failure<br><br>[Install]<br>WantedBy=multi-user.target<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>修改 <code>ExecStart</code> 路径为你的frp客户端实际路径。</li>
+</ul>
+</li>
+<li><p><strong>启用并启动服务</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl <span class="hljs-built_in">enable</span> frpc<br><span class="hljs-built_in">sudo</span> systemctl start frpc<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>检查服务状态</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl status frpc<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="6-安全性建议"><a href="#6-安全性建议" class="headerlink" title="6. 安全性建议"></a><strong>6. 安全性建议</strong></h2><ol>
+<li><p><strong>修改默认SSH端口</strong>：</p>
+<p>在树莓派上修改SSH端口（如 <code>2222</code>），并在frp客户端配置中同步修改 <code>local_port</code>。</p>
+</li>
+<li><p><strong>使用密钥认证</strong>：</p>
+<p>禁用密码登录，使用SSH密钥认证。</p>
+</li>
+<li><p><strong>限制访问IP</strong>：</p>
+<p>在服务器防火墙中限制 <code>6000</code> 端口的访问IP。</p>
+</li>
+</ol>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/01/03/%E5%85%B7%E4%BD%93%E6%95%B0%E5%AD%A6%E9%87%8D%E7%82%B9/">具体数学重点 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Zenith</a></h1><div id="description"><p>未经审视的人生是不值得过的人生</p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">1.准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%85%8D%E7%BD%AEfrp%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-number">2.</span> <span class="toc-text">2.在服务器上配置frp服务端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%9C%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8A%E9%85%8D%E7%BD%AEfrp%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-number">3.</span> <span class="toc-text">3. 在树莓派上配置frp客户端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%BF%9C%E7%A8%8BSSH%E8%BF%9E%E6%8E%A5%E6%A0%91%E8%8E%93%E6%B4%BE"><span class="toc-number">4.</span> <span class="toc-text">4. 远程SSH连接树莓派</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="toc-number">5.</span> <span class="toc-text">5. 设置开机自启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%AE%89%E5%85%A8%E6%80%A7%E5%BB%BA%E8%AE%AE"><span class="toc-number">6.</span> <span class="toc-text">6. 安全性建议</span></a></li></ol></div></div><footer><nobr><span class="icp-title">♖</span><a class="icp-content" href="https://smallgoodgood.top/about/">关于本站</a></nobr><br><nobr>Pubulished by <a href="http://smallgoodgood.top">Zenith <br></a></nobr><wbr><!-- 添加网站运行时间 --><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now = new Date();
+
+function createtime() {
+  var grt = new Date("02/09/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间 
+  now.setTime(now.getTime() + 250);
+  days = (now - grt) / 1000 / 60 / 60 / 24;
+  dnum = Math.floor(days);
+  hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+  hnum = Math.floor(hours);
+  if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+  }
+  minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+  mnum = Math.floor(minutes);
+  if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+  }
+  seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+  snum = Math.round(seconds);
+  if (String(snum).length == 1) {
+      snum = "0" + snum;
+  }
+  document.getElementById("timeDate").innerHTML = " | 本站已安全运行 " + dnum + " 天 ";
+  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+}
+setInterval("createtime()", 250);
+<!-- 添加网站运行时间 -->
+
+</script></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
