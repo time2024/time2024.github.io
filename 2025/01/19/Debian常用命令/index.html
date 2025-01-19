@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Debian 常用命令 | Zenith</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/yellow.jpg');
+ --light-background: url('/img/green.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸红心效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script><meta name="generator" content="Hexo 7.3.0"></head><body><script>(function () {  
+    var a_idx = 0;  
+    window.onclick = function (event) {  
+        var a = new Array("这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "曾经有人让我听这首歌","可是那时的我还不谙情事","也没有真正认真的听完整首歌","直到后来","分开后再听时才发现","原来我错过了","曾经的阿芒","你还好吗");  
+
+        var heart = document.createElement("p"); // 创建p元素，这里从b改为p  
+        heart.onselectstart = function() { return false; }; // 简化防止拖动的代码  
+
+        document.body.appendChild(heart).textContent = a[a_idx]; // 使用textContent代替innerHTML，因为这里只是文本  
+        a_idx = (a_idx + 1) % a.length;  
+        heart.style.cssText = "position: fixed;left:-100%;"; // 初始位置  
+
+        var f = 16, // 字体大小  
+            x = event.clientX - f / 2, // 横坐标  
+            y = event.clientY - f, // 纵坐标  
+            c = randomColor(), // 随机颜色  
+            a = 1, // 透明度  
+            s = 1.2; // 放大缩小比例  
+
+        var timer = setInterval(function () { // 添加定时器  
+            if (a <= 0) {  
+                document.body.removeChild(heart);  
+                clearInterval(timer);  
+            } else {  
+                heart.style.cssText = "font-size:" + f + "px;cursor: default;position: fixed;color:" +  
+                    c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +  
+                    s + ");";  
+
+                y--;  
+                a -= 0.016;  
+                s += 0.002;  
+            }  
+        }, 15);  
+    }  
+
+    // 随机颜色函数  
+    function randomColor() {  
+        //- return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";  
+        return "(255,240,245)";
+    }  
+}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Debian 常用命令</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2025-01-18T16:00:00.000Z" id="date"> 2025-01-19</time></div></span><br><span>Last Update: <div class="control"><time datetime="2025-01-19T05:48:59.366Z" id="updated"> 2025-01-19</time></div></span><br><span>Word Count: <div class="control">1k</div></span><br><span>Read Time: <div class="control">4 min</div></span></div></div><hr><div id="post-content"><h1 id="Debian-常用命令汇总"><a href="#Debian-常用命令汇总" class="headerlink" title="Debian 常用命令汇总"></a>Debian 常用命令汇总</h1><p>以下是 Debian 系统（包括 Raspberry Pi OS 等基于 Debian 的发行版）中一些常用命令的总结，涵盖了文件操作、系统管理、网络配置等方面：</p>
+<h2 id="文件与目录操作"><a href="#文件与目录操作" class="headerlink" title="文件与目录操作"></a><strong>文件与目录操作</strong></h2><ol>
+<li><p><strong>列出目录内容</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span><br><span class="hljs-built_in">ls</span> -l  <span class="hljs-comment"># 详细列表</span><br><span class="hljs-built_in">ls</span> -a  <span class="hljs-comment"># 显示隐藏文件</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>切换目录</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> &lt;目录路径&gt;<br><span class="hljs-built_in">cd</span> ..  <span class="hljs-comment"># 返回上一级目录</span><br><span class="hljs-built_in">cd</span> ~   <span class="hljs-comment"># 返回用户主目录</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>创建目录</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> &lt;目录名&gt;<br><span class="hljs-built_in">mkdir</span> -p &lt;路径/目录名&gt;  <span class="hljs-comment"># 递归创建目录</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>删除文件或目录</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">rm</span> &lt;文件名&gt;  <span class="hljs-comment"># 删除文件</span><br><span class="hljs-built_in">rm</span> -r &lt;目录名&gt;  <span class="hljs-comment"># 递归删除目录</span><br><span class="hljs-built_in">rm</span> -f &lt;文件名&gt;  <span class="hljs-comment"># 强制删除</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>复制文件或目录</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cp</span> &lt;源文件&gt; &lt;目标文件&gt;<br><span class="hljs-built_in">cp</span> -r &lt;源目录&gt; &lt;目标目录&gt;  <span class="hljs-comment"># 递归复制目录</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>移动或重命名文件</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mv</span> &lt;源文件&gt; &lt;目标文件&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查看文件内容</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> &lt;文件名&gt;<br>less &lt;文件名&gt;  <span class="hljs-comment"># 分页查看</span><br><span class="hljs-built_in">head</span> &lt;文件名&gt;  <span class="hljs-comment"># 查看文件开头</span><br><span class="hljs-built_in">tail</span> &lt;文件名&gt;  <span class="hljs-comment"># 查看文件末尾</span><br><span class="hljs-built_in">tail</span> -f &lt;文件名&gt;  <span class="hljs-comment"># 实时查看文件更新</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查找文件</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">find &lt;目录&gt; -name &lt;文件名&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>压缩与解压</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">tar -czvf &lt;压缩文件名.tar.gz&gt; &lt;目录&gt;  <span class="hljs-comment"># 压缩</span><br>tar -xzvf &lt;压缩文件名.tar.gz&gt;  <span class="hljs-comment"># 解压</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="系统信息与管理"><a href="#系统信息与管理" class="headerlink" title="系统信息与管理"></a><strong>系统信息与管理</strong></h2><ol>
+<li><p><strong>查看系统信息</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">uname</span> -a  <span class="hljs-comment"># 查看内核信息</span><br><span class="hljs-built_in">cat</span> /etc/os-release  <span class="hljs-comment"># 查看系统版本</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查看磁盘空间</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">df</span> -h  <span class="hljs-comment"># 查看磁盘使用情况</span><br><span class="hljs-built_in">du</span> -sh &lt;目录&gt;  <span class="hljs-comment"># 查看目录大小</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查看内存与 CPU 使用</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">free -h  <span class="hljs-comment"># 查看内存使用</span><br>top  <span class="hljs-comment"># 实时查看系统资源占用</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查看进程</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ps aux  <span class="hljs-comment"># 查看所有进程</span><br>ps aux | grep &lt;进程名&gt;  <span class="hljs-comment"># 查找特定进程</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>杀死进程</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">kill</span> &lt;进程ID&gt;<br><span class="hljs-built_in">kill</span> -9 &lt;进程ID&gt;  <span class="hljs-comment"># 强制杀死进程</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>关机与重启</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> shutdown now  <span class="hljs-comment"># 立即关机</span><br><span class="hljs-built_in">sudo</span> reboot  <span class="hljs-comment"># 重启</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查看系统日志</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">journalctl  <span class="hljs-comment"># 查看系统日志</span><br>journalctl -f  <span class="hljs-comment"># 实时查看日志</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a><strong>包管理</strong></h2><p>​	使用 <code>APT</code>（Advanced Package Tool）作为包管理工具</p>
+<ol>
+<li><p><strong>更新包列表</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt update<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>安装软件包</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt install &lt;软件包名&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>卸载软件包</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt remove &lt;软件包名&gt;<br><span class="hljs-built_in">sudo</span> apt purge &lt;软件包名&gt;  <span class="hljs-comment"># 同时删除配置文件</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>升级已安装的软件包</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt upgrade<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>搜索软件包</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt search &lt;关键字&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>清理缓存</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt clean  <span class="hljs-comment"># 清理所有缓存</span><br><span class="hljs-built_in">sudo</span> apt autoremove  <span class="hljs-comment"># 删除不需要的依赖</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="用户与权限管理"><a href="#用户与权限管理" class="headerlink" title="用户与权限管理"></a><strong>用户与权限管理</strong></h2><ol>
+<li><p><strong>切换用户</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">su &lt;用户名&gt;  <span class="hljs-comment"># 切换用户</span><br><span class="hljs-built_in">sudo</span> -i  <span class="hljs-comment"># 切换到 root 用户</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>添加用户</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> adduser &lt;用户名&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>删除用户</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> deluser &lt;用户名&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>修改文件权限</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> &lt;权限&gt; &lt;文件名&gt;  <span class="hljs-comment"># 修改权限</span><br><span class="hljs-built_in">chmod</span> 755 &lt;文件名&gt;  <span class="hljs-comment"># 示例：设置可执行权限</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>修改文件所有者</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chown</span> &lt;用户&gt;:&lt;组&gt; &lt;文件名&gt;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="网络管理"><a href="#网络管理" class="headerlink" title="网络管理"></a><strong>网络管理</strong></h2><ol>
+<li><p><strong>查看网络接口</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ifconfig  <span class="hljs-comment"># 查看网络接口信息</span><br>ip addr  <span class="hljs-comment"># 查看 IP 地址</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>测试网络连接</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ping &lt;目标地址&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查看网络状态</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">netstat -tuln  <span class="hljs-comment"># 查看端口监听状态</span><br>ss -tuln  <span class="hljs-comment"># 更现代的替代工具</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>下载文件</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget &lt;URL&gt;<br>curl -O &lt;URL&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>配置网络</strong>：</p>
+<ul>
+<li>编辑网络配置文件：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> nano /etc/network/interfaces<br></code></pre></td></tr></table></figure></li>
+<li>重启网络服务：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl restart networking<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="服务管理"><a href="#服务管理" class="headerlink" title="服务管理"></a><strong>服务管理</strong></h2><ol>
+<li><p><strong>启动服务</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl start &lt;服务名&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>停止服务</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl stop &lt;服务名&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>重启服务</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl restart &lt;服务名&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查看服务状态</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl status &lt;服务名&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>启用开机自启动</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl <span class="hljs-built_in">enable</span> &lt;服务名&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>禁用开机自启动</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl <span class="hljs-built_in">disable</span> &lt;服务名&gt;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a><strong>其他常用命令</strong></h2><ol>
+<li><p><strong>查看命令帮助</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">man &lt;命令&gt;  <span class="hljs-comment"># 查看手册</span><br>&lt;命令&gt; --<span class="hljs-built_in">help</span>  <span class="hljs-comment"># 查看简要帮助</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查看环境变量</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-variable">$PATH</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>设置别名</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">alias</span> ll=<span class="hljs-string">&#x27;ls -l&#x27;</span>  <span class="hljs-comment"># 设置别名</span><br><span class="hljs-built_in">unalias</span> ll  <span class="hljs-comment"># 取消别名</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>定时任务</strong>：</p>
+<ul>
+<li>编辑定时任务：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">crontab -e<br></code></pre></td></tr></table></figure></li>
+<li>查看定时任务：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">crontab -l<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/01/16/%E5%9F%BA%E4%BA%8E%E5%8D%8E%E4%B8%BA%E4%BA%91%E4%B8%8Efrp%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E8%BF%9E%E6%8E%A5%E6%A0%91%E8%8E%93%E6%B4%BE/">基于华为云与frp实现内网穿透连接树莓派 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Zenith</a></h1><div id="description"><p>未经审视的人生是不值得过的人生</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Debian-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB"><span class="toc-number">1.</span> <span class="toc-text">Debian 常用命令汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">文件与目录操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E4%B8%8E%E7%AE%A1%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">系统信息与管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.</span> <span class="toc-text">包管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E4%B8%8E%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">用户与权限管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86"><span class="toc-number">1.5.</span> <span class="toc-text">网络管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="toc-number">1.6.</span> <span class="toc-text">服务管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.7.</span> <span class="toc-text">其他常用命令</span></a></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">♖</span><a class="icp-content" href="https://smallgoodgood.top/about/">关于本站</a></nobr><br><nobr>Pubulished by <a href="http://smallgoodgood.top">Zenith <br></a></nobr><wbr><!-- 添加网站运行时间 --><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now = new Date();
+
+function createtime() {
+  var grt = new Date("02/09/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间 
+  now.setTime(now.getTime() + 250);
+  days = (now - grt) / 1000 / 60 / 60 / 24;
+  dnum = Math.floor(days);
+  hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+  hnum = Math.floor(hours);
+  if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+  }
+  minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+  mnum = Math.floor(minutes);
+  if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+  }
+  seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+  snum = Math.round(seconds);
+  if (String(snum).length == 1) {
+      snum = "0" + snum;
+  }
+  document.getElementById("timeDate").innerHTML = " | 本站已安全运行 " + dnum + " 天 ";
+  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+}
+setInterval("createtime()", 250);
+<!-- 添加网站运行时间 -->
+
+</script></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
