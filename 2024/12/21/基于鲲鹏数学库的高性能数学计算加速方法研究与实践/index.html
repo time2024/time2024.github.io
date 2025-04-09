@@ -108,7 +108,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
         //- return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";  
         return "(255,240,245)";
     }  
-}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>基于鲲鹏数学库的高性能数学计算加速方法研究与实践</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-12-21T04:00:00.000Z" id="date"> 2024-12-21</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2024-12-21T11:23:05.896Z" id="updated"> 2024-12-21</time></div></span><br><span>文章总字数: <div class="control">10.1k</div></span><br><span>预计阅读时间: <div class="control">48 分钟</div></span></div></div><hr><div id="post-content"><h1 id="基于鲲鹏数学库的高性能数学计算加速方法研究与实践"><a href="#基于鲲鹏数学库的高性能数学计算加速方法研究与实践" class="headerlink" title="基于鲲鹏数学库的高性能数学计算加速方法研究与实践"></a><strong>基于鲲鹏数学库的高性能数学计算加速方法研究与实践</strong></h1><h2 id="1-实验目的"><a href="#1-实验目的" class="headerlink" title="1 实验目的"></a>1 实验目的</h2><h3 id="1-验证鲲鹏数学库的性能优化效果"><a href="#1-验证鲲鹏数学库的性能优化效果" class="headerlink" title="1. 验证鲲鹏数学库的性能优化效果"></a>1. <strong>验证鲲鹏数学库的性能优化效果</strong></h3><ul>
+}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>基于鲲鹏数学库的高性能数学计算加速方法研究与实践</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-12-21T04:00:00.000Z" id="date"> 2024-12-21</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-04-09T08:34:38.371Z" id="updated"> 2025-04-09</time></div></span><br><span>文章总字数: <div class="control">10.1k</div></span><br><span>预计阅读时间: <div class="control">48 分钟</div></span></div></div><hr><div id="post-content"><h1 id="基于鲲鹏数学库的高性能数学计算加速方法研究与实践"><a href="#基于鲲鹏数学库的高性能数学计算加速方法研究与实践" class="headerlink" title="基于鲲鹏数学库的高性能数学计算加速方法研究与实践"></a><strong>基于鲲鹏数学库的高性能数学计算加速方法研究与实践</strong></h1><h2 id="1-实验目的"><a href="#1-实验目的" class="headerlink" title="1 实验目的"></a>1 实验目的</h2><h3 id="1-验证鲲鹏数学库的性能优化效果"><a href="#1-验证鲲鹏数学库的性能优化效果" class="headerlink" title="1. 验证鲲鹏数学库的性能优化效果"></a>1. <strong>验证鲲鹏数学库的性能优化效果</strong></h3><ul>
 <li><strong>核心目标</strong>：通过一系列数学计算实验，系统验证基于鲲鹏架构的 Kunpeng Math Library (KML) 相较传统实现方式的性能提升程度。</li>
 <li>细化目标<ul>
 <li>验证 KML 在不同数学计算任务中的加速效果，包括基础数学运算（如三角函数计算）、矩阵计算（如矩阵乘法）和高级线性代数问题（如特征值分解）。</li>
@@ -230,7 +230,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <p>首先使用远程登录工具，登录到鲲鹏 ECS 服务器上</p>
 <p>下载 WinSCP 客户端并安装。</p>
 <p>启动WinSCP，启动后界面如下：</p>
-<p class='item-img' data-src='/images/19.png'><img src="/images/19.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>填写说明：</p>
@@ -263,14 +263,14 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <p>具体操作可以参考：</p>
 <p>本地Windows主机使用WinSCP上传文件到Linux云服务器 <a target="_blank" rel="noopener" href="https://support.huaweicloud.com/ecs_faq/zh-cn_topic_0166284971.html">https://support.huaweicloud.com/ecs_faq/zh-cn_topic_0166284971.html</a></p>
 <p> 然后到<a target="_blank" rel="noopener" href="https://www.hikunpeng.com/developer/boostkit/library/detail?subtab=%E6%95%B0%E5%AD%A6%E5%BA%93%E8%8E%B7%E5%8F%96KML%E8%BD%AF%E4%BB%B6%E5%8C%85%EF%BC%88GCC%E7%89%88%E6%9C%AC%EF%BC%89">https://www.hikunpeng.com/developer/boostkit/library/detail?subtab=%E6%95%B0%E5%AD%A6%E5%BA%93获取KML软件包（GCC版本）</a></p>
-<p class='item-img' data-src='/images/20.png'><img src="/images/20.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
-<p class='item-img' data-src='/images/22.png'><img src="/images/22.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>下载软件包后解压得到此文件：</p>
-<p class='item-img' data-src='/images/21.jpg'><img src="/images/21.jpg"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>再通过“本地Windows主机使用WinSCP上传文件到Linux云服务器<a target="_blank" rel="noopener" href="https://support.huaweicloud.com/ecs_faq/zh-cn_topic_0166284971.html%E2%80%9D%E4%B8%AD%E6%89%80%E8%BF%B0%E7%9A%84%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%B0%86%E8%AF%A5%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8">https://support.huaweicloud.com/ecs_faq/zh-cn_topic_0166284971.html”中所述的远程登录将该文件上传到云服务器</a></p>
@@ -279,25 +279,25 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">rpm -ivh kml-xxxx.aarch64.rpm<br></code></pre></td></tr></table></figure>
 
 <p>安装软件包，其中命令中涉及的xxxx代表版本号，下图示中的版本号是2.4.0-1</p>
-<p class='item-img' data-src='/images/23.jpg'><img src="/images/23.jpg"> </p>
+<p class='item-img' data-src=''><img src=""> </p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>步骤 2 安装后验证</p>
 <p>执行source命令或重新登录终端让环境变量生效。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">source /etc/profile<br></code></pre></td></tr></table></figure>
 
-<p class='item-img' data-src='/images/24.png'><img src="/images/24.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>查看环境变量LD_LIBRARY_PATH是否包含KML的安装路径“&#x2F;usr&#x2F;local&#x2F;kml&#x2F;lib”。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">env | grep LD_LIBRARY_PATH<br></code></pre></td></tr></table></figure>
 
 <p>如果变量包含安装路径，说明安装成功。</p>
-<p class='item-img' data-src='/images/25.png'><img src="/images/25.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>安装成功后在安装路径（默认路径是“&#x2F;usr&#x2F;local&#x2F;kml”）下生成相应文件，其中，include文件夹包含子库的头文件，lib文件夹包含了数学库的动态库文件。</p>
-<p class='item-img' data-src='/images/26.png'><img src="/images/26.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>使用时，请在GCC编译选项中添加动态库所在路径，链接需要使用的动态库文件，添加编译选项后用ldd命令检查程序依赖库是否准确链接。</p>
@@ -331,14 +331,14 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">gcc test.c -I /usr/local/kml/include -L /usr/local/kml/lib -lkm_l9 -lm<br></code></pre></td></tr></table></figure>
 
 <p>编译，生成a.out</p>
-<p class='item-img' data-src='/images/27.png'><img src="/images/27.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>输入</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">./a.out<br></code></pre></td></tr></table></figure>
 
 <p>运行，结果如下</p>
-<p class='item-img' data-src='/images/28.png'><img src="/images/28.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>接下来尝试用牛顿迭代法求解非线性方程的根</p>
@@ -350,7 +350,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">gcc NEWTON_KML.c -I /usr/local/kml/include -L /usr/local/kml/lib -lkm -lm -o NEWTON_KML<br>./NEWTON_KML<br></code></pre></td></tr></table></figure>
 
 <p>运行之，结构如下：</p>
-<p class='item-img' data-src='/images/29.png'><img src="/images/29.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>至此说明kml安装成功</p>
@@ -364,7 +364,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">gcc kblas.c -o kblas -L /usr/local/kml/lib/kblas/nolocking -lkblas -I /usr/local/kml/include<br></code></pre></td></tr></table></figure>
 
 <p>运行之，得到运行结果如下：</p>
-<p class='item-img' data-src='/images/30.png'><img src="/images/30.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>可知KML_BLAS提供的函数cblas_dgemv对矩阵-向量乘加运算的优化效果十分显著</p>
@@ -375,7 +375,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">gcc vsin.c -o vsin -L /usr/local/kml/lib/kvml/multi -lkvml -L /usr/local/kml/lib -lkm -I /usr/local/kml/include -lm -fopenmp<br>./vsin<br></code></pre></td></tr></table></figure>
 
 <p>运行结果如下所示：</p>
-<p class='item-img' data-src='/images/31.png'><img src="/images/31.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>可知KML_VML库对三角函数运算的优化效果十分显著</p>
@@ -388,10 +388,10 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">sh sh.sh<br></code></pre></td></tr></table></figure>
 
 <p>运行之，得到如下结果：</p>
-<p class='item-img' data-src='/images/32.png'><img src="/images/32.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
-<p class='item-img' data-src='/images/33.png'><img src="/images/33.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>至此LAPACK用到的脚本已经生成完毕</p>
@@ -403,7 +403,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">gcc eigenNoOpt.c -o eigenNoOpt -lm<br>./eigenNoOpt    <br></code></pre></td></tr></table></figure>
 
 <p>得到运行结果如下：</p>
-<p class='item-img' data-src='/images/34.png'><img src="/images/34.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>对其进行改进，并作体现LAPACK库性能的对比实验如下：</p>
@@ -414,7 +414,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;time.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;klapack.h&quot;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;  <br>    <span class="hljs-type">char</span> jobz = <span class="hljs-string">&#x27;V&#x27;</span>; <br>    <span class="hljs-type">char</span> uplo = <span class="hljs-string">&#x27;L&#x27;</span>; <br>    <span class="hljs-type">int</span> n = <span class="hljs-number">10</span>; <br>    <span class="hljs-type">int</span> lda = <span class="hljs-number">10</span>; <br>    <span class="hljs-type">int</span> info = <span class="hljs-number">0</span>; <br>    <span class="hljs-type">double</span> w[<span class="hljs-number">10</span>]; <br>    <span class="hljs-type">double</span> *work = <span class="hljs-literal">NULL</span>; <br>    <span class="hljs-type">double</span> qwork; <br>    <span class="hljs-type">int</span> lwork = <span class="hljs-number">-1</span>; <br>    <span class="hljs-type">int</span> *iwork = <span class="hljs-literal">NULL</span>; <br>    <span class="hljs-type">int</span> qiwork; <br>    <span class="hljs-type">int</span> liwork = <span class="hljs-number">-1</span>; <br><br>    <span class="hljs-type">double</span> a[] =<br>     &#123;  <br><span class="hljs-number">1.23</span>, <span class="hljs-number">2.75</span>, <span class="hljs-number">3.10</span>, <span class="hljs-number">4.56</span>, <span class="hljs-number">5.92</span>, <span class="hljs-number">7.01</span>, <span class="hljs-number">8.40</span>, <span class="hljs-number">9.88</span>, <span class="hljs-number">6.34</span>, <span class="hljs-number">4.59</span>, <br><span class="hljs-number">2.75</span>, <span class="hljs-number">1.56</span>, <span class="hljs-number">2.49</span>, <span class="hljs-number">3.31</span>, <span class="hljs-number">4.47</span>, <span class="hljs-number">5.90</span>, <span class="hljs-number">6.55</span>, <span class="hljs-number">7.10</span>, <span class="hljs-number">8.22</span>, <span class="hljs-number">5.78</span>,  <br><span class="hljs-number">3.10</span>, <span class="hljs-number">2.49</span>, <span class="hljs-number">1.88</span>, <span class="hljs-number">5.39</span>, <span class="hljs-number">6.23</span>, <span class="hljs-number">7.68</span>, <span class="hljs-number">3.79</span>, <span class="hljs-number">4.12</span>, <span class="hljs-number">6.44</span>, <span class="hljs-number">7.85</span>,  <br><span class="hljs-number">4.56</span>, <span class="hljs-number">3.31</span>, <span class="hljs-number">5.39</span>, <span class="hljs-number">8.94</span>, <span class="hljs-number">4.58</span>, <span class="hljs-number">2.53</span>, <span class="hljs-number">6.83</span>, <span class="hljs-number">7.46</span>, <span class="hljs-number">1.56</span>, <span class="hljs-number">3.21</span>,  <br><span class="hljs-number">5.92</span>, <span class="hljs-number">4.47</span>, <span class="hljs-number">6.23</span>, <span class="hljs-number">4.58</span>, <span class="hljs-number">9.76</span>, <span class="hljs-number">8.90</span>, <span class="hljs-number">5.12</span>, <span class="hljs-number">3.98</span>, <span class="hljs-number">2.63</span>, <span class="hljs-number">6.34</span>,  <br><span class="hljs-number">7.01</span>, <span class="hljs-number">5.90</span>, <span class="hljs-number">7.68</span>, <span class="hljs-number">2.53</span>, <span class="hljs-number">8.90</span>, <span class="hljs-number">6.75</span>, <span class="hljs-number">4.80</span>, <span class="hljs-number">1.94</span>, <span class="hljs-number">3.55</span>, <span class="hljs-number">2.88</span>,  <br><span class="hljs-number">8.40</span>, <span class="hljs-number">6.55</span>, <span class="hljs-number">3.79</span>, <span class="hljs-number">6.83</span>, <span class="hljs-number">5.12</span>, <span class="hljs-number">4.80</span>, <span class="hljs-number">1.64</span>, <span class="hljs-number">9.20</span>, <span class="hljs-number">5.90</span>, <span class="hljs-number">4.75</span>,  <br><span class="hljs-number">9.88</span>, <span class="hljs-number">7.10</span>, <span class="hljs-number">4.12</span>, <span class="hljs-number">7.46</span>, <span class="hljs-number">3.98</span>, <span class="hljs-number">1.94</span>, <span class="hljs-number">9.20</span>, <span class="hljs-number">7.44</span>, <span class="hljs-number">2.38</span>, <span class="hljs-number">6.71</span>,  <br><span class="hljs-number">6.34</span>, <span class="hljs-number">8.22</span>, <span class="hljs-number">6.44</span>, <span class="hljs-number">1.56</span>, <span class="hljs-number">2.63</span>, <span class="hljs-number">3.55</span>, <span class="hljs-number">5.90</span>, <span class="hljs-number">2.38</span>, <span class="hljs-number">0.76</span>, <span class="hljs-number">2.13</span>,  <br><span class="hljs-number">4.59</span>, <span class="hljs-number">5.78</span>, <span class="hljs-number">7.85</span>, <span class="hljs-number">3.21</span>, <span class="hljs-number">6.34</span>, <span class="hljs-number">2.88</span>, <span class="hljs-number">4.75</span>, <span class="hljs-number">6.71</span>, <span class="hljs-number">2.13</span>, <span class="hljs-number">9.32</span>    &#125;; <br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">timespec</span> <span class="hljs-title">t1</span>,<span class="hljs-title">t2</span>;</span>    <span class="hljs-comment">//定义初始与结束时间</span><br>    <span class="hljs-comment">/* Query optimal work size */</span> <br>    dsyevd_(&amp;jobz, &amp;uplo, &amp;n, a, &amp;lda, w, &amp;qwork, &amp;lwork, &amp;qiwork, &amp;liwork, &amp;info); <br>    <span class="hljs-keyword">if</span> (info != <span class="hljs-number">0</span>) <br>    &#123; <br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>; <br>    &#125; <br>    lwork = (<span class="hljs-type">int</span>)qwork; <br>    work = (<span class="hljs-type">double</span> *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">double</span>) * lwork); <br>    liwork = (<span class="hljs-type">int</span>)qiwork; <br>    iwork = (<span class="hljs-type">int</span> *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>) * liwork); <br>    <span class="hljs-comment">/* Calculate eigenvalues and eigenvectors */</span> <br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;With KML:\n&quot;</span>);<br>    clock_gettime(CLOCK_MONOTONIC,&amp;t1);      <span class="hljs-comment">//计算开始时间。</span><br>    dsyevd_(&amp;jobz, &amp;uplo, &amp;n, a, &amp;lda, w, work, &amp;lwork, iwork, &amp;liwork, &amp;info); <br>    clock_gettime(CLOCK_MONOTONIC,&amp;t2);    <span class="hljs-comment">//计算结束时间。  </span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Time:%11u ns\n&quot;</span>,t2.tv_nsec-t1.tv_nsec);  <br><br>    <span class="hljs-built_in">free</span>(work); <br>    <span class="hljs-built_in">free</span>(iwork); <br><br>     <br>     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>编译并运行，得到结果如下：</p>
-<p class='item-img' data-src='/images/35.png'><img src="/images/35.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>可知LAPACK库对运算的优化效果十分显著</p>
@@ -426,7 +426,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">gcc without.c -o without -lm<br>./without    <br></code></pre></td></tr></table></figure>
 
 <p>得到结果如下：</p>
-<p class='item-img' data-src='/images/36.png'><img src="/images/36.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>接着再使用KML_FFT库函数进行优化：</p>
@@ -437,7 +437,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">gcc FFT.c -o FFT -L /usr/local/kml/lib -lkfft -I /usr/local/kml/include -pthread<br>./FFT<br></code></pre></td></tr></table></figure>
 
 <p>得到运行结果如下：</p>
-<p class='item-img' data-src='/images/37.png'><img src="/images/37.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>可知KML库对R2R FFT运算的优化效果十分显著</p>
@@ -492,7 +492,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">gcc svsin.c -o svsin -I /usr/local/kml/include -L /usr/local/kml/lib -lksvml -lm<br>./svsin<br></code></pre></td></tr></table></figure>
 
 <p>编译并运行得到运行结果如下：</p>
-<p class='item-img' data-src='/images/38.png'><img src="/images/38.png"></p>
+<p class='item-img' data-src=''><img src=""></p>
 <span class="hide"><object><p>看不见是正常的，别担心</p></object></span>
 
 <p>通过对比可知使用KML_SVML进行短向量的数学运算优化的优化效果十分显著</p>
