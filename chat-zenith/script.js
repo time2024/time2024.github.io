@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sendBtn = document.getElementById('send-btn');
     const clearBtn = document.getElementById('clear-btn');
     
-    const WORKER_URL = 'https://ai.smallgoodgood.top/';
+    const WORKER_URL = '/chat-zenith/';
     let conversationHistory = [];
     
     async function sendMessage() {
