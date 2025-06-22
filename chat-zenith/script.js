@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sendBtn = document.getElementById('send-btn');
     const clearBtn = document.getElementById('clear-btn');
     
-    const WORKER_URL = 'https://dut-zenith.top/';
+    const WORKER_URL = 'dut-zenith.top';
     let conversationHistory = [];
     
     async function sendMessage() {
