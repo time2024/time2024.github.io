@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sendBtn = document.getElementById('send-btn');
     const clearBtn = document.getElementById('clear-btn');
     
-    const WORKER_URL = 'https://chat-zenith.1940876394.workers.dev/';
+    const WORKER_URL = 'https://ai.smallgoodgood.top/';
     let conversationHistory = [];
     
     async function sendMessage() {
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
             messageDiv.style.alignItems = 'flex-start';
 
             const avatar = document.createElement('img');
-            avatar.src = 'https://th.bing.com/th/id/OIP.oQvGCdItQXKj1JKbBN0HwgHaHa?rs=1&pid=ImgDetMain';
+            avatar.src = 'https://smallgoodgood.top/images/23.jpg';
             avatar.className = 'cat-avatar';
             messageDiv.appendChild(avatar);
 
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
         innerDiv.style.alignItems = 'flex-start';
 
         const avatar = document.createElement('img');
-        avatar.src = 'https://th.bing.com/th/id/OIP.oQvGCdItQXKj1JKbBN0HwgHaHa?rs=1&pid=ImgDetMain';
+        avatar.src = 'https://smallgoodgood.top/images/23.jpg';
         avatar.className = 'cat-avatar';
         innerDiv.appendChild(avatar);
 
