@@ -126,6 +126,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 hljs.highlightElement(block);
             });
         }
+
+        // 渲染公式（MathJax）
+        if (window.MathJax && typeof MathJax.typesetPromise === 'function') {
+            MathJax.typesetPromise([messageDiv]);
+        }
     }
 
     // AI思考消息也用相同结构和样式
