@@ -87,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function addMessageToChat(role, content, isMarkdown = false) {
         const messageDiv = document.createElement('div');
         if (role === 'assistant') {
-            // 直接用ai-message作为内容div的class，防止被marked渲染顶层div覆盖
             messageDiv.className = 'message ai-message';
             messageDiv.style.display = 'flex';
             messageDiv.style.alignItems = 'flex-start';
@@ -100,7 +99,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const contentDiv = document.createElement('div');
             contentDiv.style.flex = '1';
             if (isMarkdown) {
-                contentDiv.innerHTML = marked.parse(content);
+                // 支持 \\( ... \\) 行内公式和 \\[ ... \\] 块公式
+                let mathContent = content
+                    .replace(/\\\((.+?)\\\)/g, function(match, p1) {
+                        return '$' + p1 + '$';
+                    })
+                    .replace(/\\\[(.+?)\\\]/g, function(match, p1) {
+                        return '$$' + p1 + '$$';
+                    });
+                contentDiv.innerHTML = marked.parse(mathContent);
             } else {
                 contentDiv.textContent = content;
             }
