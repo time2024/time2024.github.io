@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>docker教程 | Zenith</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/yellow.jpg');
+ --light-background: url('/img/green.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸红心效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script><meta name="generator" content="Hexo 7.3.0"></head><body><script>(function () {  
+    var a_idx = 0;  
+    window.onclick = function (event) {  
+        var a = new Array("这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "曾经有人让我听这首歌","可是那时的我还不谙情事","也没有真正认真的听完整首歌","直到后来","分开后再听时才发现","原来我错过了","曾经的阿芒","你还好吗");  
+
+        var heart = document.createElement("p"); // 创建p元素，这里从b改为p  
+        heart.onselectstart = function() { return false; }; // 简化防止拖动的代码  
+
+        document.body.appendChild(heart).textContent = a[a_idx]; // 使用textContent代替innerHTML，因为这里只是文本  
+        a_idx = (a_idx + 1) % a.length;  
+        heart.style.cssText = "position: fixed;left:-100%;"; // 初始位置  
+
+        var f = 16, // 字体大小  
+            x = event.clientX - f / 2, // 横坐标  
+            y = event.clientY - f, // 纵坐标  
+            c = randomColor(), // 随机颜色  
+            a = 1, // 透明度  
+            s = 1.2; // 放大缩小比例  
+
+        var timer = setInterval(function () { // 添加定时器  
+            if (a <= 0) {  
+                document.body.removeChild(heart);  
+                clearInterval(timer);  
+            } else {  
+                heart.style.cssText = "font-size:" + f + "px;cursor: default;position: fixed;color:" +  
+                    c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +  
+                    s + ");";  
+
+                y--;  
+                a -= 0.016;  
+                s += 0.002;  
+            }  
+        }, 15);  
+    }  
+
+    // 随机颜色函数  
+    function randomColor() {  
+        //- return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";  
+        return "(255,240,245)";
+    }  
+}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li><li class="navItem"><a class="navBlock" href="/chat-zenith"><span class="navItemTitle">AI</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>docker教程</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-07-18T06:00:00.000Z" id="date"> 2025-07-18</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-07-18T09:15:46.096Z" id="updated"> 2025-07-18</time></div></span><br><span>文章总字数: <div class="control">2.9k</div></span><br><span>预计阅读时间: <div class="control">11 分钟</div></span></div></div><hr><div id="post-content"><p>本教程是在 Windows 11 的 WSL2 上安装和配置 Docker ，如果不知道如何配置可以参照以下教程：<a href="https://smallgoodgood.top/2025/07/06/WSL%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/">WSL的安装与使用|Zenith</a> 。</p>
+<h2 id="安装-Docker-Desktop-for-Windows"><a href="#安装-Docker-Desktop-for-Windows" class="headerlink" title="安装 Docker Desktop for Windows"></a><strong>安装 Docker Desktop for Windows</strong></h2><h3 id="1、下载-Docker-Desktop："><a href="#1、下载-Docker-Desktop：" class="headerlink" title="1、下载 Docker Desktop："></a><strong>1、下载 Docker Desktop</strong>：</h3><ul>
+<li>访问 <a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop/">Docker 官网</a> 下载 Windows 版安装包。</li>
+</ul>
+<h3 id="2、安装-Docker-Desktop："><a href="#2、安装-Docker-Desktop：" class="headerlink" title="2、安装 Docker Desktop："></a><strong>2、安装 Docker Desktop</strong>：</h3><ul>
+<li>双击安装包，按向导完成安装。</li>
+<li><del>安装时勾选 “Use WSL 2 instead of Hyper-V”。</del></li>
+<li>新版 Docker Desktop 会自动化判断你的系统是否启用 WSL 2 并进行对应的安装</li>
+<li>安装完成会<strong>自动重启电脑</strong>，注意文件保存</li>
+</ul>
+<h3 id="3、启动-Docker-Desktop："><a href="#3、启动-Docker-Desktop：" class="headerlink" title="3、启动 Docker Desktop："></a><strong>3、启动 Docker Desktop</strong>：</h3><ul>
+<li>安装完成后启动 Docker Desktop。可以先不登录</li>
+<li><del>在设置（Settings） &gt; General 中确认勾选：</del>（新版 Docker Desktop 默认强制勾选可以不做配置）<ul>
+<li><del>Use the WSL 2 based engine</del></li>
+</ul>
+</li>
+</ul>
+<h3 id="4、检查确认-Docker-是否使用了-WSL-2"><a href="#4、检查确认-Docker-是否使用了-WSL-2" class="headerlink" title="4、检查确认 Docker 是否使用了 WSL 2"></a><strong>4、检查确认 Docker 是否使用了 WSL 2</strong></h3><ul>
+<li><p>在 PowerShell 中运行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">wsl -l -v<br></code></pre></td></tr></table></figure>
+
+<p>如果看到 <code>docker-desktop</code> ，且版本为 <strong>2</strong>，则证明 Docker 正在使用 WSL 2。</p>
+</li>
+<li><p>打开 WSL 2 终端（Ubuntu），运行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">docker --version<br></code></pre></td></tr></table></figure>
+
+<p>如果看到输出版本信息，说明 Docker 已成功运行在 WSL 2 中。</p>
+</li>
+</ul>
+<h2 id="直接在-ubuntu-中安装-Docker"><a href="#直接在-ubuntu-中安装-Docker" class="headerlink" title="直接在 ubuntu 中安装 Docker"></a><strong>直接在 ubuntu 中安装 Docker</strong></h2><h3 id="1、更新系统包索引："><a href="#1、更新系统包索引：" class="headerlink" title="1、更新系统包索引："></a><strong>1、更新系统包索引</strong>：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo apt update<br></code></pre></td></tr></table></figure>
+
+<h3 id="2、安装必要的包以允许apt通过HTTPS使用仓库："><a href="#2、安装必要的包以允许apt通过HTTPS使用仓库：" class="headerlink" title="2、安装必要的包以允许apt通过HTTPS使用仓库："></a><strong>2、安装必要的包以允许apt通过HTTPS使用仓库</strong>：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo apt install apt-transport-https ca-certificates curl software-properties-common<br># 用于设置系统，准备安装来自安全（HTTPS）存储库的软件，并确保下载的软件是经过验证和可信的<br></code></pre></td></tr></table></figure>
+
+<h3 id="3、添加-Docker-的官方-GPG-密钥："><a href="#3、添加-Docker-的官方-GPG-密钥：" class="headerlink" title="3、添加 Docker 的官方 GPG 密钥："></a><strong>3、添加 Docker 的官方 GPG 密钥</strong>：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -<br># 用于验证从远程仓库下载的文件或软件包在传输过程中没有被篡改，确保包没有被篡改或损坏<br></code></pre></td></tr></table></figure>
+
+<h3 id="4、添加-Docker-的稳定仓库："><a href="#4、添加-Docker-的稳定仓库：" class="headerlink" title="4、添加 Docker 的稳定仓库："></a><strong>4、添加 Docker 的稳定仓库</strong>：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot;<br># 在系统中添加 Docker 官方软件仓库，以便后续通过 apt 安装 Docker 及其更新<br></code></pre></td></tr></table></figure>
+
+<h3 id="5、再次更新系统包索引："><a href="#5、再次更新系统包索引：" class="headerlink" title="5、再次更新系统包索引："></a><strong>5、再次更新系统包索引</strong>：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo apt update<br></code></pre></td></tr></table></figure>
+
+<h3 id="6、安装Docker-CE（社区版）："><a href="#6、安装Docker-CE（社区版）：" class="headerlink" title="6、安装Docker CE（社区版）："></a><strong>6、安装Docker CE（社区版）</strong>：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo apt install docker-ce<br># Docker Community Edition 简称 Docker CE<br></code></pre></td></tr></table></figure>
+
+<h3 id="7、验证Docker是否安装成功："><a href="#7、验证Docker是否安装成功：" class="headerlink" title="7、验证Docker是否安装成功："></a><strong>7、验证Docker是否安装成功</strong>：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo docker run hello-world<br></code></pre></td></tr></table></figure>
+
+<h2 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h2><h3 id="在-Docker-Desktop-中下载镜像"><a href="#在-Docker-Desktop-中下载镜像" class="headerlink" title="在 Docker Desktop 中下载镜像"></a>在 Docker Desktop 中下载镜像</h3><p>Docker Hub 是一个公共的 Docker 镜像仓库，其中包含了大量的镜像，用户可以从中拉取镜像到本地使用</p>
+<blockquote>
+<p>例如，要拉取一个名为 <code>Nginx</code> 的镜像，可以进行如下操作：</p>
+<ol>
+<li><strong>启动 Docker Desktop 进入 Images</strong></li>
+<li><strong>搜索 <code>Nginx</code> <code>pull</code> 第一个镜像文件</strong></li>
+<li><strong>启动 <code>Nginx</code> 镜像</strong><ul>
+<li>配置名字（例如：nginxweb）</li>
+<li>配置端口映射（例如：80）</li>
+<li>选择将容器中的文件存储在主机中的位置（可选）（例如：D:\nginxweb-storage）</li>
+<li>选择挂载到容器中的位置，实现容器与主机的文件共享（可选）（例如：&#x2F;nginxweb）</li>
+<li>运行</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<h3 id="在-ubuntu-中下载镜像"><a href="#在-ubuntu-中下载镜像" class="headerlink" title="在 ubuntu 中下载镜像"></a>在 ubuntu 中下载镜像</h3><p>也可以在ubuntu中使用命令行完成：</p>
+<blockquote>
+<p>例如，要拉取一个名为 <code>opengauss</code> 的镜像，可以进行如下操作：</p>
+<p><strong>使用以下命令拉取镜像</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">docker pull opengauss/opengauss<br></code></pre></td></tr></table></figure>
+</blockquote>
+<p>可以通过 <code>docker images</code> 命令查看当前已下载的镜像</p>
+<h2 id="设置-Docker-镜像源"><a href="#设置-Docker-镜像源" class="headerlink" title="设置 Docker 镜像源"></a><strong>设置 Docker 镜像源</strong></h2><h3 id="在旧版本下设置-Docker-镜像源"><a href="#在旧版本下设置-Docker-镜像源" class="headerlink" title="在旧版本下设置 Docker 镜像源"></a>在旧版本下设置 Docker 镜像源</h3><p>由于某些不可描述的问题，Docker 官方镜像经常会拉不下来，常用方式是通过设置镜像源的方式解决（但是大部分源都已经挂了），其他方式可以自行 bing 搜索</p>
+<p>在旧版本下 Docker Desktop 会自动创建两个 WSL2 发行版：</p>
+<ul>
+<li><code>docker-desktop</code>：运行 Docker Engine（守护进程）。</li>
+<li><code>docker-desktop-data</code>：存储镜像和容器数据。</li>
+</ul>
+<p>进入 <code>docker-desktop</code> 发行版：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">wsl <span class="hljs-literal">-d</span> docker<span class="hljs-literal">-desktop</span><br></code></pre></td></tr></table></figure>
+
+<p>首先修改 <code>/etc/docker/daemon.json</code> 文件为如下格式</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs powershell">&#123;<br>    <span class="hljs-string">&quot;registry-mirrors&quot;</span>: [<br>        <span class="hljs-string">&quot;https://docker.xuanyuan.me&quot;</span>,<br>        <span class="hljs-string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span>,<br>      	<span class="hljs-string">&quot;https://mirror.ccs.tencentyun.com&quot;</span>,<br>        <span class="hljs-string">&quot;https://registry.docker-cn.com&quot;</span><br>    ]<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>上述镜像源只是一个示例，可以自行寻找或搭建其他源</p>
+<p>然后重启 Docker：<code>service docker restart</code></p>
+<p>可以通过 <code>docker info</code> 命令查看配置是否生效</p>
+<h3 id="在新版本下设置-Docker-镜像源"><a href="#在新版本下设置-Docker-镜像源" class="headerlink" title="在新版本下设置 Docker 镜像源"></a>在新版本下设置 Docker 镜像源</h3><p>在新版本 Docker Desktop 中进行了存储优化，Docker 团队合并了 <code>docker-desktop</code> 和 <code>docker-desktop-data</code> 的功能：**仅保留 <code>docker-desktop</code>**，数据和引擎合并到一个 WSL 2 发行版。</p>
+<p>在新版本中要通过 Docker Desktop 的 GUI 或 API 动态管理配置。</p>
+<p>进入 <strong>Settings &gt; Docker Engine</strong>。</p>
+<p>直接编辑 JSON 配置：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs powershell">&#123;<br>    <span class="hljs-string">&quot;builder&quot;</span>: &#123;<br>        <span class="hljs-string">&quot;gc&quot;</span>: &#123;<br>            <span class="hljs-string">&quot;defaultKeepStorage&quot;</span>: <span class="hljs-string">&quot;20GB&quot;</span>,<br>            <span class="hljs-string">&quot;enabled&quot;</span>: true<br>        &#125;<br>    &#125;,<br>    <span class="hljs-string">&quot;experimental&quot;</span>: false,<br>    <span class="hljs-string">&quot;registry-mirrors&quot;</span>: [<br>        <span class="hljs-string">&quot;https://docker.xuanyuan.me&quot;</span>,<br>        <span class="hljs-string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span>,<br>        <span class="hljs-string">&quot;https://mirror.ccs.tencentyun.com&quot;</span>,<br>        <span class="hljs-string">&quot;https://registry.docker-cn.com&quot;</span><br>    ]<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>点击 <strong>Apply &amp; Restart</strong>，Docker 会自动重启并应用新配置</p>
+<p>在终端运行以下命令，检查镜像源是否已加载：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker info | grep -A 10 <span class="hljs-string">&quot;Registry Mirrors&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>输出应包含你添加的镜像地址：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">Registry Mirrors:<br> https://docker.xuanyuan.me/<br> https://docker.mirrors.ustc.edu.cn/<br> https://mirror.ccs.tencentyun.com/<br> https://registry.docker-cn.com/<br></code></pre></td></tr></table></figure>
+
+<p>上述镜像源只是一个示例，可以自行寻找或搭建其他源</p>
+<h2 id="使用容器"><a href="#使用容器" class="headerlink" title="使用容器"></a>使用容器</h2><h3 id="1、启动容器"><a href="#1、启动容器" class="headerlink" title="1、启动容器"></a><strong>1、启动容器</strong></h3><p>拉取镜像成功后就可以启动容器了</p>
+<p>或者也可以不拉取镜像直接启动容器，docker会自动下载对应的镜像文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">docker run -d \<br>	--name opengauss_container \<br>	-p 5432:5432 opengauss/opengauss<br>docker run --name opengauss_container \<br>	--privileged=true \<br>	-d \<br>	-e GS_PASSWORD=your_password \<br>	-e GS_USERNAME=your_username \<br>	-p 5432:5432 opengauss/opengauss<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>--privileged</code>：赋予容器内的进程几乎相同的权限，容器内的进程可以访问宿主机的所有设备</li>
+<li><code>--name opengauss_container</code>：给容器指定一个名称，这里是 <code>opengauss_container</code></li>
+<li><code>-d</code>：表示在后台运行容器</li>
+<li><code>-e</code>：传递参数</li>
+<li><code>GS_PASSWORD=your_password -e GS_USERNAME=your_username</code>：自定义数据库账号密码</li>
+<li><code>-p 5432:5432</code>：将容器的 5432 端口映射到本机的 5432 端口</li>
+</ul>
+<p>如果你仅仅是想创建一个容器，暂时并不想启动他，可以使用 <code>docker create</code> 命令</p>
+<p>与 <code>docker run</code> 命令几乎一致，只是少了 <code>-p</code> 参数。使用 <code>docker create</code> 创建的容器，在用 <code>docker start</code> 启动时，默认总是以后台（detached）方式运行，不管有没有加 <code>-d</code> 参数</p>
+<h3 id="2、查看容器状态"><a href="#2、查看容器状态" class="headerlink" title="2、查看容器状态"></a><strong>2、查看容器状态</strong></h3><p><code>docker ps -a</code> 命令可以查看所有容器的状态</p>
+<p><code>docker start &lt;容器名&gt;/&lt;容器id&gt;</code> 和 <code>docker stop &lt;容器名&gt;/&lt;容器id&gt;</code> 可以启动 &#x2F; 停止已有容器</p>
+<ul>
+<li>使用 <code>docker start</code> 启动的容器是不需要添加参数的，会保留使用 <code>docker run</code> 创建时使用的参数</li>
+</ul>
+<p><code>docker inspect &lt;容器名&gt;/&lt;容器id&gt;</code>   可以查看容器的所有信息，其中就包括了创建时使用的参数</p>
+<p><code>docker logs &lt;容器名&gt;/&lt;容器id&gt;</code> 可以查看容器日志</p>
+<ul>
+<li>但是这种方式只能查看现有日志，不能刷新，可以在后面加 <code>-f</code> 参数使其滚动刷新追踪输出：<code>docker logs &lt;容器名&gt;/&lt;容器id&gt; -f</code></li>
+</ul>
+<h3 id="3、使用容器"><a href="#3、使用容器" class="headerlink" title="3、使用容器"></a><strong>3、使用容器</strong></h3><blockquote>
+<p>上面以 opengauss 数据库为例，所以接下来我们可以使用 <code>gsql</code> 或数据库管理工具来连接数据库。如果是其他项目，通过端口使用即可</p>
+</blockquote>
+<p>每个 Docker 容器都是一个独立的运行环境，每个容器内部表现的都像一个独立的 Linux 系统，可以使用 <code>docker exec &lt;容器名&gt;/&lt;容器id&gt; &lt;想要执行的命令&gt;</code> 在容器内部执行命令</p>
+<p>但是这样会非常的麻烦，可以通过 <code>docker exec -it &lt;容器名&gt;/&lt;容器id&gt; /bin/sh</code> 命令进入容器内部，获得一个交互式的命令行，之后可以用 <code>exec</code> 命令或者使用 <code>Ctrl + D</code> 快捷键退出到宿主机</p>
+<h2 id="额外介绍：Dockerfile"><a href="#额外介绍：Dockerfile" class="headerlink" title="额外介绍：Dockerfile"></a>额外介绍：Dockerfile</h2><p>Dockerfile 是一个文件，用于描述镜像是如何制作的，之前用 <code>docker pull</code> 命令拉取的镜像就是用 Dockerfile 制作的</p>
+<p>可以看菜鸟教程 <a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-dockerfile.html">Docker Dockerfile-菜鸟教程</a></p>
+<h2 id="额外介绍：Docker-网络"><a href="#额外介绍：Docker-网络" class="headerlink" title="额外介绍：Docker 网络"></a>额外介绍：Docker 网络</h2><p>Docker 容器不光环境和宿主机隔离，网络也和宿主机隔离</p>
+<p>Docker 主要有四种网络模式：Bridge、Host、Container、None。其中桥接模式（Bridge）和直连模式（Host）是最常用的，其余两种可以自行 bing 搜索</p>
+<h3 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h3><p>桥接模式是 Docker 的默认网路模式。所有容器都在一个子网内，通过网桥与宿主机连接，每个容器都分配了一个内部 ip 地址，容器网络与宿主机网络隔离，通过端口映射访问</p>
+<p>可以通过 <code>docker network create &lt;子网名&gt;</code> 创建新的子网，默认创建的子网也是桥接模式，可以将指定容器加入指定的子网，子网间也是相互隔离的。并且 Docker 子网内部有 DNS 机制，可以将容器名转换为子网 ip 地址</p>
+<h3 id="直连模式"><a href="#直连模式" class="headerlink" title="直连模式"></a>直连模式</h3><p>直接使用宿主机的 ip 地址，通过宿主机端口可以直接访问容器，无需建立端口映射。可以通过这个命令启动一个直连模式的容器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">docker run -d network host mysql-server<br></code></pre></td></tr></table></figure>
+
+<p>使用 <code>docker network list</code> 可以展示出 Docker 所有的网络</p>
+<p>使用 <code>docker network rm &lt;网络id&gt;</code> 可以删除一个子网</p>
+<h2 id="额外介绍：Docker-Compose"><a href="#额外介绍：Docker-Compose" class="headerlink" title="额外介绍：Docker Compose"></a>额外介绍：Docker Compose</h2><p>如果我们要用 Docker 部署一个完整的包含前端、后端、中间件、数据库的项目，一种容易想到的方式是分别拉取不同镜像，分别创建容器，但是这样会有三个问题</p>
+<ol>
+<li>比较繁琐 复杂</li>
+<li>项目中可能存在容器互相依赖的情况</li>
+<li>容器的网络可能会有特殊要求</li>
+</ol>
+<p>可能这时候会想到，我把所有的项目都打包到一起，跑在一个巨大的容器里。这样也会有三个问题</p>
+<ol>
+<li>镜像太大</li>
+<li>如果有一个模块挂壁了，整个项目都直接挂壁了</li>
+<li>不方便扩容</li>
+</ol>
+<p>这时候就需要 Docker Compose 出场了</p>
+<p>Docker Compose 是一个容器编排技术，使用 yaml 文件管理多个容器，里面描述了容器之间是如何创建以及如何协同工作的，比如在启动后端项目前，需要先启动一个 MySQL 容器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">version: &#x27;3.8&#x27;<br><br>services:<br>  mysql-server:<br>    image: mysql:8.4.5<br>    container_name: mysql-server<br>    restart: unless-stopped<br>    environment:<br>      MYSQL_ROOT_PASSWORD: rootpassword<br>      MYSQL_DATABASE: mydb<br>      MYSQL_USER: myuser<br>      MYSQL_PASSWORD: mypassword<br>    ports:<br>      - &quot;3306:3306&quot;<br>    volumes:<br>      - mysql_data:/var/lib/mysql<br><br>  backend:<br>    build: ./backend<br>    container_name: backend<br>    depends_on:<br>      - mysql-server<br>    environment:<br>      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-server:3306/mydb<br>      SPRING_DATASOURCE_USERNAME: myuser<br>      SPRING_DATASOURCE_PASSWORD: mypassword<br>    ports:<br>      - &quot;8080:8080&quot;<br>    restart: unless-stopped<br><br>volumes:<br>  mysql_data:<br></code></pre></td></tr></table></figure>
+
+<p>这个 <code>depends_on</code> 字段就可以规定容器的启动顺序</p>
+<p>在写好了 <code>docker-compose.yaml</code> 文件后，就可以用 <code>docker compose up -d</code> 一键启动了，与 <code>docker compose</code> 相关的还有其他命令</p>
+<ul>
+<li><code>docker compose stop</code>: 停止所有容器</li>
+<li><code>docker compose down</code>: 停止并删除所有容器</li>
+<li><code>docker compose start</code>: 启动所有容器</li>
+</ul>
+<p>注意 <code>docker compose up -d</code> 只能识别名为 <code>docker-compose.yaml</code> 的文件，改个名字就无法识别了。如果要识别其他名字的 <code>yaml</code> 文件可以使用 <code>-f</code> 参数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">docker compose -f &lt;文件路径&gt; up -d<br></code></pre></td></tr></table></figure>
+
+<p>Docker Compose 只适合简单项目启动，不适合大型项目启动。对于企业级大规模服务器集群的容器编排需求，通常会使用 Kubernetes</p>
+<p>🌧️</p>
+<p>上述内容参考自：</p>
+<p>[高冷博学猫娘 AI](<a href="https://smallgoodgood.top/chat-zenith/">Zenith Blog | Zenith</a>)</p>
+<p><a target="_blank" rel="noopener" href="https://blog.linyang.ink/07165b7ae23a/">Docker 常见命令与操作 | 你不定积分没加CのBlog</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.linyang.ink/2789bb0563b9/">使用 Docker 进行项目快速部署 | 你不定积分没加CのBlog</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Vk4y1V7bV/?share_source=copy_web&vd_source=4c0e3c35b160a89cba705a566e4bf932">10分钟掌握Docker Desktop安装及使用</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ai421S7zj/?share_source=copy_web&vd_source=4c0e3c35b160a89cba705a566e4bf932">改变软件行业的技术！程序员、软件爱好者必须掌握的Docker，到底是什么？</a></p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/07/17/vscode%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E6%95%99%E7%A8%8B/">Vscode插件开发教程 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Zenith</a></h1><div id="description"><p>未经审视的人生是不值得过的人生</p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Docker-Desktop-for-Windows"><span class="toc-number">1.</span> <span class="toc-text">安装 Docker Desktop for Windows</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E4%B8%8B%E8%BD%BD-Docker-Desktop%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">1、下载 Docker Desktop：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%AE%89%E8%A3%85-Docker-Desktop%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">2、安装 Docker Desktop：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%90%AF%E5%8A%A8-Docker-Desktop%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">3、启动 Docker Desktop：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E6%A3%80%E6%9F%A5%E7%A1%AE%E8%AE%A4-Docker-%E6%98%AF%E5%90%A6%E4%BD%BF%E7%94%A8%E4%BA%86-WSL-2"><span class="toc-number">1.4.</span> <span class="toc-text">4、检查确认 Docker 是否使用了 WSL 2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E5%9C%A8-ubuntu-%E4%B8%AD%E5%AE%89%E8%A3%85-Docker"><span class="toc-number">2.</span> <span class="toc-text">直接在 ubuntu 中安装 Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F%E5%8C%85%E7%B4%A2%E5%BC%95%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">1、更新系统包索引：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%AE%89%E8%A3%85%E5%BF%85%E8%A6%81%E7%9A%84%E5%8C%85%E4%BB%A5%E5%85%81%E8%AE%B8apt%E9%80%9A%E8%BF%87HTTPS%E4%BD%BF%E7%94%A8%E4%BB%93%E5%BA%93%EF%BC%9A"><span class="toc-number">2.2.</span> <span class="toc-text">2、安装必要的包以允许apt通过HTTPS使用仓库：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E6%B7%BB%E5%8A%A0-Docker-%E7%9A%84%E5%AE%98%E6%96%B9-GPG-%E5%AF%86%E9%92%A5%EF%BC%9A"><span class="toc-number">2.3.</span> <span class="toc-text">3、添加 Docker 的官方 GPG 密钥：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E6%B7%BB%E5%8A%A0-Docker-%E7%9A%84%E7%A8%B3%E5%AE%9A%E4%BB%93%E5%BA%93%EF%BC%9A"><span class="toc-number">2.4.</span> <span class="toc-text">4、添加 Docker 的稳定仓库：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E3%80%81%E5%86%8D%E6%AC%A1%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F%E5%8C%85%E7%B4%A2%E5%BC%95%EF%BC%9A"><span class="toc-number">2.5.</span> <span class="toc-text">5、再次更新系统包索引：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6%E3%80%81%E5%AE%89%E8%A3%85Docker-CE%EF%BC%88%E7%A4%BE%E5%8C%BA%E7%89%88%EF%BC%89%EF%BC%9A"><span class="toc-number">2.6.</span> <span class="toc-text">6、安装Docker CE（社区版）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7%E3%80%81%E9%AA%8C%E8%AF%81Docker%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F%EF%BC%9A"><span class="toc-number">2.7.</span> <span class="toc-text">7、验证Docker是否安装成功：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E9%95%9C%E5%83%8F"><span class="toc-number">3.</span> <span class="toc-text">下载镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-Docker-Desktop-%E4%B8%AD%E4%B8%8B%E8%BD%BD%E9%95%9C%E5%83%8F"><span class="toc-number">3.1.</span> <span class="toc-text">在 Docker Desktop 中下载镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-ubuntu-%E4%B8%AD%E4%B8%8B%E8%BD%BD%E9%95%9C%E5%83%8F"><span class="toc-number">3.2.</span> <span class="toc-text">在 ubuntu 中下载镜像</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE-Docker-%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-number">4.</span> <span class="toc-text">设置 Docker 镜像源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E6%97%A7%E7%89%88%E6%9C%AC%E4%B8%8B%E8%AE%BE%E7%BD%AE-Docker-%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-number">4.1.</span> <span class="toc-text">在旧版本下设置 Docker 镜像源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E6%96%B0%E7%89%88%E6%9C%AC%E4%B8%8B%E8%AE%BE%E7%BD%AE-Docker-%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-number">4.2.</span> <span class="toc-text">在新版本下设置 Docker 镜像源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">使用容器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8"><span class="toc-number">5.1.</span> <span class="toc-text">1、启动容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8%E7%8A%B6%E6%80%81"><span class="toc-number">5.2.</span> <span class="toc-text">2、查看容器状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8"><span class="toc-number">5.3.</span> <span class="toc-text">3、使用容器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%9D%E5%A4%96%E4%BB%8B%E7%BB%8D%EF%BC%9ADockerfile"><span class="toc-number">6.</span> <span class="toc-text">额外介绍：Dockerfile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%9D%E5%A4%96%E4%BB%8B%E7%BB%8D%EF%BC%9ADocker-%E7%BD%91%E7%BB%9C"><span class="toc-number">7.</span> <span class="toc-text">额外介绍：Docker 网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F"><span class="toc-number">7.1.</span> <span class="toc-text">桥接模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E8%BF%9E%E6%A8%A1%E5%BC%8F"><span class="toc-number">7.2.</span> <span class="toc-text">直连模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%9D%E5%A4%96%E4%BB%8B%E7%BB%8D%EF%BC%9ADocker-Compose"><span class="toc-number">8.</span> <span class="toc-text">额外介绍：Docker Compose</span></a></li></ol></div></div><footer><nobr><span class="icp-title">♖</span><a class="icp-content" href="https://smallgoodgood.top/about/">关于本站</a></nobr><br><nobr>Pubulished by <a href="http://smallgoodgood.top">Zenith <br></a></nobr><wbr><!-- 添加网站运行时间 --><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now = new Date();
+
+function createtime() {
+  var grt = new Date("02/09/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间 
+  now.setTime(now.getTime() + 250);
+  days = (now - grt) / 1000 / 60 / 60 / 24;
+  dnum = Math.floor(days);
+  hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+  hnum = Math.floor(hours);
+  if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+  }
+  minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+  mnum = Math.floor(minutes);
+  if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+  }
+  seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+  snum = Math.round(seconds);
+  if (String(snum).length == 1) {
+      snum = "0" + snum;
+  }
+  document.getElementById("timeDate").innerHTML = " | 本站已安全运行 " + dnum + " 天 ";
+  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+}
+setInterval("createtime()", 250);
+<!-- 添加网站运行时间 -->
+
+</script></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
