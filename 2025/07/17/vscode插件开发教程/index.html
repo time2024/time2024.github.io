@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Vscode插件开发教程 | Zenith</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/yellow.jpg');
+ --light-background: url('/img/green.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸红心效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script><meta name="generator" content="Hexo 7.3.0"></head><body><script>(function () {  
+    var a_idx = 0;  
+    window.onclick = function (event) {  
+        var a = new Array("这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "曾经有人让我听这首歌","可是那时的我还不谙情事","也没有真正认真的听完整首歌","直到后来","分开后再听时才发现","原来我错过了","曾经的阿芒","你还好吗");  
+
+        var heart = document.createElement("p"); // 创建p元素，这里从b改为p  
+        heart.onselectstart = function() { return false; }; // 简化防止拖动的代码  
+
+        document.body.appendChild(heart).textContent = a[a_idx]; // 使用textContent代替innerHTML，因为这里只是文本  
+        a_idx = (a_idx + 1) % a.length;  
+        heart.style.cssText = "position: fixed;left:-100%;"; // 初始位置  
+
+        var f = 16, // 字体大小  
+            x = event.clientX - f / 2, // 横坐标  
+            y = event.clientY - f, // 纵坐标  
+            c = randomColor(), // 随机颜色  
+            a = 1, // 透明度  
+            s = 1.2; // 放大缩小比例  
+
+        var timer = setInterval(function () { // 添加定时器  
+            if (a <= 0) {  
+                document.body.removeChild(heart);  
+                clearInterval(timer);  
+            } else {  
+                heart.style.cssText = "font-size:" + f + "px;cursor: default;position: fixed;color:" +  
+                    c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +  
+                    s + ");";  
+
+                y--;  
+                a -= 0.016;  
+                s += 0.002;  
+            }  
+        }, 15);  
+    }  
+
+    // 随机颜色函数  
+    function randomColor() {  
+        //- return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";  
+        return "(255,240,245)";
+    }  
+}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li><li class="navItem"><a class="navBlock" href="/chat-zenith"><span class="navItemTitle">AI</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Vscode插件开发教程</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-07-17T04:00:00.000Z" id="date"> 2025-07-17</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-07-18T05:22:40.385Z" id="updated"> 2025-07-18</time></div></span><br><span>文章总字数: <div class="control">1.5k</div></span><br><span>预计阅读时间: <div class="control">7 分钟</div></span></div></div><hr><div id="post-content"><h2 id="清理"><a href="#清理" class="headerlink" title="清理"></a>清理</h2><p>使用管理员权限打开命令行窗口，运行如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">npm uninstall -g yo generator-code<br>npm cache clean --force<br></code></pre></td></tr></table></figure>
+
+<h2 id="使用管理员权限配置环境"><a href="#使用管理员权限配置环境" class="headerlink" title="使用管理员权限配置环境"></a>使用管理员权限配置环境</h2><ol>
+<li><p><strong>安装Node.js</strong>：确保你已安装最新版本的Node.js，使用以下命令验证：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">node -v<br>npm -v<br></code></pre></td></tr></table></figure>
+
+<p>如果未安装可按以下步骤<strong>使用官方安装包</strong>来安装node.js：</p>
+<ul>
+<li><p>卸载旧版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">npm uninstall -g npm  # 先卸载npm<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>访问 Node.js 官网（建议选择 LTS 版本，如 20.x）。下载 .msi 安装包（如 node-v20.x.x-x64.msi）。</p>
+</li>
+<li><p>双击安装包，全程默认选项（会自动覆盖旧版本并更新环境变量）。</p>
+</li>
+<li><p>勾选 **<code>Automatically install the necessary tools</code>**（包括 <code>npm</code> 和 <code>Python</code> 等依赖）。</p>
+</li>
+<li><p>打开新的终端（CMD&#x2F;PowerShell），运行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">node -v  # 应显示新版本号（如 v20.x.x）<br>npm -v   # 应显示对应的npm版本<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>安装Yeoman和VS Code扩展生成器</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">npm install -g yo generator-code<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>yo</code>：Yeoman，一个项目脚手架工具</li>
+<li><code>generator-code</code>：专门用于生成<code>VSCode</code>插件项目的生成器</li>
+</ul>
+</li>
+</ol>
+<h2 id="创建新插件项目"><a href="#创建新插件项目" class="headerlink" title="创建新插件项目"></a>创建新插件项目</h2><ol>
+<li><p>运行生成器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">yo code<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>按照提示选择：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">D:\my-vscode&gt;yo code<br><br>     _-----_     ╭──────────────────────────╮<br>    |       |    │   Welcome to the Visual  │<br>    |--(o)--|    │   Studio Code Extension  │<br>   `---------´   │        generator!        │<br>    ( _´U`_ )    ╰──────────────────────────╯<br>    /___A___\   /<br>     |  ~  |<br>   __&#x27;.___.&#x27;__<br> ´   `  |° ´ Y `<br><br>? What type of extension do you want to create? New Extension (JavaScript)<br>? What&#x27;s the name of your extension? rainbow-comments<br>? What&#x27;s the identifier of your extension? rainbow-comments<br>? What&#x27;s the description of your extension? rainbow-comments<br>? Enable JavaScript type checking in &#x27;jsconfig.json&#x27;? No<br>? Initialize a git repository? Yes<br>? Which package manager to use? npm<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="编写插件代码"><a href="#编写插件代码" class="headerlink" title="编写插件代码"></a>编写插件代码</h2><p>打开<code>extension.js</code>文件，替换为以下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">const vscode = require(&#x27;vscode&#x27;);<br><br>// 定义多种颜色方案<br>const colorSchemes = &#123;<br>    rainbow: [ // 彩虹色<br>        &#x27;#FF0000&#x27;, &#x27;#FF7F00&#x27;, &#x27;#FFFF00&#x27;, <br>        &#x27;#00FF00&#x27;, &#x27;#5ec5f5ff&#x27;, &#x27;#0000FF&#x27;, &#x27;#9400D3&#x27;<br>    ],<br>    pastel: [ // 糖果色<br>        &#x27;#FFD1DC&#x27;, &#x27;#FFECB8&#x27;, &#x27;#E2F0CB&#x27;,<br>        &#x27;#B5EAD7&#x27;, &#x27;#C7CEEA&#x27;, &#x27;#D8B5FF&#x27;<br>    ],<br>    monochrome: [ // 灰色系<br>        &#x27;#6f6f6fff&#x27;<br>    ],<br>    warm: [ // 暖色调<br>        &#x27;#FF6B6B&#x27;, &#x27;#FFA07A&#x27;, &#x27;#FFD166&#x27;,<br>        &#x27;#F7C1BB&#x27;, &#x27;#ff0080ff&#x27;<br>    ],<br>    cool: [ // 冷色调<br>        &#x27;#c6f4fbff&#x27;, &#x27;#a39feaff&#x27;, &#x27;#7BC9FF&#x27;,<br>        &#x27;#9494ffff&#x27;, &#x27;#b1d8fbff&#x27;<br>    ]<br>&#125;;<br><br>// 清除所有装饰器<br>function clearAllDecorations(editor, decorationTypes) &#123;<br>    decorationTypes.forEach(type =&gt; &#123;<br>        editor.setDecorations(type, []);<br>    &#125;);<br>&#125;<br><br>/**<br> * 应用颜色方案到注释<br> * @param &#123;vscode.TextEditor&#125; editor <br> * @param &#123;string[]&#125; colors <br> */<br>function applyColorScheme(editor, colors) &#123;<br>    const document = editor.document;<br>    const text = document.getText();<br>    const commentRegex = /(\/\/[^\n]*|\/\*[\s\S]*?\*\/)/g;<br>    let match;<br>    let colorIndex = 0;<br>    const decorations = [];<br><br>    while ((match = commentRegex.exec(text))) &#123;<br>        const startPos = document.positionAt(match.index);<br>        const endPos = document.positionAt(match.index + match[0].length);<br>        <br>        decorations.push(&#123;<br>            range: new vscode.Range(startPos, endPos),<br>            renderOptions: &#123;<br>                color: colors[colorIndex % colors.length],<br>                fontWeight: &#x27;bold&#x27;,<br>                fontStyle: &#x27;italic&#x27;<br>            &#125;<br>        &#125;);<br>        colorIndex++;<br>    &#125;<br><br>    // 创建装饰器类型并应用<br>    const decorationTypes = colors.map(color =&gt; &#123;<br>        return vscode.window.createTextEditorDecorationType(&#123;<br>            color: color,<br>            fontWeight: &#x27;bold&#x27;,<br>            fontStyle: &#x27;italic&#x27;<br>        &#125;);<br>    &#125;);<br><br>    // 应用装饰器<br>    colors.forEach((color, index) =&gt; &#123;<br>        const colorDecorations = decorations.filter((d, i) =&gt; i % colors.length === index);<br>        editor.setDecorations(decorationTypes[index], colorDecorations);<br>    &#125;);<br><br>    return decorationTypes;<br>&#125;<br><br>function activate(context) &#123;<br>    let activeDecorationTypes = []; // 保存当前活动的装饰器<br><br>    // 注册多个命令<br>    const commands = [<br>        &#123; name: &#x27;rainbow&#x27;, title: &#x27;注释颜色: 彩虹色&#x27; &#125;,<br>        &#123; name: &#x27;pastel&#x27;, title: &#x27;注释颜色: 糖果色&#x27; &#125;,<br>        &#123; name: &#x27;monochrome&#x27;, title: &#x27;注释颜色: 灰色&#x27; &#125;,<br>        &#123; name: &#x27;warm&#x27;, title: &#x27;注释颜色: 暖色&#x27; &#125;,<br>        &#123; name: &#x27;cool&#x27;, title: &#x27;注释颜色: 冷色&#x27; &#125;,<br>        &#123; name: &#x27;clear&#x27;, title: &#x27;恢复默认注释颜色&#x27; &#125;<br>    ];<br><br>    commands.forEach(cmd =&gt; &#123;<br>        let disposable = vscode.commands.registerCommand(<br>            `rainbow-comments.$&#123;cmd.name&#125;`,<br>            function () &#123;<br>                const editor = vscode.window.activeTextEditor;<br>                if (!editor) &#123;<br>                    vscode.window.showWarningMessage(&#x27;没有打开的编辑器！&#x27;);<br>                    return;<br>                &#125;<br><br>                // 清除之前的装饰器<br>                clearAllDecorations(editor, activeDecorationTypes);<br>                activeDecorationTypes = [];<br><br>                if (cmd.name !== &#x27;clear&#x27;) &#123;<br>                    // 应用新颜色方案<br>                    activeDecorationTypes = applyColorScheme(<br>                        editor, <br>                        colorSchemes[cmd.name]<br>                    );<br>                    vscode.window.showInformationMessage(<br>                        `已应用 $&#123;cmd.title&#125; 方案!`<br>                    );<br>                &#125; else &#123;<br>                    vscode.window.showInformationMessage(&#x27;已清除所有注释颜色&#x27;);<br>                &#125;<br>            &#125;<br>        );<br>        context.subscriptions.push(disposable);<br>    &#125;);<br>&#125;<br><br>function deactivate() &#123;<br>    // 清理资源<br>&#125;<br><br>module.exports = &#123;<br>    activate,<br>    deactivate<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h2 id="修改package-json"><a href="#修改package-json" class="headerlink" title="修改package.json"></a>修改package.json</h2><p>在<code>package.json</code>中添加以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&quot;contributes&quot;: &#123;<br>    &quot;commands&quot;: [<br>        &#123;<br>            &quot;command&quot;: &quot;rainbow-comments.rainbow&quot;,<br>            &quot;title&quot;: &quot;注释颜色: 彩虹色&quot;<br>        &#125;,<br>        &#123;<br>            &quot;command&quot;: &quot;rainbow-comments.pastel&quot;,<br>            &quot;title&quot;: &quot;注释颜色: 糖果色&quot;<br>        &#125;,<br>        &#123;<br>            &quot;command&quot;: &quot;rainbow-comments.monochrome&quot;,<br>            &quot;title&quot;: &quot;注释颜色: 灰色&quot;<br>        &#125;,<br>        &#123;<br>            &quot;command&quot;: &quot;rainbow-comments.warm&quot;,<br>            &quot;title&quot;: &quot;注释颜色: 暖色&quot;<br>        &#125;,<br>        &#123;<br>            &quot;command&quot;: &quot;rainbow-comments.cool&quot;,<br>            &quot;title&quot;: &quot;注释颜色: 冷色&quot;<br>        &#125;,<br>        &#123;<br>            &quot;command&quot;: &quot;rainbow-comments.clear&quot;,<br>            &quot;title&quot;: &quot;恢复默认注释颜色&quot;<br>        &#125;<br>    ],<br>    &quot;menus&quot;: &#123;<br>      &quot;editor/context&quot;: [<br>        &#123;<br>            &quot;command&quot;: &quot;rainbow-comments.rainbow&quot;,<br>            &quot;group&quot;: &quot;rainbow@1&quot;,  <br>            &quot;when&quot;: &quot;editorTextFocus&quot;<br>        &#125;,<br>        &#123;<br>            &quot;command&quot;: &quot;rainbow-comments.pastel&quot;,<br>            &quot;group&quot;: &quot;rainbow@2&quot;,<br>            &quot;when&quot;: &quot;editorTextFocus&quot;<br>        &#125;,<br>        &#123;<br>            &quot;command&quot;: &quot;rainbow-comments.monochrome&quot;,<br>            &quot;group&quot;: &quot;rainbow@3&quot;,<br>            &quot;when&quot;: &quot;editorTextFocus&quot;<br>        &#125;,<br>        &#123;<br>            &quot;command&quot;: &quot;rainbow-comments.warm&quot;,<br>            &quot;group&quot;: &quot;rainbow@4&quot;,<br>            &quot;when&quot;: &quot;editorTextFocus&quot;<br>        &#125;,<br>        &#123;<br>            &quot;command&quot;: &quot;rainbow-comments.cool&quot;,<br>            &quot;group&quot;: &quot;rainbow@5&quot;,<br>            &quot;when&quot;: &quot;editorTextFocus&quot;<br>        &#125;,<br>        &#123;<br>            &quot;command&quot;: &quot;rainbow-comments.clear&quot;,<br>            &quot;group&quot;: &quot;rainbow@6&quot;,<br>            &quot;when&quot;: &quot;editorTextFocus&quot;<br>        &#125;<br>      ]<br>    &#125;<br>  &#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="运行和测试插件"><a href="#运行和测试插件" class="headerlink" title="运行和测试插件"></a>运行和测试插件</h2><ol>
+<li>按F5启动调试</li>
+<li>在新打开的<code>VSCode</code>窗口中打开一个代码文件</li>
+<li>按Ctrl+Shift+P打开命令面板输入并选择命令</li>
+<li>或者直接右键选择需要执行的命令</li>
+<li>观察你的注释颜色变化</li>
+</ol>
+<h2 id="发布插件"><a href="#发布插件" class="headerlink" title="发布插件"></a>发布插件</h2><p>如果你想分享你的插件：</p>
+<ol>
+<li>安装vsce：<code>npm install -g vsce</code></li>
+<li>创建发布账号：<a target="_blank" rel="noopener" href="https://aka.ms/vscode-create-publisher">https://aka.ms/vscode-create-publisher</a></li>
+<li>登录：<code>vsce login &lt;publisher-name&gt;</code> </li>
+<li>打包：<code>vsce package</code></li>
+<li>发布：<code>vsce publish</code></li>
+</ol>
+<p>或者你也可以：</p>
+<ol>
+<li>安装vsce：<code>npm install -g vsce</code></li>
+<li>创建发布账号：<a target="_blank" rel="noopener" href="https://aka.ms/vscode-create-publisher">https://aka.ms/vscode-create-publisher</a></li>
+<li>打包：<code>vsce package</code></li>
+<li>发布：将生成的<code>.vsix</code>文件拖到上述网页<code>上传 Azure DevOps 扩展</code>中即可</li>
+</ol>
+<p>注意：<code>.vsix</code> 文件的发布者信息必须与目标发布者相匹配，即项目中的 <code>package.json</code> 文件中的”publisher”: “xxx”必须与登录的发布者ID完全一致</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>已将上述插件上传到了 <code>vscode</code> 中的插件应用市场，可以搜索 <code>Zenith-zh</code> 安装后查看效果🥰</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/07/15/win11%E8%93%9D%E7%89%99%E6%B6%88%E5%A4%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Win11蓝牙消失解决方案 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Zenith</a></h1><div id="description"><p>未经审视的人生是不值得过的人生</p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%85%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">清理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%98%E6%9D%83%E9%99%90%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83"><span class="toc-number">2.</span> <span class="toc-text">使用管理员权限配置环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E6%8F%92%E4%BB%B6%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.</span> <span class="toc-text">创建新插件项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E6%8F%92%E4%BB%B6%E4%BB%A3%E7%A0%81"><span class="toc-number">4.</span> <span class="toc-text">编写插件代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9package-json"><span class="toc-number">5.</span> <span class="toc-text">修改package.json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E5%92%8C%E6%B5%8B%E8%AF%95%E6%8F%92%E4%BB%B6"><span class="toc-number">6.</span> <span class="toc-text">运行和测试插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E5%B8%83%E6%8F%92%E4%BB%B6"><span class="toc-number">7.</span> <span class="toc-text">发布插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">8.</span> <span class="toc-text">示例</span></a></li></ol></div></div><footer><nobr><span class="icp-title">♖</span><a class="icp-content" href="https://smallgoodgood.top/about/">关于本站</a></nobr><br><nobr>Pubulished by <a href="http://smallgoodgood.top">Zenith <br></a></nobr><wbr><!-- 添加网站运行时间 --><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now = new Date();
+
+function createtime() {
+  var grt = new Date("02/09/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间 
+  now.setTime(now.getTime() + 250);
+  days = (now - grt) / 1000 / 60 / 60 / 24;
+  dnum = Math.floor(days);
+  hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+  hnum = Math.floor(hours);
+  if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+  }
+  minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+  mnum = Math.floor(minutes);
+  if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+  }
+  seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+  snum = Math.round(seconds);
+  if (String(snum).length == 1) {
+      snum = "0" + snum;
+  }
+  document.getElementById("timeDate").innerHTML = " | 本站已安全运行 " + dnum + " 天 ";
+  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+}
+setInterval("createtime()", 250);
+<!-- 添加网站运行时间 -->
+
+</script></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
