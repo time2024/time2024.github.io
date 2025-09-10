@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Zenith</title>
+    <link>https://smallgoodgood.top/</link>
+    
+    <atom:link href="https://smallgoodgood.top/rss.xml" rel="self" type="application/rss+xml"/>
+    
+    <description>未经审视的人生是不值得过的人生</description>
+    <pubDate>Tue, 26 Aug 2025 07:57:17 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>不推荐购买树莓派小车拓展套件</title>
+      <link>https://smallgoodgood.top/2025/08/26/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%B0%8F%E8%BD%A6%E6%8B%93%E5%B1%95%E5%A5%97%E4%BB%B6/</link>
+      <guid>https://smallgoodgood.top/2025/08/26/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%B0%8F%E8%BD%A6%E6%8B%93%E5%B1%95%E5%A5%97%E4%BB%B6/</guid>
+      <pubDate>Tue, 26 Aug 2025 06:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;之前买了一块树莓派五，暑假一直闲置着，就想着重新拿出来玩一玩，刚好逛淘宝时看见了一款小车拓展板及配件，就一时上头买了回来，组装，烧录专门的系统，上手玩，一个下午就把树莓派小车跑了起来，可以做简单</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/08/26/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%B0%8F%E8%BD%A6%E6%8B%93%E5%B1%95%E5%A5%97%E4%BB%B6/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>基于阿里云服务器配置宝塔面板</title>
+      <link>https://smallgoodgood.top/2025/08/13/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/</link>
+      <guid>https://smallgoodgood.top/2025/08/13/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/</guid>
+      <pubDate>Wed, 13 Aug 2025 06:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;现在在阿里云购买服务器并配置宝塔面板十分简单，只需在购买服务器时选择安装应用镜像：宝塔Linux面板&lt;/p&gt;
+&lt;p&gt;阿里云专享版</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E8%B5%84%E6%96%99/">资料</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/08/13/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>LangChain入门</title>
+      <link>https://smallgoodgood.top/2025/08/10/Langchain/</link>
+      <guid>https://smallgoodgood.top/2025/08/10/Langchain/</guid>
+      <pubDate>Sun, 10 Aug 2025 06:00:00 GMT</pubDate>
+      
+      <description>&lt;p&gt;&lt;img src=&quot;/images/24.png&quot;&gt;&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E6%95%99%E7%A8%8B/">教程</category>
+      
+      <category domain="https://smallgoodgood.top/tags/LangChain/">LangChain</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/08/10/Langchain/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>AutoDL教程</title>
+      <link>https://smallgoodgood.top/2025/08/07/AutoDL/</link>
+      <guid>https://smallgoodgood.top/2025/08/07/AutoDL/</guid>
+      <pubDate>Thu, 07 Aug 2025 06:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;前言：由于本地轻薄本算力不够，跑一些复杂的对显存要求高的模型比较困难，因此需要租服务器提高速度，根据推荐就选用 &lt;code&gt;AutoDL</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E6%95%99%E7%A8%8B/">教程</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/08/07/AutoDL/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>docker教程</title>
+      <link>https://smallgoodgood.top/2025/07/18/docker%E6%95%99%E7%A8%8B/</link>
+      <guid>https://smallgoodgood.top/2025/07/18/docker%E6%95%99%E7%A8%8B/</guid>
+      <pubDate>Fri, 18 Jul 2025 06:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;本教程是在 Windows 11 的 WSL2 上安装和配置 Docker ，如果不知道如何配置可以参照以下教程：&lt;a</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E6%95%99%E7%A8%8B/">教程</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/07/18/docker%E6%95%99%E7%A8%8B/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Vscode插件开发教程</title>
+      <link>https://smallgoodgood.top/2025/07/17/vscode%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E6%95%99%E7%A8%8B/</link>
+      <guid>https://smallgoodgood.top/2025/07/17/vscode%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E6%95%99%E7%A8%8B/</guid>
+      <pubDate>Thu, 17 Jul 2025 04:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;清理&quot;&gt;&lt;a href=&quot;#清理&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E6%95%99%E7%A8%8B/">教程</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/07/17/vscode%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E6%95%99%E7%A8%8B/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Win11蓝牙消失解决方案</title>
+      <link>https://smallgoodgood.top/2025/07/15/win11%E8%93%9D%E7%89%99%E6%B6%88%E5%A4%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <guid>https://smallgoodgood.top/2025/07/15/win11%E8%93%9D%E7%89%99%E6%B6%88%E5%A4%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <pubDate>Tue, 15 Jul 2025 06:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;今天正用着蓝牙，突然鼠标就动不了了，尝试去关蓝牙，发现蓝牙图标在点击后卡死了，打开设置里发现蓝牙也消失了！&lt;/p&gt;
+&lt;p&gt;打开设备管理器打算卸载重装蓝牙，发现连设备管理器里都没有蓝牙，仿佛这台电</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E8%B5%84%E6%96%99/">资料</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/07/15/win11%E8%93%9D%E7%89%99%E6%B6%88%E5%A4%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://smallgoodgood.top/2025/07/11/git/</link>
+      <guid>https://smallgoodgood.top/2025/07/11/git/</guid>
+      <pubDate>Fri, 11 Jul 2025 06:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;前言：最近在做关于C的项目工程，涉及到多人协作以及版本控制，每天都有大量的代码修改，也经常性地回退上几个版本，此时git就非常好用。最近有一个学弟他在修改代码后程序就跑不通了，把修改的地方删掉后</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E8%B5%84%E6%96%99/">资料</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/07/11/git/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>加速编译的方法</title>
+      <link>https://smallgoodgood.top/2025/07/10/%E5%8A%A0%E9%80%9F%E7%BC%96%E8%AF%91%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <guid>https://smallgoodgood.top/2025/07/10/%E5%8A%A0%E9%80%9F%E7%BC%96%E8%AF%91%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <pubDate>Thu, 10 Jul 2025 06:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;前言：之前以为主要是操作系统的问题导致编译速度的差异，使用了 &lt;code&gt;wsl&lt;/code&gt;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E8%B5%84%E6%96%99/">资料</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/07/10/%E5%8A%A0%E9%80%9F%E7%BC%96%E8%AF%91%E7%9A%84%E6%96%B9%E6%B3%95/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>编译时unused报错解决方案</title>
+      <link>https://smallgoodgood.top/2025/07/07/%E7%BC%96%E8%AF%91%E6%97%B6unused%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <guid>https://smallgoodgood.top/2025/07/07/%E7%BC%96%E8%AF%91%E6%97%B6unused%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <pubDate>Mon, 07 Jul 2025 06:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;这两天在做一个C的项目，编译用到了CMake，遇到了挺多的问题。今天发现了同一个文件相同的内容在一台电脑上可以编译通过，在另一台电脑上编译不通过。始终报的是&lt;code&gt;error:xxx</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E8%B5%84%E6%96%99/">资料</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/07/07/%E7%BC%96%E8%AF%91%E6%97%B6unused%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>WSL的安装与使用</title>
+      <link>https://smallgoodgood.top/2025/07/06/WSL%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
+      <guid>https://smallgoodgood.top/2025/07/06/WSL%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
+      <pubDate>Sun, 06 Jul 2025 06:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;前言：因为某个项目在windows下编译实在是太慢太慢太慢了&lt;span</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E8%B5%84%E6%96%99/">资料</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/07/06/WSL%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>新增AI功能</title>
+      <link>https://smallgoodgood.top/2025/06/22/ai/</link>
+      <guid>https://smallgoodgood.top/2025/06/22/ai/</guid>
+      <pubDate>Sun, 22 Jun 2025 06:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;现在可以通过左边栏的AI模块进入，访问本博客专属的AI喵~&lt;/p&gt;
+&lt;p&gt;目前还有些许问题等待解决&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;增加公式的在线渲染&lt;/p&gt;
+&lt;p&gt;增加AI对本博客的内</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/AI/">AI</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/06/22/ai/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>IntelliJ 全家桶和付费插件 最新破解</title>
+      <link>https://smallgoodgood.top/2025/05/23/IntelliJ%20%E5%85%A8%E5%AE%B6%E6%A1%B6%E5%92%8C%E4%BB%98%E8%B4%B9%E6%8F%92%E4%BB%B6%20%E6%9C%80%E6%96%B0%E7%A0%B4%E8%A7%A3/</link>
+      <guid>https://smallgoodgood.top/2025/05/23/IntelliJ%20%E5%85%A8%E5%AE%B6%E6%A1%B6%E5%92%8C%E4%BB%98%E8%B4%B9%E6%8F%92%E4%BB%B6%20%E6%9C%80%E6%96%B0%E7%A0%B4%E8%A7%A3/</guid>
+      <pubDate>Fri, 23 May 2025 06:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;IntelliJ-全家桶和付费插件-最新破解&quot;&gt;&lt;a href=&quot;#IntelliJ-全家桶和付费插件-最新破解&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E8%B5%84%E6%96%99/">资料</category>
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%A0%B4%E8%A7%A3/">破解</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/05/23/IntelliJ%20%E5%85%A8%E5%AE%B6%E6%A1%B6%E5%92%8C%E4%BB%98%E8%B4%B9%E6%8F%92%E4%BB%B6%20%E6%9C%80%E6%96%B0%E7%A0%B4%E8%A7%A3/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>基于Ubuntu编译内核并添加内核模块</title>
+      <link>https://smallgoodgood.top/2025/03/26/%E5%9F%BA%E4%BA%8EUbuntu%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97/</link>
+      <guid>https://smallgoodgood.top/2025/03/26/%E5%9F%BA%E4%BA%8EUbuntu%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97/</guid>
+      <pubDate>Tue, 25 Mar 2025 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;本文详细记录在 &lt;code&gt;Ubuntu 24.10&lt;/code&gt; 系统上编译 &lt;code&gt;Linux&lt;/code&gt; 内核、创建最小化运行环境，并添加自定义内核模块的全过程。所有操作均在</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</category>
+      
+      <category domain="https://smallgoodgood.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/03/26/%E5%9F%BA%E4%BA%8EUbuntu%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>环境变量变化复原方法</title>
+      <link>https://smallgoodgood.top/2025/02/12/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%98%E5%8C%96%E5%A4%8D%E5%8E%9F%E6%96%B9%E6%B3%95/</link>
+      <guid>https://smallgoodgood.top/2025/02/12/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%98%E5%8C%96%E5%A4%8D%E5%8E%9F%E6%96%B9%E6%B3%95/</guid>
+      <pubDate>Tue, 11 Feb 2025 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;环境变量变化复原方法&quot;&gt;&lt;a href=&quot;#环境变量变化复原方法&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/02/12/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%98%E5%8C%96%E5%A4%8D%E5%8E%9F%E6%96%B9%E6%B3%95/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>使用BearPi-Pico H3863驱动3.52inch e-Paper HAT</title>
+      <link>https://smallgoodgood.top/2025/02/07/%E4%BD%BF%E7%94%A8BearPi-Pico%20H3863%E9%A9%B1%E5%8A%A83.52inch%20e-Paper%20HAT/</link>
+      <guid>https://smallgoodgood.top/2025/02/07/%E4%BD%BF%E7%94%A8BearPi-Pico%20H3863%E9%A9%B1%E5%8A%A83.52inch%20e-Paper%20HAT/</guid>
+      <pubDate>Thu, 06 Feb 2025 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;使用BearPi-Pico-H3863驱动3-52inch-e-Paper-HAT&quot;&gt;&lt;a</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%A1%AC%E4%BB%B6/">硬件</category>
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</category>
+      
+      <category domain="https://smallgoodgood.top/tags/%E5%8D%8E%E4%B8%BA/">华为</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/02/07/%E4%BD%BF%E7%94%A8BearPi-Pico%20H3863%E9%A9%B1%E5%8A%A83.52inch%20e-Paper%20HAT/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Debian 常用命令</title>
+      <link>https://smallgoodgood.top/2025/01/19/Debian%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <guid>https://smallgoodgood.top/2025/01/19/Debian%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <pubDate>Sat, 18 Jan 2025 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;Debian-常用命令汇总&quot;&gt;&lt;a href=&quot;#Debian-常用命令汇总&quot; class=&quot;headerlink&quot; title=&quot;Debian 常用命令汇总&quot;&gt;&lt;/a&gt;Debian</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</category>
+      
+      <category domain="https://smallgoodgood.top/tags/Linux/">Linux</category>
+      
+      <category domain="https://smallgoodgood.top/tags/Debian/">Debian</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/01/19/Debian%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>基于华为云与frp实现内网穿透连接树莓派</title>
+      <link>https://smallgoodgood.top/2025/01/16/%E5%9F%BA%E4%BA%8E%E5%8D%8E%E4%B8%BA%E4%BA%91%E4%B8%8Efrp%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E8%BF%9E%E6%8E%A5%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
+      <guid>https://smallgoodgood.top/2025/01/16/%E5%9F%BA%E4%BA%8E%E5%8D%8E%E4%B8%BA%E4%BA%91%E4%B8%8Efrp%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E8%BF%9E%E6%8E%A5%E6%A0%91%E8%8E%93%E6%B4%BE/</guid>
+      <pubDate>Wed, 15 Jan 2025 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;放寒假了~ 买了好久的树莓派，终于可以开始玩了。&lt;/p&gt;
+&lt;p&gt;首先就是通过raspberry pi</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E5%8D%8E%E4%B8%BA/">华为</category>
+      
+      <category domain="https://smallgoodgood.top/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/01/16/%E5%9F%BA%E4%BA%8E%E5%8D%8E%E4%B8%BA%E4%BA%91%E4%B8%8Efrp%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E8%BF%9E%E6%8E%A5%E6%A0%91%E8%8E%93%E6%B4%BE/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>2024-2025</title>
+      <link>https://smallgoodgood.top/2025/01/01/2024-2025/</link>
+      <guid>https://smallgoodgood.top/2025/01/01/2024-2025/</guid>
+      <pubDate>Tue, 31 Dec 2024 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;时间过得真快，2024也过去了&lt;/p&gt;
+&lt;p&gt;浅浅总结一下2024吧&lt;/p&gt;
+&lt;p&gt;To be continue</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/">记录生活</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E6%9D%82%E8%B0%88/">杂谈</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/01/01/2024-2025/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>美赛苟活大法</title>
+      <link>https://smallgoodgood.top/2024/12/26/%E7%BE%8E%E8%B5%9B%E8%8B%9F%E6%B4%BB%E5%A4%A7%E6%B3%95/</link>
+      <guid>https://smallgoodgood.top/2024/12/26/%E7%BE%8E%E8%B5%9B%E8%8B%9F%E6%B4%BB%E5%A4%A7%E6%B3%95/</guid>
+      <pubDate>Thu, 26 Dec 2024 04:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;十分、万分感谢来自&lt;strong&gt;对外经济贸易大学&lt;/strong&gt;的&lt;strong&gt;藏羚羊&lt;/strong&gt;，本美赛苟活大法是由她编写的，此处仅搬运分享，再次表达感谢！！！&lt;/p&gt;
+&lt;p&gt;&lt;a</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E8%B5%84%E6%96%99/">资料</category>
+      
+      
+      <comments>https://smallgoodgood.top/2024/12/26/%E7%BE%8E%E8%B5%9B%E8%8B%9F%E6%B4%BB%E5%A4%A7%E6%B3%95/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>基于鲲鹏数学库的高性能数学计算加速方法研究与实践</title>
+      <link>https://smallgoodgood.top/2024/12/21/%E5%9F%BA%E4%BA%8E%E9%B2%B2%E9%B9%8F%E6%95%B0%E5%AD%A6%E5%BA%93%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BD%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%8A%A0%E9%80%9F%E6%96%B9%E6%B3%95%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%AE%9E%E8%B7%B5/</link>
+      <guid>https://smallgoodgood.top/2024/12/21/%E5%9F%BA%E4%BA%8E%E9%B2%B2%E9%B9%8F%E6%95%B0%E5%AD%A6%E5%BA%93%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BD%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%8A%A0%E9%80%9F%E6%96%B9%E6%B3%95%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%AE%9E%E8%B7%B5/</guid>
+      <pubDate>Sat, 21 Dec 2024 04:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;基于鲲鹏数学库的高性能数学计算加速方法研究与实践&quot;&gt;&lt;a href=&quot;#基于鲲鹏数学库的高性能数学计算加速方法研究与实践&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E5%8D%8E%E4%B8%BA/">华为</category>
+      
+      <category domain="https://smallgoodgood.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</category>
+      
+      <category domain="https://smallgoodgood.top/tags/%E8%AE%BA%E6%96%87/">论文</category>
+      
+      <category domain="https://smallgoodgood.top/tags/%E9%B2%B2%E9%B9%8F/">鲲鹏</category>
+      
+      
+      <comments>https://smallgoodgood.top/2024/12/21/%E5%9F%BA%E4%BA%8E%E9%B2%B2%E9%B9%8F%E6%95%B0%E5%AD%A6%E5%BA%93%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BD%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%8A%A0%E9%80%9F%E6%96%B9%E6%B3%95%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%AE%9E%E8%B7%B5/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>复制黏贴出错原因分析</title>
+      <link>https://smallgoodgood.top/2024/11/20/copy_wrong/</link>
+      <guid>https://smallgoodgood.top/2024/11/20/copy_wrong/</guid>
+      <pubDate>Tue, 19 Nov 2024 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;复制黏贴出错原因分析&quot;&gt;&lt;a href=&quot;#复制黏贴出错原因分析&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%97%AE%E9%A2%98/">计算机问题</category>
+      
+      
+      <comments>https://smallgoodgood.top/2024/11/20/copy_wrong/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Linux 常用命令</title>
+      <link>https://smallgoodgood.top/2024/11/19/Linux/</link>
+      <guid>https://smallgoodgood.top/2024/11/19/Linux/</guid>
+      <pubDate>Mon, 18 Nov 2024 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;Linux-常用命令汇总&quot;&gt;&lt;a href=&quot;#Linux-常用命令汇总&quot; class=&quot;headerlink&quot; title=&quot;Linux 常用命令汇总&quot;&gt;&lt;/a&gt;Linux</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</category>
+      
+      <category domain="https://smallgoodgood.top/tags/Linux/">Linux</category>
+      
+      
+      <comments>https://smallgoodgood.top/2024/11/19/Linux/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>C语言知识点总结</title>
+      <link>https://smallgoodgood.top/2024/11/17/C/</link>
+      <guid>https://smallgoodgood.top/2024/11/17/C/</guid>
+      <pubDate>Sat, 16 Nov 2024 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;这是我主持的OurEDA的例会内容整理&quot;&gt;&lt;a href=&quot;#这是我主持的OurEDA的例会内容整理&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/C%E8%AF%AD%E8%A8%80/">C语言</category>
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</category>
+      
+      
+      <comments>https://smallgoodgood.top/2024/11/17/C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>stm32f407驱动BMX055记录</title>
+      <link>https://smallgoodgood.top/2024/11/14/BMX055/</link>
+      <guid>https://smallgoodgood.top/2024/11/14/BMX055/</guid>
+      <pubDate>Wed, 13 Nov 2024 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;stm32f407驱动BMX055记录&quot;&gt;&lt;a href=&quot;#stm32f407驱动BMX055记录&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%A1%AC%E4%BB%B6/">硬件</category>
+      
+      <category domain="https://smallgoodgood.top/tags/stm32f407/">stm32f407</category>
+      
+      
+      <comments>https://smallgoodgood.top/2024/11/14/BMX055/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>C++ STL常用内容总结</title>
+      <link>https://smallgoodgood.top/2024/10/29/stl/</link>
+      <guid>https://smallgoodgood.top/2024/10/29/stl/</guid>
+      <pubDate>Mon, 28 Oct 2024 16:00:00 GMT</pubDate>
+      
+      <description>&lt;h1 id=&quot;说明&quot;&gt;&lt;a href=&quot;#说明&quot; class=&quot;headerlink&quot; title=&quot;说明&quot;&gt;&lt;/a&gt;说明&lt;/h1&gt;&lt;p&gt;这是关于C++ STL常用内容总结&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;强调使用方法&lt;/strong&gt;，并不强调原理&lt;/p&gt;
+&lt;p&gt;本篇博客是我用于个人学习总结用的&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</category>
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%AE%97%E6%B3%95/">算法</category>
+      
+      
+      <comments>https://smallgoodgood.top/2024/10/29/stl/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>算法题的错题整理及反思</title>
+      <link>https://smallgoodgood.top/2024/10/27/algorithm/</link>
+      <guid>https://smallgoodgood.top/2024/10/27/algorithm/</guid>
+      <pubDate>Sat, 26 Oct 2024 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;这是关于算法题的整理及思考&quot;&gt;&lt;a href=&quot;#这是关于算法题的整理及思考&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%AE%97%E6%B3%95/">算法</category>
+      
+      <category domain="https://smallgoodgood.top/tags/%E9%94%99%E9%A2%98%E6%95%B4%E7%90%86/">错题整理</category>
+      
+      
+      <comments>https://smallgoodgood.top/2024/10/27/algorithm/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>对内容进行了一些完善</title>
+      <link>https://smallgoodgood.top/2024/10/05/add-something-new/</link>
+      <guid>https://smallgoodgood.top/2024/10/05/add-something-new/</guid>
+      <pubDate>Sat, 05 Oct 2024 08:10:14 GMT</pubDate>
+      
+      <description>&lt;p&gt;&lt;img src=&quot;/images/4.jpg&quot; alt=&quot;令&quot;&gt;&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/">记录生活</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E6%9D%82%E8%B0%88/">杂谈</category>
+      
+      
+      <comments>https://smallgoodgood.top/2024/10/05/add-something-new/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>感谢大家</title>
+      <link>https://smallgoodgood.top/2024/10/02/thx/</link>
+      <guid>https://smallgoodgood.top/2024/10/02/thx/</guid>
+      <pubDate>Wed, 02 Oct 2024 11:36:26 GMT</pubDate>
+      
+      <description>&lt;p&gt;&lt;img src=&quot;/images/2.jpg&quot; alt=&quot;感谢米马提供图片&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;感谢我身边的大家，本博客的搭建离不开大家的建议和帮助。&lt;/strong&gt;&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/">记录生活</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E6%9D%82%E8%B0%88/">杂谈</category>
+      
+      
+      <comments>https://smallgoodgood.top/2024/10/02/thx/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>杂谈</title>
+      <link>https://smallgoodgood.top/2024/02/09/my-first-blog/</link>
+      <guid>https://smallgoodgood.top/2024/02/09/my-first-blog/</guid>
+      <pubDate>Thu, 08 Feb 2024 16:00:00 GMT</pubDate>
+      
+      <description>&lt;p&gt;这是我的第一个博客嘿嘿嘿&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/">记录生活</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E6%9D%82%E8%B0%88/">杂谈</category>
+      
+      
+      <comments>https://smallgoodgood.top/2024/02/09/my-first-blog/#disqus_thread</comments>
+      
+    </item>
+    
+  </channel>
+</rss>
