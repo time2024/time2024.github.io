@@ -9,8 +9,36 @@
     <atom:link href="https://smallgoodgood.top/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>未经审视的人生是不值得过的人生</description>
-    <pubDate>Tue, 26 Aug 2025 07:57:17 GMT</pubDate>
+    <pubDate>Thu, 18 Sep 2025 12:13:21 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>R语言</title>
+      <link>https://smallgoodgood.top/2025/09/14/R/</link>
+      <guid>https://smallgoodgood.top/2025/09/14/R/</guid>
+      <pubDate>Sun, 14 Sep 2025 06:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;R语言是一种编程语言和环境，专门用于统计计算和图形绘制。它是“引擎”，负责执行所有计算任务。&lt;/p&gt;
+&lt;p&gt;为了有更好的编写R语言的体验，我们可以下载RStudio，它是一个**集成开发环境</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E8%B5%84%E6%96%99/">资料</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/09/14/R/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>不推荐购买树莓派小车拓展套件</title>
