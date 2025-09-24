@@ -109,7 +109,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
         //- return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";  
         return "(255,240,245)";
     }  
-}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li><li class="navItem"><a class="navBlock" href="/chat-zenith"><span class="navItemTitle">AI</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>基于华为云服务器与frp实现内网穿透连接树莓派</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-01-15T16:00:00.000Z" id="date"> 2025-01-16</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-09-22T08:13:25.682Z" id="updated"> 2025-09-22</time></div></span><br><span>文章总字数: <div class="control">4.2k</div></span><br><span>预计阅读时间: <div class="control">16 分钟</div></span></div></div><hr><div id="post-content"><p>放寒假了~ 买了好久的树莓派，终于可以开始玩了。</p>
+}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li><li class="navItem"><a class="navBlock" href="/chat-zenith"><span class="navItemTitle">AI</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>基于华为云服务器与frp实现内网穿透连接树莓派</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-01-15T16:00:00.000Z" id="date"> 2025-01-16</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-09-24T02:17:59.137Z" id="updated"> 2025-09-24</time></div></span><br><span>文章总字数: <div class="control">4.7k</div></span><br><span>预计阅读时间: <div class="control">18 分钟</div></span></div></div><hr><div id="post-content"><p>放寒假了~ 买了好久的树莓派，终于可以开始玩了。</p>
 <span id="more"></span>
 
 <p>首先就是通过raspberry pi imager进行基本的系统下载，在下载系统时设置好wifi并打开ssh连接，然后树莓派开机连接wifi后就能用同一网络下的电脑使用ssh连接树莓派了，进一步的，如果下载的是有图形化界面的系统，就可以用VNC进行远程桌面操控。<span class="hide"><object><p>因为没有显示屏，所以不得不使用这种方法连接树莓派咳咳</p></object></span></p>
@@ -176,6 +176,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">nohup</span> ./frps -c frps.ini &gt; frps.log 2&gt;&amp;1 &amp;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p><strong>配置华为云安全组</strong>：</p>
+<p>这一步是<strong>必须的</strong>，因为云服务商为了安全，默认会<strong>封锁所有入站端口</strong>。虽然你的云服务器系统内部的端口可能已经监听，但华为云的网络层面防火墙（安全组）会阻止外部访问。</p>
 <ul>
 <li><p>登录华为云控制台，找到你的服务器实例。</p>
 </li>
@@ -257,6 +258,22 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <li><code>[ssh]</code>：定义一个SSH隧道，将服务器的 <code>6000</code> 端口映射到树莓派的 <code>22</code> 端口。</li>
 </ul>
 </li>
+<li><p><strong>配置华为云安全组</strong>：</p>
+<p>这一步是<strong>必须的</strong>，因为需要允许你的电脑通过服务器的6000端口访问树莓派。</p>
+<ul>
+<li><p>登录华为云控制台，找到你的服务器实例</p>
+</li>
+<li><p>进入”安全组”配置，添加以下规则：</p>
+<ul>
+<li>协议：TCP</li>
+<li>端口范围：6000（SSH转发端口）</li>
+<li>源地址：0.0.0.0&#x2F;0（或限制为你的公网IP提高安全性）</li>
+</ul>
+</li>
+<li><p>保存规则</p>
+</li>
+</ul>
+</li>
 <li><p><strong>启动frp客户端</strong>：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./frpc -c frpc.ini<br></code></pre></td></tr></table></figure>
 
@@ -266,30 +283,48 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <p> 可以使用 <code>nohup</code> 或 <code>systemd</code> 让frp客户端在后台运行：</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">nohup</span> ./frpc -c frpc.ini &gt; frpc.log 2&gt;&amp;1 &amp;<br></code></pre></td></tr></table></figure>
 </li>
-<li><p><strong>检查服务端是否运行</strong>：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ps aux | grep frps<br></code></pre></td></tr></table></figure>
+<li><p><strong>检查客户端是否运行</strong>：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ps aux | grep frpc<br></code></pre></td></tr></table></figure>
 
 <p>  如果没有输出，说明 frp 客户端未运行，需要重新启动：</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./frpc -c frpc.ini<br></code></pre></td></tr></table></figure>
 <p>  补充：在ssh连接下可以用ctrl+D快速退出ssh连接，也能输入exit退出ssh连接</p>
 </li>
-<li><p><strong>检查端口监听状态</strong>：</p>
-<p> 运行以下命令，检查 <code>7000</code> 端口是否被 frp 服务端监听：</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo netstat -tuln | grep 7000<br></code></pre></td></tr></table></figure>
-
-<p>  如果看到类似以下输出，说明端口已监听：</p>
-   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">tcp        0      0 0.0.0.0:7000            0.0.0.0:*               LISTEN<br></code></pre></td></tr></table></figure>
-
-<p>  如果没有输出，说明 frp 服务端未正确监听端口。</p>
-</li>
 <li><p><strong>检查 frp 客户端日志</strong>：</p>
-<p> 查看 frp 客户端的日志文件：</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">cat frpc.log<br></code></pre></td></tr></table></figure>
+<p>查看 frp 客户端的日志文件：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">cat frpc.log<br></code></pre></td></tr></table></figure>
 
-<p> 如果日志中有错误信息（如连接失败），请根据错误信息进行排查。</p>
+<p> 如果连接成功，应该看到类似信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">login to server success<br>[ssh] start proxy success<br></code></pre></td></tr></table></figure>
+
+<p>如果日志中有错误信息（如连接失败），请根据错误信息进行排查。</p>
+</li>
+<li><p><strong>检查端口监听状态</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"># 在服务器上执行，检查6000端口是否被frps监听<br>netstat -tuln | grep 6000<br></code></pre></td></tr></table></figure>
+
+<p>如果看到类似以下输出，说明端口已监听：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">tcp        0      0 0.0.0.0:6000            0.0.0.0:*               LISTEN<br></code></pre></td></tr></table></figure>
+
+<p>如果没有输出，说明frp服务端未正确监听转发端口。</p>
 </li>
 </ol>
-<h2 id="4-远程SSH连接树莓派"><a href="#4-远程SSH连接树莓派" class="headerlink" title="4. 远程SSH连接树莓派"></a>4. 远程SSH连接树莓派</h2><ol>
+<h2 id="4-远程SSH连接树莓派"><a href="#4-远程SSH连接树莓派" class="headerlink" title="4. 远程SSH连接树莓派"></a>4. 远程SSH连接树莓派</h2><blockquote>
+<p><strong>端口开放情况说明</strong></p>
+<ul>
+<li><strong>服务器端开放端口</strong>：<ul>
+<li><strong>7000端口</strong>：frp服务端控制端口，用于接收树莓派frp客户端的连接</li>
+<li><strong>6000端口</strong>：SSH转发端口，用于接收你的电脑的SSH连接</li>
+</ul>
+</li>
+<li><strong>树莓派端开放端口</strong>：<ul>
+<li><strong>22端口</strong>：本地SSH服务端口（仅限本地访问）</li>
+</ul>
+</li>
+</ul>
+<p><strong>连接流程</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">你的电脑 → 服务器:6000 → frp服务端 → frp客户端 → 树莓派:22<br></code></pre></td></tr></table></figure>
+</blockquote>
+<ol>
 <li><p><strong>通过服务器连接树莓派</strong>：</p>
 <ul>
 <li><p>在自己的电脑上使用以下命令通过服务器的公网IP和映射端口连接树莓派：</p>
@@ -305,6 +340,19 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -p 6000 pi@mypi.ddns.net<br></code></pre></td></tr></table></figure></li>
 </ul>
 </li>
+<li><p><strong>连接成功验证</strong></p>
+<p>如果连接成功，你会看到树莓派的终端提示符：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">pi@raspberrypi:~ $<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>连接失败排查</strong></p>
+<p>如果连接失败，请检查：</p>
+<ol>
+<li>服务器安全组是否正确开放了6000和7000端口</li>
+<li>树莓派frp客户端是否正常运行（<code>ps aux | grep frpc</code>）</li>
+<li>服务器frp服务端是否正常运行（<code>ps aux | grep frps</code>）</li>
+<li>查看frpc日志确认连接状态（<code>cat frpc.log</code>）</li>
+</ol>
+</li>
 </ol>
 <p>至此，应该就可以基于华为云与frp实现内网穿透连接树莓派了，下面给出一些实用性和安全性建议</p>
 <h2 id="5-设置开机自启动"><a href="#5-设置开机自启动" class="headerlink" title="5. 设置开机自启动"></a>5. 设置开机自启动</h2><p>为了确保frp客户端在树莓派重启后自动运行，可以将其设置为系统服务。</p>
@@ -313,10 +361,10 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> nano /etc/systemd/system/frpc.service<br></code></pre></td></tr></table></figure>
 </li>
 <li><p><strong>添加以下内容</strong>：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">[Unit]<br>Description=Frp Client Service<br>After=network.target<br><br>[Service]<br>ExecStart=/home/pi/frp_0.61.1_linux_arm/frpc -c /home/pi/frp_0.61.1_linux_arm/frpc.ini<br>Restart=on-failure<br><br>[Install]<br>WantedBy=multi-user.target<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">[Unit]<br>Description=Frp Client Service<br>After=network.target<br>StartLimitInterval=0<br><br>[Service]<br>Type=simple<br>User=zenith<br>WorkingDirectory=/home/zenith/Desktop/frp_0.61.1_linux_arm<br>ExecStart=/home/pi/frp_0.61.1_linux_arm/frpc -c /home/pi/frp_0.61.1_linux_arm/frpc.ini<br>Restart=always<br>RestartSec=5s<br><br>[Install]<br>WantedBy=multi-user.target<br></code></pre></td></tr></table></figure>
 
 <ul>
-<li>修改 <code>ExecStart</code> 路径为你的frp客户端实际路径。</li>
+<li>修改 <code>ExecStart</code> 路径为你的frp客户端实际路径。一般是将 <code>pi</code> 改成你的树莓派的用户名即可，如果放在了 <code>Desktop</code> 等地方也要进行相应的修改。</li>
 </ul>
 </li>
 <li><p><strong>启用并启动服务</strong>：</p>

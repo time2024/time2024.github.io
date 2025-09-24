@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 配置marked.js
+    // 配置marked.js - 用于渲染Markdown格式的回复
     marked.setOptions({
         highlight: function(code, lang) {
             const language = hljs.getLanguage(lang) ? lang : 'plaintext';
@@ -14,29 +14,51 @@ document.addEventListener('DOMContentLoaded', function() {
     const sendBtn = document.getElementById('send-btn');
     const clearBtn = document.getElementById('clear-btn');
     
-    const WORKER_URL = 'https://dut-zenith.top/';
+    // ===== 主要修改部分：更换API端点 =====
+    // 原先的Cloudflare Worker地址已被替换为阿里云服务器的Nginx反向代理地址
+    // 使用HTTP协议，因为博客可能是HTTPS，这里需要根据实际情况调整
+    const API_URL = 'http://39.103.58.123/api/langchain/chat';
+    
+    // 如果你的博客是HTTPS，浏览器可能会阻止HTTP请求（混合内容问题）
+    // 如果遇到这个问题，有两个解决方案：
+    // 1. 为阿里云服务器配置HTTPS（推荐，后续步骤会讲）
+    // 2. 临时方案：如果博客支持HTTP访问，可以先用HTTP访问博客
+    
+    // 对话历史记录，用于保持上下文
     let conversationHistory = [];
     
+    /**
+     * 发送消息的主函数
+     * 处理用户输入，调用API，显示响应
+     */
     async function sendMessage() {
         const message = userInput.value.trim();
         if (!message) return;
         
+        // 禁用输入控件，防止重复发送
         sendBtn.disabled = true;
         userInput.disabled = true;
         
+        // 将用户消息添加到聊天界面
         addMessageToChat('user', message);
         userInput.value = '';
         
+        // 显示AI正在思考的提示
         const thinkingMsgId = showThinkingMessage();
         
         try {
-            const response = await callDeepSeekAPI(message);
+            // ===== 修改部分：调用新的API =====
+            const response = await callLangchainAPI(message);
+            
+            // 移除思考提示
             removeThinkingMessage(thinkingMsgId);
             
+            // 处理响应 - 响应格式与原先相同，无需修改
             if (response && response.choices && response.choices[0].message.content) {
                 const aiResponse = response.choices[0].message.content;
                 addMessageToChat('assistant', aiResponse, true); // 标记为需要渲染Markdown
                 
+                // 更新对话历史
                 conversationHistory.push(
                     { role: 'user', content: message },
                     { role: 'assistant', content: aiResponse }
@@ -47,43 +69,75 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             removeThinkingMessage(thinkingMsgId);
             console.error('API调用失败:', error);
-            addMessageToChat('assistant', `抱歉，出现错误: ${error.message}`);
+            
+            // ===== 新增：更详细的错误提示 =====
+            let errorMessage = '抱歉，出现错误: ';
+            if (error.message.includes('Failed to fetch')) {
+                errorMessage += '无法连接到服务器，请检查网络连接';
+            } else if (error.message.includes('Mixed Content')) {
+                errorMessage += 'HTTPS/HTTP混合内容问题，请联系管理员';
+            } else {
+                errorMessage += error.message;
+            }
+            addMessageToChat('assistant', errorMessage);
         } finally {
+            // 恢复输入控件
             sendBtn.disabled = false;
             userInput.disabled = false;
             userInput.focus();
         }
     }
     
-    async function callDeepSeekAPI(message) {
+    /**
+     * 调用Langchain API的函数
+     * 替换原先的callDeepSeekAPI函数
+     * @param {string} message - 用户输入的消息
+     * @returns {Promise} API响应
+     */
+    async function callLangchainAPI(message) {
         try {
-            const response = await fetch(WORKER_URL, {
+            // 发送POST请求到新的API端点
+            const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    // 如果后续添加了API密钥验证，可以在这里添加
+                    // 'Authorization': 'Bearer YOUR_API_KEY'
                 },
                 body: JSON.stringify({
-                    model: 'deepseek-chat',
+                    model: 'langchain-deepseek',  // 可选，用于标识
                     messages: [
-                        ...conversationHistory,
+                        ...conversationHistory,    // 包含历史对话
                         { role: 'user', content: message }
                     ]
                 })
             });
             
+            // 检查响应状态
             if (!response.ok) {
                 const errorData = await response.json();
                 throw new Error(errorData.error || `请求失败: ${response.status}`);
             }
             
+            // 返回JSON响应
             return response.json();
         } catch (error) {
             console.error('Fetch错误:', error);
-            throw new Error(`无法连接到AI服务: ${error.message}`);
+            
+            // 提供更友好的错误信息
+            if (error instanceof TypeError && error.message === 'Failed to fetch') {
+                throw new Error('无法连接到AI服务，请稍后重试');
+            }
+            throw new Error(`服务连接异常: ${error.message}`);
         }
     }
     
-    // 修改后的消息添加函数，支持Markdown渲染，AI消息统一样式
+    // ===== 以下函数保持不变 =====
+    
+    /**
+     * 添加消息到聊天界面
+     * 支持Markdown渲染，AI消息统一样式
+     */
     function addMessageToChat(role, content, isMarkdown = false) {
         const messageDiv = document.createElement('div');
         if (role === 'assistant') {
@@ -134,13 +188,15 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // 渲染公式（MathJax）
+        // 渲染数学公式（MathJax）
         if (window.MathJax && typeof MathJax.typesetPromise === 'function') {
             MathJax.typesetPromise([messageDiv]);
         }
     }
 
-    // AI思考消息也用相同结构和样式
+    /**
+     * 显示AI思考中的动画提示
+     */
     function showThinkingMessage() {
         const messageDiv = document.createElement('div');
         messageDiv.className = 'message ai-message';
@@ -177,6 +233,9 @@ document.addEventListener('DOMContentLoaded', function() {
         return 'thinking-message';
     }
     
+    /**
+     * 移除思考提示
+     */
     function removeThinkingMessage(messageId) {
         const thinkingMsg = document.getElementById(messageId);
         if (thinkingMsg) {
@@ -184,11 +243,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    /**
+     * 清空聊天历史
+     */
     function clearChatHistory() {
+        // 保留欢迎消息
+        const welcomeMessage = chatHistory.querySelector('.ai-message');
         chatHistory.innerHTML = '';
+        if (welcomeMessage) {
+            chatHistory.appendChild(welcomeMessage.cloneNode(true));
+        }
         conversationHistory = [];
     }
     
+    // ===== 事件监听器（保持不变）=====
     sendBtn.addEventListener('click', sendMessage);
     
     userInput.addEventListener('keydown', function(e) {
@@ -203,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 限制输入字数为500
     userInput.setAttribute('maxlength', '500');
 
-    // 字数统计提示移到左下角
+    // 字数统计提示（左下角）
     let charCountTip = document.createElement('div');
     charCountTip.style.position = 'absolute';
     charCountTip.style.left = '16px';
@@ -225,5 +293,6 @@ document.addEventListener('DOMContentLoaded', function() {
     userInput.addEventListener('input', updateCharCount);
     updateCharCount();
 
+    // 自动聚焦到输入框
     userInput.focus();
 });
