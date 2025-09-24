@@ -14,15 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const sendBtn = document.getElementById('send-btn');
     const clearBtn = document.getElementById('clear-btn');
     
-    // ===== 主要修改部分：更换API端点 =====
-    // 原先的Cloudflare Worker地址已被替换为阿里云服务器的Nginx反向代理地址
-    // 使用HTTP协议，因为博客可能是HTTPS，这里需要根据实际情况调整
+    // API端点配置
+    // 使用HTTPS协议访问你配置的子域名
     const API_URL = 'https://api.smallgoodgood.top/chat';
-    
-    // 如果你的博客是HTTPS，浏览器可能会阻止HTTP请求（混合内容问题）
-    // 如果遇到这个问题，有两个解决方案：
-    // 1. 为阿里云服务器配置HTTPS（推荐，后续步骤会讲）
-    // 2. 临时方案：如果博客支持HTTP访问，可以先用HTTP访问博客
     
     // 对话历史记录，用于保持上下文
     let conversationHistory = [];
@@ -47,38 +41,54 @@ document.addEventListener('DOMContentLoaded', function() {
         const thinkingMsgId = showThinkingMessage();
         
         try {
-            // ===== 修改部分：调用新的API =====
+            // 调用API获取响应
+            console.log('正在发送请求到:', API_URL);
             const response = await callLangchainAPI(message);
+            console.log('收到响应:', response);
             
             // 移除思考提示
             removeThinkingMessage(thinkingMsgId);
             
-            // 处理响应 - 响应格式与原先相同，无需修改
-            if (response && response.choices && response.choices[0].message.content) {
-                const aiResponse = response.choices[0].message.content;
-                addMessageToChat('assistant', aiResponse, true); // 标记为需要渲染Markdown
-                
-                // 更新对话历史
-                conversationHistory.push(
-                    { role: 'user', content: message },
-                    { role: 'assistant', content: aiResponse }
-                );
+            // 处理响应 - 检查响应格式
+            if (response && response.choices && response.choices[0]) {
+                const aiMessage = response.choices[0].message;
+                if (aiMessage && aiMessage.content) {
+                    const aiResponse = aiMessage.content;
+                    addMessageToChat('assistant', aiResponse, true); // 标记为需要渲染Markdown
+                    
+                    // 更新对话历史
+                    conversationHistory.push(
+                        { role: 'user', content: message },
+                        { role: 'assistant', content: aiResponse }
+                    );
+                } else {
+                    // 响应格式不完整
+                    console.error('响应格式不完整，message对象:', aiMessage);
+                    throw new Error('API响应格式不正确：缺少message.content');
+                }
             } else {
-                throw new Error('无效的API响应');
+                // 响应格式完全错误
+                console.error('响应格式错误，完整响应:', response);
+                throw new Error('API响应格式不正确：缺少choices数组');
             }
         } catch (error) {
             removeThinkingMessage(thinkingMsgId);
-            console.error('API调用失败:', error);
+            console.error('处理消息时出错:', error);
             
-            // ===== 新增：更详细的错误提示 =====
+            // 提供详细的错误信息
             let errorMessage = '抱歉，出现错误: ';
-            if (error.message.includes('Failed to fetch')) {
+            
+            // 根据错误类型提供更具体的错误信息
+            if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
                 errorMessage += '无法连接到服务器，请检查网络连接';
-            } else if (error.message.includes('Mixed Content')) {
-                errorMessage += 'HTTPS/HTTP混合内容问题，请联系管理员';
-            } else {
+            } else if (error.message.includes('JSON')) {
+                errorMessage += '服务器响应格式错误';
+            } else if (error.message.includes('API响应格式')) {
                 errorMessage += error.message;
+            } else {
+                errorMessage += error.message || '未知错误';
             }
+            
             addMessageToChat('assistant', errorMessage);
         } finally {
             // 恢复输入控件
@@ -90,49 +100,71 @@ document.addEventListener('DOMContentLoaded', function() {
     
     /**
      * 调用Langchain API的函数
-     * 替换原先的callDeepSeekAPI函数
      * @param {string} message - 用户输入的消息
      * @returns {Promise} API响应
      */
     async function callLangchainAPI(message) {
         try {
-            // 发送POST请求到新的API端点
+            // 构建请求体
+            const requestBody = {
+                messages: [
+                    ...conversationHistory,    // 包含历史对话
+                    { role: 'user', content: message }
+                ]
+            };
+            
+            console.log('发送请求体:', requestBody);
+            
+            // 发送POST请求到API端点
             const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    // 如果后续添加了API密钥验证，可以在这里添加
-                    // 'Authorization': 'Bearer YOUR_API_KEY'
                 },
-                body: JSON.stringify({
-                    model: 'langchain-deepseek',  // 可选，用于标识
-                    messages: [
-                        ...conversationHistory,    // 包含历史对话
-                        { role: 'user', content: message }
-                    ]
-                })
+                body: JSON.stringify(requestBody)
             });
+            
+            console.log('响应状态:', response.status, response.statusText);
+            console.log('响应头:', response.headers);
             
             // 检查响应状态
             if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || `请求失败: ${response.status}`);
+                let errorMessage = `请求失败: ${response.status} ${response.statusText}`;
+                try {
+                    const errorData = await response.json();
+                    if (errorData.error) {
+                        errorMessage = errorData.error;
+                    }
+                } catch (e) {
+                    // 如果无法解析错误响应，使用默认错误信息
+                    console.error('无法解析错误响应:', e);
+                }
+                throw new Error(errorMessage);
             }
             
-            // 返回JSON响应
-            return response.json();
+            // 尝试解析JSON响应
+            let data;
+            try {
+                const responseText = await response.text();
+                console.log('原始响应文本:', responseText);
+                
+                // 尝试解析JSON
+                data = JSON.parse(responseText);
+                console.log('解析后的JSON:', data);
+            } catch (parseError) {
+                console.error('JSON解析失败:', parseError);
+                throw new Error('服务器响应格式错误，无法解析JSON');
+            }
+            
+            return data;
+            
         } catch (error) {
-            console.error('Fetch错误:', error);
+            console.error('API调用失败:', error);
             
-            // 提供更友好的错误信息
-            if (error instanceof TypeError && error.message === 'Failed to fetch') {
-                throw new Error('无法连接到AI服务，请稍后重试');
-            }
-            throw new Error(`服务连接异常: ${error.message}`);
+            // 重新抛出错误，让上层处理
+            throw error;
         }
     }
-    
-    // ===== 以下函数保持不变 =====
     
     /**
      * 添加消息到聊天界面
@@ -140,20 +172,25 @@ document.addEventListener('DOMContentLoaded', function() {
      */
     function addMessageToChat(role, content, isMarkdown = false) {
         const messageDiv = document.createElement('div');
+        
         if (role === 'assistant') {
+            // AI消息样式
             messageDiv.className = 'message ai-message';
             messageDiv.style.display = 'flex';
             messageDiv.style.alignItems = 'flex-start';
 
+            // 添加猫咪头像
             const avatar = document.createElement('img');
             avatar.src = 'https://smallgoodgood.top/images/23.jpg';
             avatar.className = 'cat-avatar';
             messageDiv.appendChild(avatar);
 
+            // 消息内容容器
             const contentDiv = document.createElement('div');
             contentDiv.style.flex = '1';
+            
             if (isMarkdown) {
-                // 支持 \\( ... \\) 行内公式和 \\[ ... \\] 块公式
+                // 处理数学公式并渲染Markdown
                 let mathContent = content
                     .replace(/\\\((.+?)\\\)/g, function(match, p1) {
                         return '$' + p1 + '$';
@@ -167,30 +204,35 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             messageDiv.appendChild(contentDiv);
         } else {
+            // 用户消息样式
             messageDiv.className = 'message user-message';
             const messageContent = document.createElement('div');
             messageContent.textContent = content;
             messageDiv.appendChild(messageContent);
         }
 
+        // 添加时间戳
         const messageTime = document.createElement('div');
         messageTime.className = 'message-time';
         messageTime.textContent = new Date().toLocaleTimeString();
         messageDiv.appendChild(messageTime);
 
+        // 添加到聊天历史
         chatHistory.appendChild(messageDiv);
         chatHistory.scrollTop = chatHistory.scrollHeight;
 
-        // 高亮代码块
+        // 高亮代码块（如果有）
         if (isMarkdown && role === 'assistant') {
             messageDiv.querySelectorAll('pre code').forEach((block) => {
                 hljs.highlightElement(block);
             });
         }
 
-        // 渲染数学公式（MathJax）
+        // 渲染数学公式（如果MathJax可用）
         if (window.MathJax && typeof MathJax.typesetPromise === 'function') {
-            MathJax.typesetPromise([messageDiv]);
+            MathJax.typesetPromise([messageDiv]).catch(err => {
+                console.error('MathJax渲染错误:', err);
+            });
         }
     }
 
@@ -215,6 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const thinkingText = document.createElement('span');
         thinkingText.textContent = '正在思考...';
         contentDiv.appendChild(thinkingText);
+        
         const loadingSpan = document.createElement('span');
         loadingSpan.className = 'loading';
         contentDiv.appendChild(loadingSpan);
@@ -247,18 +290,20 @@ document.addEventListener('DOMContentLoaded', function() {
      * 清空聊天历史
      */
     function clearChatHistory() {
-        // 保留欢迎消息
+        // 保留欢迎消息（如果有）
         const welcomeMessage = chatHistory.querySelector('.ai-message');
         chatHistory.innerHTML = '';
         if (welcomeMessage) {
             chatHistory.appendChild(welcomeMessage.cloneNode(true));
         }
         conversationHistory = [];
+        console.log('聊天历史已清空');
     }
     
-    // ===== 事件监听器（保持不变）=====
+    // ===== 事件监听器 =====
     sendBtn.addEventListener('click', sendMessage);
     
+    // Enter键发送消息（Shift+Enter换行）
     userInput.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
@@ -266,6 +311,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // 清空按钮
     clearBtn.addEventListener('click', clearChatHistory);
     
     // 限制输入字数为500
@@ -290,9 +336,14 @@ document.addEventListener('DOMContentLoaded', function() {
             charCountTip.style.color = '#888';
         }
     }
+    
     userInput.addEventListener('input', updateCharCount);
     updateCharCount();
 
     // 自动聚焦到输入框
     userInput.focus();
+    
+    // 输出版本信息到控制台
+    console.log('Chat Zenith 前端已加载');
+    console.log('API端点:', API_URL);
 });
