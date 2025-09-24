@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== 主要修改部分：更换API端点 =====
     // 原先的Cloudflare Worker地址已被替换为阿里云服务器的Nginx反向代理地址
     // 使用HTTP协议，因为博客可能是HTTPS，这里需要根据实际情况调整
-    const API_URL = 'http://39.103.58.123/api/langchain/chat';
+    const API_URL = 'https://api.smallgoodgood.top/chat';
     
     // 如果你的博客是HTTPS，浏览器可能会阻止HTTP请求（混合内容问题）
     // 如果遇到这个问题，有两个解决方案：
