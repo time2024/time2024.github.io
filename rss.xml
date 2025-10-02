@@ -9,8 +9,57 @@
     <atom:link href="https://smallgoodgood.top/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>未经审视的人生是不值得过的人生</description>
-    <pubDate>Mon, 22 Sep 2025 04:07:03 GMT</pubDate>
+    <pubDate>Thu, 02 Oct 2025 06:17:56 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Langchain在阿里云与树莓派边缘计算环境中的集成实践</title>
+      <link>https://smallgoodgood.top/2025/10/01/Langchain%E5%9C%A8%E9%98%BF%E9%87%8C%E4%BA%91%E4%B8%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E7%8E%AF%E5%A2%83%E4%B8%AD%E7%9A%84%E9%9B%86%E6%88%90%E5%AE%9E%E8%B7%B5/</link>
+      <guid>https://smallgoodgood.top/2025/10/01/Langchain%E5%9C%A8%E9%98%BF%E9%87%8C%E4%BA%91%E4%B8%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E7%8E%AF%E5%A2%83%E4%B8%AD%E7%9A%84%E9%9B%86%E6%88%90%E5%AE%9E%E8%B7%B5/</guid>
+      <pubDate>Wed, 01 Oct 2025 12:00:00 GMT</pubDate>
+      
+      <description>&lt;p&gt;Chat-Zenith是一个部署在树莓派边缘设备上的智能对话系统，通过Langchain框架整合DeepSeek大语言模型，能够搜索并理解博客内容，为用户提供精准的技术问答服务。项目采用混合云架构，结合阿里云ECS网关与本地边缘计算，实现了低成本、高可用的AI服务部署方案。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86/">知识</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/10/01/Langchain%E5%9C%A8%E9%98%BF%E9%87%8C%E4%BA%91%E4%B8%8E%E6%A0%91%E8%8E%93%E6%B4%BE%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E7%8E%AF%E5%A2%83%E4%B8%AD%E7%9A%84%E9%9B%86%E6%88%90%E5%AE%9E%E8%B7%B5/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Windows无法格式化SD卡解决方案</title>
+      <link>https://smallgoodgood.top/2025/10/01/sd/</link>
+      <guid>https://smallgoodgood.top/2025/10/01/sd/</guid>
+      <pubDate>Wed, 01 Oct 2025 06:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;前言：这两天在使用windows常规的格式化方法格式化SD卡时遇到了无法格式化SD卡的情况，于是我们可以使用Windows内置的Diskpart工具来强制格式化SD卡。&lt;/p&gt;
+&lt;p&gt;首先打开命</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86/">知识</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/10/01/sd/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>绝区零</title>
