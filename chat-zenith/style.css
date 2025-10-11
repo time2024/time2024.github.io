@@ -53,6 +53,11 @@ header p {
     border-radius: 18px;
     max-width: 80%;
     word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    /* 添加这些关键属性防止内容溢出 */
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .user-message {
@@ -65,6 +70,9 @@ header p {
     background-color: #f1f1f1;
     margin-right: auto;
     border-bottom-left-radius: 5px;
+    /* 确保AI消息内容不溢出 */
+    display: flex;
+    flex-direction: column;
 }
 
 .message-time {
@@ -94,7 +102,7 @@ textarea {
     resize: none;
     font-family: inherit;
     min-height: 60px;
-    padding-bottom: 48px; /* 预留按钮高度 */
+    padding-bottom: 48px;
 }
 
 .button-group {
@@ -172,9 +180,15 @@ footer {
     to { transform: rotate(360deg); }
 }
 
-/* 在原有样式基础上添加以下内容 */
+/* Markdown渲染样式 - 添加防溢出处理 */
+.message div {
+    /* 确保所有内容都不会溢出 */
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
 
-/* Markdown渲染样式 */
 .message div p {
     margin: 0.5em 0;
 }
@@ -191,6 +205,9 @@ footer {
     padding: 1em;
     overflow-x: auto;
     margin: 0.5em 0;
+    /* 添加最大宽度和滚动 */
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .message div code {
@@ -199,12 +216,18 @@ footer {
     border-radius: 3px;
     padding: 0.2em 0.4em;
     font-size: 0.9em;
+    /* 内联代码也要能换行 */
+    word-break: break-all;
+    overflow-wrap: break-word;
 }
 
 .message div pre code {
     background-color: transparent;
     padding: 0;
     border-radius: 0;
+    /* 代码块中的代码保持正常 */
+    word-break: normal;
+    white-space: pre;
 }
 
 .message div blockquote {
@@ -212,18 +235,26 @@ footer {
     color: #6a737d;
     padding: 0 1em;
     margin: 0.5em 0;
+    overflow-wrap: break-word;
 }
 
 .message div table {
     border-collapse: collapse;
     margin: 0.5em 0;
     width: 100%;
+    /* 表格也要处理溢出 */
+    max-width: 100%;
+    display: block;
+    overflow-x: auto;
 }
 
 .message div table th,
 .message div table td {
     border: 1px solid #dfe2e5;
     padding: 6px 13px;
+    /* 表格单元格内容换行 */
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .message div table tr {
@@ -244,6 +275,9 @@ footer {
     margin: 0.8em 0 0.4em 0;
     font-weight: 600;
     line-height: 1.25;
+    /* 标题也要能换行 */
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .message div h1 {
@@ -265,6 +299,9 @@ footer {
 .message div a {
     color: #0366d6;
     text-decoration: none;
+    /* 链接要能够断行 */
+    word-break: break-all;
+    overflow-wrap: break-word;
 }
 
 .message div a:hover {
@@ -273,27 +310,35 @@ footer {
 
 /* 猫娘消息特殊样式 */
 .ai-message {
-  background-color: #fff0f5 !important;
-  border-left: 3px solid #ffb6c1;
+    background-color: #fff0f5 !important;
+    border-left: 3px solid #ffb6c1;
 }
 
 .cat-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-  float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    flex-shrink: 0; /* 防止头像被压缩 */
+}
+
+/* AI消息内容容器 */
+.ai-message > div:not(.message-time) {
+    flex: 1;
+    min-width: 0; /* 这个很重要，允许flex子元素缩小 */
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 /* 用户消息强调主人身份 */
 .user-message {
-  background-color: #f0f8ff !important;
-  border-right: 3px solid #4682b4;
+    background-color: #f0f8ff !important;
+    border-right: 3px solid #4682b4;
 }
 
 .user-message::before {
-  content: "博士";
-  font-weight: bold;
-  color: #1e90ff;
-  margin-right: 5px;
+    content: "博士";
+    font-weight: bold;
+    color: #1e90ff;
+    margin-right: 5px;
 }
