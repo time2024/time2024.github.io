@@ -9,7 +9,7 @@
     <atom:link href="https://smallgoodgood.top/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>未经审视的人生是不值得过的人生</description>
-    <pubDate>Thu, 02 Oct 2025 06:17:56 GMT</pubDate>
+    <pubDate>Tue, 14 Oct 2025 11:12:44 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -51,27 +51,6 @@
       
       
       <comments>https://smallgoodgood.top/2025/10/01/sd/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>绝区零</title>
-      <link>https://smallgoodgood.top/2025/09/22/%E5%9B%BE%E7%89%87%E5%88%86%E4%BA%AB/</link>
-      <guid>https://smallgoodgood.top/2025/09/22/%E5%9B%BE%E7%89%87%E5%88%86%E4%BA%AB/</guid>
-      <pubDate>Mon, 22 Sep 2025 06:00:00 GMT</pubDate>
-      
-      <description>&lt;p&gt;&lt;img src=&quot;/images/43.png&quot;&gt;</description>
-      
-      
-      
-      
-      <category domain="https://smallgoodgood.top/categories/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/">记录生活</category>
-      
-      
-      <category domain="https://smallgoodgood.top/tags/%E6%9D%82%E8%B0%88/">杂谈</category>
-      
-      
-      <comments>https://smallgoodgood.top/2025/09/22/%E5%9B%BE%E7%89%87%E5%88%86%E4%BA%AB/#disqus_thread</comments>
       
     </item>
     
@@ -435,8 +414,8 @@
       <guid>https://smallgoodgood.top/2025/02/07/%E4%BD%BF%E7%94%A8BearPi-Pico%20H3863%E9%A9%B1%E5%8A%A83.52inch%20e-Paper%20HAT/</guid>
       <pubDate>Thu, 06 Feb 2025 16:00:00 GMT</pubDate>
       
-      <description>&lt;blockquote&gt;
-&lt;p&gt;先祝大家新年快乐🎉&lt;/p&gt;</description>
+      <description>&lt;p&gt;先祝大家新年快乐🎉&lt;/p&gt;
+&lt;p&gt;微雪的官网已经给出了常见单片机使用3.52inch e-Paper的例程，我们在此基础上对其中的库文件以及例程进行了修改，使其能够适配BearPi-Pico H3863</description>
       
       
       

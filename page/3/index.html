@@ -62,7 +62,119 @@ lightGallery(document.getElementById('post-bg'), {
 document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸红心效果 -->
 <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
 <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
-<script type="text/javascript" src="/js/firework.js"></script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss.xml" title="Zenith" type="application/rss+xml">
+<script type="text/javascript" src="/js/firework.js"></script><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/rss.xml" title="Zenith" type="application/rss+xml">
 </head><body><script>(function () {  
     var a_idx = 0;  
     window.onclick = function (event) {  
@@ -109,11 +221,11 @@ document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸�
         //- return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";  
         return "(255,240,245)";
     }  
-}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li><li class="navItem"><a class="navBlock" href="/chat-zenith"><span class="navItemTitle">AI</span></a></li></ol></nav></header><article><div class="posts"><a class="recent-post" href="/2025/01/19/Debian%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></object></span><span class="tags"><object><a href="/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</a></object><object><a href="/tags/Linux/">Linux</a></object><object><a href="/tags/Debian/">Debian</a></object></span><time datetime="2025-01-18T16:00:00.000Z">2025-01-19</time></div><h1 class="recent-title">Debian 常用命令</h1><div class="recent-excerpt"><hr><p>以下是 Debian 系统（包括 Raspberry Pi OS 等基于 Debian 的发行版）中一些常用命令的总结，涵盖了文件操作、系统管理、网络配置等方面</div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2025/01/16/frp/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></object></span><span class="tags"><object><a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></object><object><a href="/tags/%E5%8D%8E%E4%B8%BA/">华为</a></object></span><time datetime="2025-01-15T16:00:00.000Z">2025-01-16</time></div><h1 class="recent-title">基于华为云服务器与frp实现内网穿透连接树莓派</h1><div class="recent-excerpt"><hr><p>放寒假了~ 买了好久的树莓派，终于可以开始玩了。</p></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2025/01/01/2024-2025/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/">记录生活</a></object></span><span class="tags"><object><a href="/tags/%E6%9D%82%E8%B0%88/">杂谈</a></object></span><time datetime="2024-12-31T16:00:00.000Z">2025-01-01</time></div><h1 class="recent-title">2024-2025年度总结</h1><div class="recent-excerpt"><hr><p>时间过得真快，2024也过去了</p>
+}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li><li class="navItem"><a class="navBlock" href="/chat-zenith"><span class="navItemTitle">AI</span></a></li></ol></nav></header><article><div class="posts"><a class="recent-post" href="/2025/01/16/frp/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></object></span><span class="tags"><object><a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></object><object><a href="/tags/%E5%8D%8E%E4%B8%BA/">华为</a></object></span><time datetime="2025-01-15T16:00:00.000Z">2025-01-16</time></div><h1 class="recent-title">基于华为云服务器与frp实现内网穿透连接树莓派</h1><div class="recent-excerpt"><hr><p>放寒假了~ 买了好久的树莓派，终于可以开始玩了。</p></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2025/01/01/2024-2025/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/">记录生活</a></object></span><span class="tags"><object><a href="/tags/%E6%9D%82%E8%B0%88/">杂谈</a></object></span><time datetime="2024-12-31T16:00:00.000Z">2025-01-01</time></div><h1 class="recent-title">2024-2025年度总结</h1><div class="recent-excerpt"><hr><p>时间过得真快，2024也过去了</p>
 <p>浅浅总结一下2024吧</p>
 <p>To be continue !</p></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/12/26/%E7%BE%8E%E8%B5%9B%E8%8B%9F%E6%B4%BB%E5%A4%A7%E6%B3%95/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></object></span><span class="tags"><object><a href="/tags/%E8%B5%84%E6%96%99/">资料</a></object></span><time datetime="2024-12-26T04:00:00.000Z">2024-12-26</time></div><h1 class="recent-title">美赛苟活大法</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/12/21/%E5%9F%BA%E4%BA%8E%E9%B2%B2%E9%B9%8F%E6%95%B0%E5%AD%A6%E5%BA%93%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BD%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%8A%A0%E9%80%9F%E6%96%B9%E6%B3%95%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%AE%9E%E8%B7%B5/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></object></span><span class="tags"><object><a href="/tags/%E5%8D%8E%E4%B8%BA/">华为</a></object><object><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></object><object><a href="/tags/%E8%AE%BA%E6%96%87/">论文</a></object><object><a href="/tags/%E9%B2%B2%E9%B9%8F/">鲲鹏</a></object></span><time datetime="2024-12-21T04:00:00.000Z">2024-12-21</time></div><h1 class="recent-title">基于鲲鹏数学库的高性能数学计算加速方法研究与实践</h1><div class="recent-excerpt"><hr><p>本博客介绍了我撰写的《基于鲲鹏数学库的高性能数学计算加速方法研究与实践》</div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/11/20/copy_wrong/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></object></span><span class="tags"><object><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%97%AE%E9%A2%98/">计算机问题</a></object></span><time datetime="2024-11-19T16:00:00.000Z">2024-11-20</time></div><h1 class="recent-title">复制黏贴时内容异常出错原因分析</h1><div class="recent-excerpt"><hr><p>最近我在进行复制黏贴时出现了多次的错误</p></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/11/19/Linux/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></object></span><span class="tags"><object><a href="/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</a></object><object><a href="/tags/Linux/">Linux</a></object></span><time datetime="2024-11-18T16:00:00.000Z">2024-11-19</time></div><h1 class="recent-title">Linux 常用命令</h1><div class="recent-excerpt"><hr><p>本文介绍了Linux的一些常用的命令，推荐在实践中学</div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/11/17/C/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></object></span><span class="tags"><object><a href="/tags/C%E8%AF%AD%E8%A8%80/">C语言</a></object><object><a href="/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</a></object><object><a href="/tags/OurEDA/">OurEDA</a></object></span><time datetime="2024-11-16T16:00:00.000Z">2024-11-17</time></div><h1 class="recent-title">OurEDA例会-C语言知识点总结</h1><div class="recent-excerpt"><hr><p>这是我主持的OurEDA例会的内容整理</p></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/11/14/BMX055/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></object></span><span class="tags"><object><a href="/tags/%E7%A1%AC%E4%BB%B6/">硬件</a></object><object><a href="/tags/stm32f407/">stm32f407</a></object></span><time datetime="2024-11-13T16:00:00.000Z">2024-11-14</time></div><h1 class="recent-title">stm32f407驱动BMX055芯片记录</h1><div class="recent-excerpt"><hr><p>前两天BOSS交给我一个BMX055芯片让我试试能不能用</p></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/10/29/stl/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></object></span><span class="tags"><object><a href="/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</a></object><object><a href="/tags/%E7%AE%97%E6%B3%95/">算法</a></object></span><time datetime="2024-10-28T16:00:00.000Z">2024-10-29</time></div><h1 class="recent-title">C++ STL常用内容总结</h1><div class="recent-excerpt"><hr><h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>这是关于C++ STL常用内容总结</p>
 <p><strong>强调使用方法</strong>，并不强调原理</p>
-<p>本篇博客是我用于个人学习总结用的</p></div><span class="read-more">阅读文章 +</span></object></a></div><div id="paginator"><a class="extend prev" rel="prev" href="/page/2/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next</a></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Zenith</a></h1><div id="description"><p>未经审视的人生是不值得过的人生</p></div></div><div id="aside-block"><section id="total"><a id="total-archives" href="/archives"><span class="total-title">文章 总数:</span><span class="total-number">34</span></a><div id="total-tags"><span class="total-title">标签:</span><span class="total-number">25</span></div><div id="total-categories"><span class="total-title">分类:</span><span class="total-number">2</span></div></section></div><footer><nobr><span class="icp-title">♖</span><a class="icp-content" href="https://smallgoodgood.top/about/">关于本站</a></nobr><br><nobr>Pubulished by <a href="http://smallgoodgood.top">Zenith <br></a></nobr><wbr><!-- 添加网站运行时间 --><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now = new Date();
+<p>本篇博客是我用于个人学习总结用的</p></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/10/27/algorithm/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></object></span><span class="tags"><object><a href="/tags/%E7%AE%97%E6%B3%95/">算法</a></object><object><a href="/tags/%E9%94%99%E9%A2%98%E6%95%B4%E7%90%86/">错题整理</a></object></span><time datetime="2024-10-26T16:00:00.000Z">2024-10-27</time></div><h1 class="recent-title">算法题的错题整理及反思</h1><div class="recent-excerpt"><hr><p>这是关于算法题的整理及思考</p></div><span class="read-more">阅读文章 +</span></object></a></div><div id="paginator"><a class="extend prev" rel="prev" href="/page/2/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next</a></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Zenith</a></h1><div id="description"><p>未经审视的人生是不值得过的人生</p></div></div><div id="aside-block"><section id="total"><a id="total-archives" href="/archives"><span class="total-title">文章 总数:</span><span class="total-number">33</span></a><div id="total-tags"><span class="total-title">标签:</span><span class="total-number">25</span></div><div id="total-categories"><span class="total-title">分类:</span><span class="total-number">2</span></div></section></div><footer><nobr><span class="icp-title">♖</span><a class="icp-content" href="https://smallgoodgood.top/about/">关于本站</a></nobr><br><nobr>Pubulished by <a href="http://smallgoodgood.top">Zenith <br></a></nobr><wbr><!-- 添加网站运行时间 --><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now = new Date();
 
 function createtime() {
   var grt = new Date("02/09/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间 
