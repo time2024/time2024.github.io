@@ -9,8 +9,29 @@
     <atom:link href="https://smallgoodgood.top/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>未经审视的人生是不值得过的人生</description>
-    <pubDate>Tue, 14 Oct 2025 11:12:44 GMT</pubDate>
+    <pubDate>Wed, 15 Oct 2025 13:26:20 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>从langchain到langgraph-ai应用实战</title>
+      <link>https://smallgoodgood.top/2025/10/15/%E4%BB%8Elangchain%E5%88%B0langgraph/</link>
+      <guid>https://smallgoodgood.top/2025/10/15/%E4%BB%8Elangchain%E5%88%B0langgraph/</guid>
+      <pubDate>Wed, 15 Oct 2025 12:00:00 GMT</pubDate>
+      
+      <description>&lt;p&gt;软件工程分享会：从langchain到langgraph-ai应用实战&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86/">知识</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/10/15/%E4%BB%8Elangchain%E5%88%B0langgraph/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Langchain在阿里云与树莓派边缘计算环境中的集成实践</title>
