@@ -9,11 +9,11 @@
     <atom:link href="https://smallgoodgood.top/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>未经审视的人生是不值得过的人生</description>
-    <pubDate>Sat, 18 Oct 2025 12:41:49 GMT</pubDate>
+    <pubDate>Sat, 18 Oct 2025 12:51:47 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>AISnap</title>
+      <title>AISnap——智能格式转换平台、便捷分享工具</title>
       <link>https://smallgoodgood.top/2025/10/18/aisnap/</link>
       <guid>https://smallgoodgood.top/2025/10/18/aisnap/</guid>
       <pubDate>Sat, 18 Oct 2025 12:00:00 GMT</pubDate>
@@ -465,9 +465,9 @@
       <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
       
       
-      <category domain="https://smallgoodgood.top/tags/%E7%A1%AC%E4%BB%B6/">硬件</category>
-      
       <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</category>
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%A1%AC%E4%BB%B6/">硬件</category>
       
       <category domain="https://smallgoodgood.top/tags/%E5%8D%8E%E4%B8%BA/">华为</category>
       
@@ -490,11 +490,11 @@
       <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
       
       
-      <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</category>
-      
       <category domain="https://smallgoodgood.top/tags/Linux/">Linux</category>
       
       <category domain="https://smallgoodgood.top/tags/Debian/">Debian</category>
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</category>
       
       
       <comments>https://smallgoodgood.top/2025/01/19/Debian%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/#disqus_thread</comments>
@@ -637,9 +637,9 @@
       <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
       
       
-      <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</category>
-      
       <category domain="https://smallgoodgood.top/tags/Linux/">Linux</category>
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</category>
       
       
       <comments>https://smallgoodgood.top/2024/11/19/Linux/#disqus_thread</comments>
@@ -660,9 +660,9 @@
       <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
       
       
-      <category domain="https://smallgoodgood.top/tags/C%E8%AF%AD%E8%A8%80/">C语言</category>
-      
       <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">知识总结</category>
+      
+      <category domain="https://smallgoodgood.top/tags/C%E8%AF%AD%E8%A8%80/">C语言</category>
       
       <category domain="https://smallgoodgood.top/tags/OurEDA/">OurEDA</category>
       
