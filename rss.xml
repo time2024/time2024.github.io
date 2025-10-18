@@ -9,8 +9,29 @@
     <atom:link href="https://smallgoodgood.top/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>未经审视的人生是不值得过的人生</description>
-    <pubDate>Wed, 15 Oct 2025 13:26:20 GMT</pubDate>
+    <pubDate>Sat, 18 Oct 2025 12:41:49 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>AISnap</title>
+      <link>https://smallgoodgood.top/2025/10/18/aisnap/</link>
+      <guid>https://smallgoodgood.top/2025/10/18/aisnap/</guid>
+      <pubDate>Sat, 18 Oct 2025 12:00:00 GMT</pubDate>
+      
+      <description>&lt;p&gt;大连理工大学第一届Vibe Coding Hackathon“灵码杯”参赛作品：AISnap——智能格式转换平台、便捷分享工具（已接入通义千问大模型）&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%9F%A5%E8%AF%86/">知识</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/10/18/aisnap/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>从langchain到langgraph-ai应用实战</title>
