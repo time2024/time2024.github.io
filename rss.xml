@@ -9,8 +9,29 @@
     <atom:link href="https://smallgoodgood.top/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>未经审视的人生是不值得过的人生</description>
-    <pubDate>Sat, 18 Oct 2025 12:51:47 GMT</pubDate>
+    <pubDate>Wed, 19 Nov 2025 03:52:40 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>基于C语言的javascript语法解析器</title>
+      <link>https://smallgoodgood.top/2025/11/19/js-parser/</link>
+      <guid>https://smallgoodgood.top/2025/11/19/js-parser/</guid>
+      <pubDate>Wed, 19 Nov 2025 06:00:00 GMT</pubDate>
+      
+      <description>&lt;p&gt;本博客记录本人完成的基于vibe coding的编译原理课程大作业：基于C语言的javascript语法解析器。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://smallgoodgood.top/categories/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      
+      <category domain="https://smallgoodgood.top/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</category>
+      
+      
+      <comments>https://smallgoodgood.top/2025/11/19/js-parser/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>AISnap——智能格式转换平台、便捷分享工具</title>

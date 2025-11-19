@@ -1,0 +1,597 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>基于C语言的javascript语法解析器 | Zenith</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light' || window.matchMedia('(prefers-color-scheme:light)').matches)
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark' || window.matchMedia('(prefers-color-scheme:dark)').matches)
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/yellow.jpg');
+ --light-background: url('/img/purple.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><!-- 爆炸红心效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss.xml" title="Zenith" type="application/rss+xml">
+</head><body><script>(function () {  
+    var a_idx = 0;  
+    window.onclick = function (event) {  
+        var a = new Array("这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "这一路上走走停停","顺着少年漂流的痕迹","迈出车站的前一刻","竟有些犹豫","不禁笑这近乡情怯","仍无法避免","而长野的天","依旧那么暖","风吹起了从前",
+        "从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不得真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","逆着光行走 任风吹雨打","短短的路走走停停","也有了几分的距离","不知抚摸的是故事","还是段心情","也许期待的不过是","与时间为敌","再次见到你","微凉晨光里","笑得很甜蜜","从前初识这世间","万般流连","看着天边似在眼前","也甘愿赴汤蹈火去走它一遍","如今走过这世间","万般流连","翻过岁月不同侧脸","措不及防闯入你的笑颜","我曾难自拔于世界之大","也沉溺于其中梦话","不做真假 不做挣扎 不惧笑话","我曾将青春翻涌成她","也曾指尖弹出盛夏","心之所动 且就随缘去吧","晚风吹起你鬓间的白发","抚平回忆留下的疤","你的眼中 明暗交杂 一笑生花","暮色遮住你蹒跚的步伐","走进床头藏起的画","画中的你 低着头说话","我仍感叹于世界之大","也沉醉于儿时情话","不剩真假 不做挣扎 无谓笑话","我终将青春还给了她","连同指尖弹出的盛夏","心之所动 就随风去了","以爱之名 你还愿意吗",
+        "曾经有人让我听这首歌","可是那时的我还不谙情事","也没有真正认真的听完整首歌","直到后来","分开后再听时才发现","原来我错过了","曾经的阿芒","你还好吗");  
+
+        var heart = document.createElement("p"); // 创建p元素，这里从b改为p  
+        heart.onselectstart = function() { return false; }; // 简化防止拖动的代码  
+
+        document.body.appendChild(heart).textContent = a[a_idx]; // 使用textContent代替innerHTML，因为这里只是文本  
+        a_idx = (a_idx + 1) % a.length;  
+        heart.style.cssText = "position: fixed;left:-100%;"; // 初始位置  
+
+        var f = 16, // 字体大小  
+            x = event.clientX - f / 2, // 横坐标  
+            y = event.clientY - f, // 纵坐标  
+            c = randomColor(), // 随机颜色  
+            a = 1, // 透明度  
+            s = 1.2; // 放大缩小比例  
+
+        var timer = setInterval(function () { // 添加定时器  
+            if (a <= 0) {  
+                document.body.removeChild(heart);  
+                clearInterval(timer);  
+            } else {  
+                heart.style.cssText = "font-size:" + f + "px;cursor: default;position: fixed;color:" +  
+                    c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +  
+                    s + ");";  
+
+                y--;  
+                a -= 0.016;  
+                s += 0.002;  
+            }  
+        }, 15);  
+    }  
+
+    // 随机颜色函数  
+    function randomColor() {  
+        //- return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";  
+        return "(255,240,245)";
+    }  
+}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li><li class="navItem"><a class="navBlock" href="/chat-zenith"><span class="navItemTitle">AI</span></a></li><li class="navItem"><a class="navBlock" href="/answer"><span class="navItemTitle">答案之书</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>基于C语言的javascript语法解析器</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2025-11-19T06:00:00.000Z" id="date"> 2025-11-19</time></div></span><br><span>Last Update: <div class="control"><time datetime="2025-11-19T03:52:40.165Z" id="updated"> 2025-11-19</time></div></span><br><span>Word Count: <div class="control">4.1k</div></span><br><span>Read Time: <div class="control">18 min</div></span></div></div><hr><div id="post-content"><p>本博客记录本人完成的基于vibe coding的编译原理课程大作业：基于C语言的javascript语法解析器。</p>
+<span id="more"></span>
+
+<p>工具：re2c+bison（Flex不支持unicode定义，javascript中的多种符合是应用unicode定义的）</p>
+<p>目标：可以判断输入的javascript脚本是否符合语法；针对省略的分号，实现ASI(Automatic Semicolon Insertion) 机制。</p>
+<p>规则：<a target="_blank" rel="noopener" href="https://tc39.es/ecma262/">https://tc39.es/ecma262/</a></p>
+<p>接下来是整个基于C语言的javascript语法解析器的项目介绍：</p>
+<h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><p>这是一个基于C语言的JavaScript语法解析器，使用re2c进行词法分析和bison进行语法分析，完全遵循ECMAScript规范并实现了ASI(自动分号插入)机制。</p>
+<p><strong>完整的项目源代码压缩包：</strong><a href="https://smallgoodgood.top/document/js-parser.zip"> js-parser.zip 项目下载</a></p>
+<p>包含内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">js-parser/<br>├── src/<br>│   ├── ast.h         			 - AST节点定义<br>│   ├── ast.c         			 - AST实现<br>│   ├── lexer.re     		     - re2c词法分析器<br>│   ├── parser.y       		     - bison语法分析器<br>│   └── main.c        			 - 主程序<br>├── tests/<br>│   ├── positive/     			 - 正向测试用例<br>│   │   ├── basic.js<br>│   │   ├── functions.js<br>│   │   ├── asi_return.js<br>│   │   ├── asi_statements.js<br>│   │   └── unicode.js<br>│   └── negative/      			 - 负向测试用例<br>│       ├── invalid_syntax.js<br>│       └── asi_ambiguous.js<br>└── Makefile          <br></code></pre></td></tr></table></figure>
+
+<h2 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h2><ul>
+<li><p>整体流程</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">JavaScript源代码<br>    ↓<br>词法分析器 (lexer.re - re2c)<br>    ↓<br>Token流 + ASI处理<br>    ↓<br>语法分析器 (parser.y - bison)<br>    ↓<br>抽象语法树 (AST)<br>    ↓<br>语法验证结果<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>核心组件</p>
+<ol>
+<li><p><strong>词法分析器 (src&#x2F;lexer.re)</strong></p>
+<ul>
+<li>使用re2c生成，支持UTF-8编码</li>
+<li>识别JavaScript的所有词法单元（关键字、标识符、字面量、运算符等）</li>
+<li>实现ASI的词法层处理（跟踪换行符）</li>
+<li>关键变量：<code>seen_newline</code>、<code>last_token</code></li>
+</ul>
+</li>
+<li><p><strong>语法分析器 (src&#x2F;parser.y)</strong></p>
+<ul>
+<li>使用bison生成LALR(1)解析器</li>
+<li>定义完整的JavaScript语法规则</li>
+<li>实现ASI的语法层处理（受限产生式）</li>
+<li>生成抽象语法树</li>
+</ul>
+</li>
+<li><p><strong>AST模块 (src&#x2F;ast.c&#x2F;h)</strong></p>
+<ul>
+<li>定义26种AST节点类型</li>
+<li>提供38个创建函数</li>
+<li>实现AST打印和内存管理</li>
+</ul>
+</li>
+<li><p><strong>主程序 (src&#x2F;main.c)</strong></p>
+<ul>
+<li><p>文件读取和命令行参数处理</p>
+</li>
+<li><p>调用解析器并输出结果</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="使用方法："><a href="#使用方法：" class="headerlink" title="使用方法："></a>使用方法：</h2><ul>
+<li><p>步骤一：</p>
+<p>安装依赖</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt-get update<br><span class="hljs-built_in">sudo</span> apt-get install build-essential re2c bison<br></code></pre></td></tr></table></figure>
+
+<p>验证安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">re2c --version   <span class="hljs-comment"># 应显示版本号 (需要 &gt;= 1.0)</span><br>bison --version  <span class="hljs-comment"># 应显示版本号 (需要 &gt;= 3.0)</span><br>gcc --version    <span class="hljs-comment"># 应显示版本号</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>步骤二：</p>
+<p>下载文件，解压并编译</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> js-parser<br>make<br></code></pre></td></tr></table></figure>
+
+<p>应该看到：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> -p build<br>gcc -Wall -Wextra -g -std=c11 -c src/main.c -o build/main.o<br>gcc -Wall -Wextra -g -std=c11 -c src/ast.c -o build/ast.o<br>re2c -o src/lexer.c -8 --input-encoding utf8 src/lexer.re<br>bison -d -v -o src/parser.tab.c src/parser.y<br>src/parser.y: warning: 48 <span class="hljs-built_in">shift</span>/reduce conflicts [-Wconflicts-sr]<br>src/parser.y: warning: 38 reduce/reduce conflicts [-Wconflicts-rr]<br>src/parser.y: note: rerun with option <span class="hljs-string">&#x27;-Wcounterexamples&#x27;</span> to generate conflict counterexamples<br>gcc -Wall -Wextra -g -std=c11 -Wno-unused-variable -Wno-unused-function -c src/lexer.c -o build/lexer.o<br>gcc -Wall -Wextra -g -std=c11 -Wno-unused-function -c src/parser.tab.c -o build/parser.tab.o<br>gcc -Wall -Wextra -g -std=c11 -o js-parser build/main.o build/ast.o build/lexer.o build/parser.tab.o<br><br>======================================<br>✓ Build successful!<br>======================================<br></code></pre></td></tr></table></figure>
+
+<p>编译过程说明：</p>
+<ol>
+<li>re2c生成 <code>src/lexer.c</code>（词法分析器）</li>
+<li>bison生成 <code>src/parser.tab.c</code> 和 <code>src/parser.tab.h</code>（语法分析器）</li>
+<li>gcc编译所有C文件</li>
+<li>链接生成可执行文件 <code>js-parser</code></li>
+</ol>
+</li>
+<li><p>步骤三：</p>
+<ul>
+<li><p>基本用法:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 基本用法</span><br><span class="hljs-comment"># 解析JavaScript文件</span><br>./js-parser tests/positive/basic.js<br></code></pre></td></tr></table></figure>
+
+<p>应该看到输出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">Parsing <span class="hljs-string">&#x27;tests/positive/basic.js&#x27;</span>...<br>✓ Parsing successful!<br>  Total lines: 16<br></code></pre></td></tr></table></figure>
+
+</li>
+<li><p>详细模式（查看AST）:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用 -v 或 --verbose 显示完整的AST</span><br>./js-parser -v tests/positive/basic.js<br></code></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Parsing &#x27;tests/positive/basic.js&#x27;...<br>✓ Parsing successful!<br>  Total lines: 16<br><br>=== Abstract Syntax Tree ===<br>Program<br>  StatementList (4 statements)<br>    VariableDeclaration(var) name=x<br>      Initializer:<br>        Literal (number) 42<br>    VariableDeclaration(let) name=y<br>      Initializer:<br>        Literal (string) &quot;hello&quot;<br>    ...<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>运行所有测试:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">make <span class="hljs-built_in">test</span><br></code></pre></td></tr></table></figure>
+
+<p>这将：</p>
+<ol>
+<li>运行所有正向测试（应该成功）</li>
+<li>运行所有负向测试（应该失败）</li>
+<li>显示测试结果摘要</li>
+</ol>
+<p>输出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs bash">======================================<br>Running Positive Tests<br>======================================<br><br>Testing: tests/positive/asi_return.js<br>Parsing <span class="hljs-string">&#x27;tests/positive/asi_return.js&#x27;</span>...<br>✓ Parsing successful!<br>  Total lines: 15<br><br>Testing: tests/positive/asi_statements.js<br>Parsing <span class="hljs-string">&#x27;tests/positive/asi_statements.js&#x27;</span>...<br>✓ Parsing successful!<br>  Total lines: 19<br><br>Testing: tests/positive/basic.js<br>Parsing <span class="hljs-string">&#x27;tests/positive/basic.js&#x27;</span>...<br>✓ Parsing successful!<br>  Total lines: 18<br><br>Testing: tests/positive/functions.js<br>Parsing <span class="hljs-string">&#x27;tests/positive/functions.js&#x27;</span>...<br>✓ Parsing successful!<br>  Total lines: 16<br><br>Testing: tests/positive/unicode.js<br>Parsing <span class="hljs-string">&#x27;tests/positive/unicode.js&#x27;</span>...<br>✓ Parsing successful!<br>  Total lines: 9<br><br>======================================<br>Running Negative Tests (should fail)<br>======================================<br><br>Testing: tests/negative/asi_ambiguous.js<br>Parsing <span class="hljs-string">&#x27;tests/negative/asi_ambiguous.js&#x27;</span>...<br>✗ Parsing failed with 1 error(s)<br>  ✓ Failed as expected<br><br>Testing: tests/negative/invalid_syntax.js<br>Parsing <span class="hljs-string">&#x27;tests/negative/invalid_syntax.js&#x27;</span>...<br>✗ Parsing failed with 1 error(s)<br>  ✓ Failed as expected<br><br>======================================<br>✓ All tests passed!<br>======================================<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="测试用例说明"><a href="#测试用例说明" class="headerlink" title="测试用例说明"></a>测试用例说明</h2><ul>
+<li><p>正向测试（tests&#x2F;positive&#x2F;）</p>
+<ul>
+<li><p>basic.js - 基本语法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> x = <span class="hljs-number">42</span>;<br><span class="hljs-keyword">let</span> y = <span class="hljs-string">&quot;hello&quot;</span>;<br><span class="hljs-keyword">const</span> z = <span class="hljs-literal">true</span>;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">a, b</span>) &#123; <span class="hljs-keyword">return</span> a + b; &#125;<br><span class="hljs-keyword">if</span> (x &gt; <span class="hljs-number">10</span>) &#123; ... &#125;<br><span class="hljs-keyword">while</span> (y &lt; <span class="hljs-number">100</span>) &#123; ... &#125;<br></code></pre></td></tr></table></figure>
+
+
+<ul>
+<li><p>functions.js - 函数声明</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">regular</span>(<span class="hljs-params"></span>) &#123; <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; &#125;<br><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">asyncFunc</span>(<span class="hljs-params"></span>) &#123; <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>; &#125;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">outer</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">inner</span>(<span class="hljs-params"></span>) &#123; <span class="hljs-keyword">return</span> <span class="hljs-number">42</span>; &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_">inner</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>asi_return.js - ASI（自动分号插入）与return</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test1</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span><br>    <span class="hljs-number">42</span>;  <span class="hljs-comment">// ASI在return后插入分号，返回undefined</span><br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test2</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">42</span>;  <span class="hljs-comment">// 返回42</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>asi_statements.js - ASI（自动分号插入）与语句</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span><br><span class="hljs-keyword">var</span> b = <span class="hljs-number">2</span>  <span class="hljs-comment">// ASI自动插入分号</span><br>a = b + c<br>a++<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>unicode.js - Unicode支持</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> α = <span class="hljs-number">42</span>;           <span class="hljs-comment">// 希腊字母</span><br><span class="hljs-keyword">var</span> 变量 = <span class="hljs-string">&quot;中文&quot;</span>;     <span class="hljs-comment">// 中文</span><br><span class="hljs-keyword">var</span> ヴァリアブル = <span class="hljs-number">123</span>; <span class="hljs-comment">// 日文</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>负向测试（tests&#x2F;negative&#x2F;）</p>
+<ul>
+<li><p>invalid_syntax.js - 语法错误</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> = <span class="hljs-number">123</span>;           <span class="hljs-comment">// 缺少标识符</span><br><span class="hljs-keyword">function</span> &#123;           <span class="hljs-comment">// 缺少函数名</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">42</span>;<br>&#125;<br><span class="hljs-keyword">if</span> x &gt; <span class="hljs-number">10</span> &#123;          <span class="hljs-comment">// 缺少括号</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;error&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+</li>
+<li><p>asi_ambiguous.js - ASI（自动分号插入）歧义</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript">a = b + <span class="hljs-title function_">c</span><br>(d + e).<span class="hljs-title function_">print</span>()  <span class="hljs-comment">// 会被解析为: a = b + c(d + e).print()</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="测试覆盖说明"><a href="#测试覆盖说明" class="headerlink" title="测试覆盖说明"></a>测试覆盖说明</h2><ul>
+<li><p>测试矩阵</p>
+<table>
+<thead>
+<tr>
+<th>测试类别</th>
+<th>测试文件</th>
+<th>测试内容</th>
+<th>预期结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基本语法</td>
+<td>basic.js</td>
+<td>变量声明、函数、控制流</td>
+<td>✅ 通过</td>
+</tr>
+<tr>
+<td>函数</td>
+<td>functions.js</td>
+<td>函数声明、嵌套、async</td>
+<td>✅ 通过</td>
+</tr>
+<tr>
+<td>ASI-受限</td>
+<td>asi_return.js</td>
+<td>return后换行</td>
+<td>✅ 通过</td>
+</tr>
+<tr>
+<td>ASI-一般</td>
+<td>asi_statements.js</td>
+<td>语句间ASI</td>
+<td>✅ 通过</td>
+</tr>
+<tr>
+<td>Unicode</td>
+<td>unicode.js</td>
+<td>多语言标识符</td>
+<td>✅ 通过</td>
+</tr>
+<tr>
+<td>语法错误</td>
+<td>invalid_syntax.js</td>
+<td>各种错误语法</td>
+<td>✅ 正确拒绝</td>
+</tr>
+<tr>
+<td>ASI歧义</td>
+<td>asi_ambiguous.js</td>
+<td>歧义情况</td>
+<td>✅ 正确处理</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>覆盖的JavaScript特性</p>
+<p>  已实现：</p>
+<ul>
+<li>变量声明（var, let, const）</li>
+<li>函数声明（普通、async）</li>
+<li>表达式（二元、一元、三元、赋值）</li>
+<li>控制流（if, while, for, do-while）</li>
+<li>跳转语句（return, break, continue, throw）</li>
+<li>对象和数组字面量</li>
+<li>成员访问和函数调用</li>
+<li>Unicode标识符</li>
+</ul>
+<p>  未实现：</p>
+<ul>
+<li>ES6+特性（class, arrow function, destructuring）</li>
+<li>模块系统（import&#x2F;export）</li>
+<li>生成器和迭代器</li>
+<li>Promise和async&#x2F;await完整支持</li>
+</ul>
+</li>
+</ul>
+<h2 id="简单的-ASI（自动分号插入）机制验证"><a href="#简单的-ASI（自动分号插入）机制验证" class="headerlink" title="简单的 ASI（自动分号插入）机制验证"></a>简单的 ASI（自动分号插入）机制验证</h2><ul>
+<li><p>测试受限产生式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 创建测试文件</span><br><span class="hljs-built_in">cat</span> &gt; test_asi.js &lt;&lt; <span class="hljs-string">&#x27;EOF&#x27;</span><br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">test</span></span>() &#123;<br>    <span class="hljs-built_in">return</span><br>    42<br>&#125;<br>EOF<br><br>./js-parser -v test_asi.js<br></code></pre></td></tr></table></figure>
+
+<p>预期行为：</p>
+<ul>
+<li><p>return后的换行会触发ASI</p>
+</li>
+<li><p>自动插入分号：<code>return; 42;</code></p>
+</li>
+<li><p>函数返回undefined而非42</p>
+</li>
+</ul>
+<p>输出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">Parsing <span class="hljs-string">&#x27;test_asi.js&#x27;</span>...<br>✓ Parsing successful!<br>  Total lines: 5<br><br>=== Abstract Syntax Tree ===<br>Program<br>  StatementList (1 statements)<br>    FunctionDeclaration name=<span class="hljs-built_in">test</span><br>      Body:<br>        BlockStatement<br>          StatementList (2 statements)<br>            ReturnStatement<br>              (no argument)<br>            ExpressionStatement<br>              Literal (number) 42<br></code></pre></td></tr></table></figure>
+
+<p>AST输出结构解释:</p>
+<p>这个输出是抽象语法树（Abstract Syntax Tree），以缩进的树形结构显示代码的语法结构：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">=== Abstract Syntax Tree ===<br>Program                                    ← 根节点：整个程序<br>  StatementList (1 statements)             ← 程序包含1个语句<br>    FunctionDeclaration name=<span class="hljs-built_in">test</span>          ← 语句是：函数声明，名字是<span class="hljs-built_in">test</span><br>      Body:                                ← 函数体<br>        BlockStatement                     ← 代码块 &#123; ... &#125;<br>          StatementList (2 statements)     ← 代码块里有2个语句 关键！<br>            ReturnStatement                ← 第1个语句：<span class="hljs-built_in">return</span><br>              (no argument)                ← 关键！<span class="hljs-built_in">return</span>没有参数！返回undefined<br>            ExpressionStatement            ← 第2个语句：表达式语句<br>              Literal (number) 42          ← 字面量42（永远不会执行）<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>测试EOF处的ASI</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> &gt; test_eof.js &lt;&lt; <span class="hljs-string">&#x27;EOF&#x27;</span><br>var x = 42<br>EOF<br><br>./js-parser -v test_eof.js<br></code></pre></td></tr></table></figure>
+
+<p>预期行为：</p>
+<ul>
+<li><p>文件末尾自动插入分号</p>
+</li>
+<li><p>成功解析</p>
+</li>
+</ul>
+<p>输出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">Parsing <span class="hljs-string">&#x27;test_eof.js&#x27;</span>...<br>✓ Parsing successful!<br>  Total lines: 2<br><br>=== Abstract Syntax Tree ===<br>Program<br>  StatementList (1 statements)<br>    StatementList (1 statements)<br>      VariableDeclaration(var) name=x<br>        Initializer:<br>          Literal (number) 42<br></code></pre></td></tr></table></figure>
+
+<p>AST输出结构解释:</p>
+<p>这个AST展示了文件末尾（EOF）的ASI处理：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">=== Abstract Syntax Tree ===<br>Program                                    ← 根节点：整个程序<br>  StatementList (1 statements)             ← 程序包含1个语句<br>    StatementList (1 statements)           ← 嵌套的列表（变量声明列表）<br>      VariableDeclaration(var) name=x      ← 变量声明：var x<br>        Initializer:                       ← 初始化器<br>          Literal (number) 42              ← 值是 42<br></code></pre></td></tr></table></figure>
+
+<p>补充：为什么有两层 StatementList？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">StatementList (程序级别)<br>  └─ StatementList (变量声明列表)<br>       └─ VariableDeclaration<br></code></pre></td></tr></table></figure>
+
+
+<p>这是因为语法规则设计：</p>
+<ul>
+<li>外层 StatementList: 程序的所有语句</li>
+<li>内层 StatementList: <code>VariableDeclarationList</code> 可以包含多个声明（如 <code>var a=1, b=2, c=3</code>）</li>
+</ul>
+<p>对比：如果有多个变量声明</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>, b = <span class="hljs-number">2</span>, c = <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+
+<p>AST会是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">StatementList (程序级别)<br>  └─ StatementList (变量声明列表，3个)<br>       ├─ VariableDeclaration name=a<br>       ├─ VariableDeclaration name=b<br>       └─ VariableDeclaration name=c<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="ASI机制实现详解"><a href="#ASI机制实现详解" class="headerlink" title="ASI机制实现详解"></a>ASI机制实现详解</h2><p>ASI（Automatic Semicolon Insertion，自动分号插入）是JavaScript语言的一个重要特性，允许在某些情况下省略分号。本解析器严格按照ECMAScript规范实现了完整的ASI机制。</p>
+<h3 id="ASI的核心变量"><a href="#ASI的核心变量" class="headerlink" title="ASI的核心变量"></a>ASI的核心变量</h3><p>在词法分析器中，我们使用以下全局变量来跟踪ASI状态：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* lexer.re 第11-17行 */</span><br><span class="hljs-comment">/* Global variables for tracking position and ASI */</span><br><span class="hljs-type">int</span> yylineno = <span class="hljs-number">1</span>;<br><span class="hljs-type">int</span> yycolno = <span class="hljs-number">1</span>;<br><span class="hljs-type">int</span> seen_newline = <span class="hljs-number">0</span>;      <span class="hljs-comment">/* 追踪是否遇到换行 */</span><br><span class="hljs-type">int</span> last_token = <span class="hljs-number">0</span>;        <span class="hljs-comment">/* 上一个token */</span><br><span class="hljs-type">int</span> paren_depth = <span class="hljs-number">0</span>;       <span class="hljs-comment">/* 括号嵌套深度 */</span><br><span class="hljs-type">int</span> in_for_header = <span class="hljs-number">0</span>;     <span class="hljs-comment">/* 是否在for循环头部 */</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>变量说明：</strong></p>
+<ul>
+<li><code>seen_newline</code>: 标记当前位置前是否遇到换行符，用于触发ASI规则1</li>
+<li><code>last_token</code>: 记录上一个识别的token，用于判断受限产生式</li>
+<li><code>paren_depth</code>: 跟踪括号嵌套深度，用于识别for循环结束</li>
+<li><code>in_for_header</code>: 标记是否在for循环头部，防止误插入分号</li>
+</ul>
+<h3 id="ASI规则映射到代码"><a href="#ASI规则映射到代码" class="headerlink" title="ASI规则映射到代码"></a>ASI规则映射到代码</h3><h4 id="规则1：违规token-Offending-Token"><a href="#规则1：违规token-Offending-Token" class="headerlink" title="规则1：违规token (Offending Token)"></a>规则1：违规token (Offending Token)</h4><p><strong>ECMAScript规范定义：</strong> 当遇到一个token，且该token与前一个token之间有至少一个行终止符分隔时，如果该token不能按语法规则被解析，则在该token前自动插入分号。</p>
+<p><strong>代码实现：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* lexer.re 第48-70行 */</span><br><span class="hljs-comment">/* Check if current context allows ASI */</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">can_insert_semicolon</span><span class="hljs-params">(<span class="hljs-type">int</span> next_token)</span> &#123;<br>    <span class="hljs-comment">/* Rule 1: Offending token after newline */</span><br>    <span class="hljs-keyword">if</span> (seen_newline) &#123;<br>        <span class="hljs-comment">/* Rule 3: Restricted productions */</span><br>        <span class="hljs-keyword">if</span> (should_insert_semicolon_after(last_token)) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-comment">/* Rule 4: Before closing brace */</span><br>        <span class="hljs-keyword">if</span> (next_token == <span class="hljs-string">&#x27;&#125;&#x27;</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-comment">/* Exception: Never in for-loop headers */</span><br>        <span class="hljs-keyword">if</span> (in_for_header) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/* Rule 2: EOF */</span><br>    <span class="hljs-keyword">if</span> (next_token == <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>换行符检测：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* lexer.re 第275-280行 */</span><br><span class="hljs-comment">// Line terminators - trigger ASI check</span><br>LineTerminatorSequence &#123;<br>    yylineno++;<br>    yycolno = <span class="hljs-number">1</span>;<br>    seen_newline = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">goto</span> yylex_start;  <span class="hljs-comment">/* Continue to next token */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>当词法分析器遇到换行符（<code>\n</code>、<code>\r</code>、<code>\u2028</code>、<code>\u2029</code>）时，设置<code>seen_newline = 1</code>，为后续ASI判断提供依据。</p>
+<h4 id="规则2：输入结束-EOF"><a href="#规则2：输入结束-EOF" class="headerlink" title="规则2：输入结束 (EOF)"></a>规则2：输入结束 (EOF)</h4><p><strong>ECMAScript规范定义：</strong> 当到达输入流末尾且解析器无法将输入解析为完整的程序时，在末尾自动插入分号。</p>
+<p><strong>代码实现：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* lexer.re 第305-312行 */</span><br><span class="hljs-comment">// End of input</span><br>[\x00] &#123;<br>    <span class="hljs-comment">/* Check for ASI at EOF */</span><br>    <span class="hljs-keyword">if</span> (can_insert_semicolon(<span class="hljs-number">0</span>) &amp;&amp; last_token != <span class="hljs-string">&#x27;;&#x27;</span> &amp;&amp; last_token != <span class="hljs-string">&#x27;&#125;&#x27;</span>) &#123;<br>        last_token = <span class="hljs-string">&#x27;;&#x27;</span>;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;;&#x27;</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>测试示例：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> x = <span class="hljs-number">42</span>  <span class="hljs-comment">// EOF处自动插入分号</span><br></code></pre></td></tr></table></figure>
+
+<p>在文件末尾，如果最后一个token不是分号或右花括号，则自动插入分号。</p>
+<h4 id="规则3：受限产生式-Restricted-Productions"><a href="#规则3：受限产生式-Restricted-Productions" class="headerlink" title="规则3：受限产生式 (Restricted Productions)"></a>规则3：受限产生式 (Restricted Productions)</h4><p><strong>ECMAScript规范定义：</strong> 某些语句（return、break、continue、throw、后缀++&#x2F;–）在关键字和后续表达式之间不允许出现行终止符。如果出现换行，则在关键字后自动插入分号。</p>
+<p><strong>受限产生式判断函数：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* lexer.re 第42-46行 */</span><br><span class="hljs-comment">/* Check if ASI should be applied based on restricted productions */</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">should_insert_semicolon_after</span><span class="hljs-params">(<span class="hljs-type">int</span> token)</span> &#123;<br>    <span class="hljs-keyword">return</span> (token == RETURN || token == BREAK || <br>            token == CONTINUE || token == THROW ||<br>            token == POSTINC || token == POSTDEC);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>在词法分析器中主动插入分号：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* lexer.re 第84-89行 */</span><br><span class="hljs-comment">/* Check for ASI insertion point */</span><br><span class="hljs-keyword">if</span> (seen_newline &amp;&amp; should_insert_semicolon_after(last_token)) &#123;<br>    seen_newline = <span class="hljs-number">0</span>;<br>    last_token = <span class="hljs-string">&#x27;;&#x27;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;;&#x27;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>在语法分析器中的体现：</strong></p>
+<p><strong>Return语句：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* parser.y 第318-329行 */</span><br>ReturnStatement:<br>    RETURN <span class="hljs-string">&#x27;;&#x27;</span> &#123;<br>        $$ = create_return_statement(<span class="hljs-literal">NULL</span>);<br>    &#125;<br>    | RETURN &#123;<br>        <span class="hljs-comment">/* ASI: restricted production - return followed by newline */</span><br>        $$ = create_return_statement(<span class="hljs-literal">NULL</span>);<br>    &#125;<br>    | RETURN Expression <span class="hljs-string">&#x27;;&#x27;</span> &#123;<br>        $$ = create_return_statement($<span class="hljs-number">2</span>);<br>    &#125;<br>    | RETURN Expression &#123;<br>        $$ = create_return_statement($<span class="hljs-number">2</span>);<br>    &#125;<br>    ;<br></code></pre></td></tr></table></figure>
+
+<p><strong>Continue语句：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* parser.y 第281-297行 */</span><br>ContinueStatement:<br>    CONTINUE <span class="hljs-string">&#x27;;&#x27;</span> &#123;<br>        $$ = create_continue_statement(<span class="hljs-literal">NULL</span>);<br>    &#125;<br>    | CONTINUE &#123;<br>        <span class="hljs-comment">/* ASI: restricted production */</span><br>        $$ = create_continue_statement(<span class="hljs-literal">NULL</span>);<br>    &#125;<br>    | CONTINUE IDENTIFIER <span class="hljs-string">&#x27;;&#x27;</span> &#123;<br>        $$ = create_continue_statement(create_identifier($<span class="hljs-number">2</span>));<br>        <span class="hljs-built_in">free</span>($<span class="hljs-number">2</span>);<br>    &#125;<br>    | CONTINUE IDENTIFIER &#123;<br>        $$ = create_continue_statement(create_identifier($<span class="hljs-number">2</span>));<br>        <span class="hljs-built_in">free</span>($<span class="hljs-number">2</span>);<br>    &#125;<br>    ;<br></code></pre></td></tr></table></figure>
+
+<p><strong>Break语句：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* parser.y 第301-313行 */</span><br>BreakStatement:<br>    BREAK <span class="hljs-string">&#x27;;&#x27;</span> &#123;<br>        $$ = create_break_statement(<span class="hljs-literal">NULL</span>);<br>    &#125;<br>    | BREAK &#123;<br>        <span class="hljs-comment">/* ASI: restricted production */</span><br>        $$ = create_break_statement(<span class="hljs-literal">NULL</span>);<br>    &#125;<br>    | BREAK IDENTIFIER <span class="hljs-string">&#x27;;&#x27;</span> &#123;<br>        $$ = create_break_statement(create_identifier($<span class="hljs-number">2</span>));<br>        <span class="hljs-built_in">free</span>($<span class="hljs-number">2</span>);<br>    &#125;<br>    | BREAK IDENTIFIER &#123;<br>        $$ = create_break_statement(create_identifier($<span class="hljs-number">2</span>));<br>    &#125;<br>    ;<br></code></pre></td></tr></table></figure>
+
+<p><strong>Throw语句：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* parser.y 第333-341行 */</span><br>ThrowStatement:<br>    THROW Expression <span class="hljs-string">&#x27;;&#x27;</span> &#123;<br>        $$ = create_throw_statement($<span class="hljs-number">2</span>);<br>    &#125;<br>    | THROW Expression &#123;<br>        <span class="hljs-comment">/* ASI after throw statement */</span><br>        $$ = create_throw_statement($<span class="hljs-number">2</span>);<br>    &#125;<br>    ;<br></code></pre></td></tr></table></figure>
+
+<p><strong>测试示例：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span><br>    <span class="hljs-number">42</span>    <span class="hljs-comment">// ASI在return后插入分号，实际返回undefined</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="规则4：右花括号前插入分号"><a href="#规则4：右花括号前插入分号" class="headerlink" title="规则4：右花括号前插入分号"></a>规则4：右花括号前插入分号</h4><p><strong>ECMAScript规范定义：</strong> 当遇到右花括号<code>&#125;</code>时，如果该花括号前需要一个分号但没有，则在花括号前自动插入分号。</p>
+<p><strong>代码实现：</strong></p>
+<p>在<code>can_insert_semicolon</code>函数中已包含此规则：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* lexer.re 第56-59行 */</span><br><span class="hljs-comment">/* Rule 4: Before closing brace */</span><br><span class="hljs-keyword">if</span> (next_token == <span class="hljs-string">&#x27;&#125;&#x27;</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>右花括号的特殊处理：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* lexer.re 第189行 */</span><br><span class="hljs-string">&quot;&#125;&quot;</span>  &#123; save_token(); seen_newline = <span class="hljs-number">0</span>; last_token = <span class="hljs-string">&#x27;&#125;&#x27;</span>; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;&#125;&#x27;</span>; &#125;<br></code></pre></td></tr></table></figure>
+
+<p>遇到右花括号时，重置<code>seen_newline</code>标志，防止后续误触发ASI。</p>
+<p><strong>测试示例：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span><br>    <span class="hljs-keyword">var</span> y = <span class="hljs-number">2</span>  <span class="hljs-comment">// 花括号前自动插入分号</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="规则5：for循环头部特殊处理"><a href="#规则5：for循环头部特殊处理" class="headerlink" title="规则5：for循环头部特殊处理"></a>规则5：for循环头部特殊处理</h4><p><strong>ECMAScript规范定义：</strong> 在for循环的头部（初始化、条件、更新表达式），即使遇到换行也不应插入分号，因为分号是for语法的分隔符。</p>
+<p><strong>for关键字标记：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* lexer.re 第161行 */</span><br><span class="hljs-string">&quot;for&quot;</span>  &#123; save_token(); in_for_header = <span class="hljs-number">1</span>; last_token = FOR; <span class="hljs-keyword">return</span> FOR; &#125;<br></code></pre></td></tr></table></figure>
+
+<p>当识别到<code>for</code>关键字时，设置<code>in_for_header = 1</code>。</p>
+<p><strong>for循环右括号处理：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* lexer.re 第191行 */</span><br><span class="hljs-string">&quot;)&quot;</span>  &#123; save_token(); paren_depth--; <span class="hljs-keyword">if</span> (paren_depth == <span class="hljs-number">0</span> &amp;&amp; in_for_header) in_for_header = <span class="hljs-number">0</span>; last_token = <span class="hljs-string">&#x27;)&#x27;</span>; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;)&#x27;</span>; &#125;<br></code></pre></td></tr></table></figure>
+
+<p>通过<code>paren_depth</code>跟踪括号嵌套，当最外层右括号闭合时，重置<code>in_for_header</code>标志。</p>
+<p><strong>ASI函数中的异常处理：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* lexer.re 第60-63行 */</span><br><span class="hljs-comment">/* Exception: Never in for-loop headers */</span><br><span class="hljs-keyword">if</span> (in_for_header) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在for循环头部内，即使遇到换行也不插入分号。</p>
+<p><strong>语法规则中的体现：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* parser.y 第241-276行 - for循环的各种形式 */</span><br>IterationStatement:<br>    <span class="hljs-comment">/* ... */</span><br>    | FOR <span class="hljs-string">&#x27;(&#x27;</span> Expression <span class="hljs-string">&#x27;;&#x27;</span> Expression <span class="hljs-string">&#x27;;&#x27;</span> Expression <span class="hljs-string">&#x27;)&#x27;</span> Statement &#123;<br>        $$ = create_for_statement($<span class="hljs-number">3</span>, $<span class="hljs-number">5</span>, $<span class="hljs-number">7</span>, $<span class="hljs-number">9</span>);<br>    &#125;<br>    | FOR <span class="hljs-string">&#x27;(&#x27;</span> VAR VariableDeclaration <span class="hljs-string">&#x27;;&#x27;</span> Expression <span class="hljs-string">&#x27;;&#x27;</span> Expression <span class="hljs-string">&#x27;)&#x27;</span> Statement &#123;<br>        $$ = create_for_statement($<span class="hljs-number">4</span>, $<span class="hljs-number">6</span>, $<span class="hljs-number">8</span>, $<span class="hljs-number">10</span>);<br>    &#125;<br>    <span class="hljs-comment">/* ... */</span><br>    ;<br></code></pre></td></tr></table></figure>
+
+<p>for循环的三部分用显式的分号<code>;</code>分隔，不依赖ASI。</p>
+<p><strong>测试示例（正确）：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span><br>     i &lt; <span class="hljs-number">10</span>        <span class="hljs-comment">// 不会在此处插入分号</span><br>     i++) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="一般语句的ASI支持"><a href="#一般语句的ASI支持" class="headerlink" title="一般语句的ASI支持"></a>一般语句的ASI支持</h3><p>除了受限产生式，普通语句也支持ASI：</p>
+<p><strong>变量声明：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* parser.y 第154-174行 */</span><br>VariableStatement:<br>    VAR VariableDeclarationList <span class="hljs-string">&#x27;;&#x27;</span> &#123;<br>        $$ = $<span class="hljs-number">2</span>;<br>    &#125;<br>    | VAR VariableDeclarationList &#123;<br>        <span class="hljs-comment">/* ASI: semicolon automatically inserted */</span><br>        $$ = $<span class="hljs-number">2</span>;<br>    &#125;<br>    | LET VariableDeclarationList <span class="hljs-string">&#x27;;&#x27;</span> &#123;<br>        $$ = $<span class="hljs-number">2</span>;<br>    &#125;<br>    | LET VariableDeclarationList &#123;<br>        $$ = $<span class="hljs-number">2</span>;<br>    &#125;<br>    | CONST VariableDeclarationList <span class="hljs-string">&#x27;;&#x27;</span> &#123;<br>        $$ = $<span class="hljs-number">2</span>;<br>    &#125;<br>    | CONST VariableDeclarationList &#123;<br>        $$ = $<span class="hljs-number">2</span>;<br>    &#125;<br>    ;<br></code></pre></td></tr></table></figure>
+
+<p><strong>表达式语句：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* parser.y 第207-215行 */</span><br>ExpressionStatement:<br>    Expression <span class="hljs-string">&#x27;;&#x27;</span> &#123;<br>        $$ = create_expression_statement($<span class="hljs-number">1</span>);<br>    &#125;<br>    | Expression &#123;<br>        <span class="hljs-comment">/* ASI: semicolon automatically inserted */</span><br>        $$ = create_expression_statement($<span class="hljs-number">1</span>);<br>    &#125;<br>    ;<br></code></pre></td></tr></table></figure>
+
+<p><strong>Do-While语句：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* parser.y 第234-240行 */</span><br>| DO Statement WHILE <span class="hljs-string">&#x27;(&#x27;</span> Expression <span class="hljs-string">&#x27;)&#x27;</span> <span class="hljs-string">&#x27;;&#x27;</span> &#123;<br>    $$ = create_while_statement($<span class="hljs-number">5</span>, $<span class="hljs-number">2</span>);<br>&#125;<br>| DO Statement WHILE <span class="hljs-string">&#x27;(&#x27;</span> Expression <span class="hljs-string">&#x27;)&#x27;</span> &#123;<br>    <span class="hljs-comment">/* ASI after do-while */</span><br>    $$ = create_while_statement($<span class="hljs-number">5</span>, $<span class="hljs-number">2</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="ASI实现流程总结"><a href="#ASI实现流程总结" class="headerlink" title="ASI实现流程总结"></a>ASI实现流程总结</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">源代码输入<br>    ↓<br>词法分析器扫描<br>    ↓<br>遇到换行符? → 设置 seen_newline = 1<br>    ↓<br>识别下一个token<br>    ↓<br>检查ASI条件:<br>    ├─ 规则1: seen_newline &amp;&amp; (违规token)<br>    ├─ 规则2: EOF<br>    ├─ 规则3: 受限产生式后换行<br>    ├─ 规则4: 右花括号前<br>    └─ 例外: for循环头部不插入<br>    ↓<br>满足条件? → 插入虚拟分号token<br>    ↓<br>语法分析器接收<br>    ↓<br>构建AST<br></code></pre></td></tr></table></figure>
+
+<h3 id="关键设计要点"><a href="#关键设计要点" class="headerlink" title="关键设计要点"></a>关键设计要点</h3><ol>
+<li><strong>词法层和语法层协作</strong>：<ul>
+<li>词法层负责检测换行、EOF、受限产生式</li>
+<li>语法层提供带&#x2F;不带分号的双重规则</li>
+</ul>
+</li>
+<li><strong>状态追踪</strong>：<ul>
+<li><code>seen_newline</code>: 追踪换行位置</li>
+<li><code>last_token</code>: 判断受限产生式</li>
+<li><code>in_for_header</code>: 处理for循环特例</li>
+</ul>
+</li>
+<li><strong>精确控制</strong>：<ul>
+<li>受限产生式立即插入分号</li>
+<li>一般语句由语法规则宽容处理</li>
+<li>for循环显式禁止ASI</li>
+</ul>
+</li>
+</ol>
+<p>这种实现方式确保了与ECMAScript规范的完全一致性，同时保持了代码的清晰和可维护性。</p>
+<h2 id="项目特性"><a href="#项目特性" class="headerlink" title="项目特性"></a>项目特性</h2><ul>
+<li><p><strong>re2c词法分析器</strong></p>
+<ul>
+<li><p>完整Unicode支持</p>
+</li>
+<li><p>所有JavaScript token识别</p>
+</li>
+<li><p>注释处理（单行和多行）</p>
+</li>
+</ul>
+</li>
+<li><p><strong>bison语法分析器</strong></p>
+<ul>
+<li><p>遵循ECMAScript规范</p>
+</li>
+<li><p>表达式和语句完整支持</p>
+</li>
+<li><p>函数声明（包括async）</p>
+</li>
+<li><p>控制流语句（if&#x2F;while&#x2F;for）</p>
+</li>
+</ul>
+</li>
+<li><p><strong>ASI机制</strong></p>
+<ul>
+<li><p>受限产生式（return&#x2F;break&#x2F;continue&#x2F;throw）</p>
+</li>
+<li><p>EOF处理</p>
+</li>
+<li><p>右花括号处理</p>
+</li>
+<li><p>for循环特殊处理</p>
+</li>
+</ul>
+</li>
+<li><p><strong>完整AST</strong></p>
+<ul>
+<li><p>26种节点类型</p>
+</li>
+<li><p>详细打印功能</p>
+</li>
+<li><p>完整内存管理</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="性能和限制"><a href="#性能和限制" class="headerlink" title="性能和限制"></a>性能和限制</h2><ul>
+<li><p>性能特点</p>
+<ul>
+<li><p><strong>编译时间</strong>: &lt;2秒（取决于机器）</p>
+</li>
+<li><p><strong>解析速度</strong>: 毫秒级（小型文件）</p>
+</li>
+<li><p><strong>内存使用</strong>: 取决于AST大小</p>
+</li>
+</ul>
+</li>
+<li><p>当前限制</p>
+<ol>
+<li><p><strong>不支持的ES6+特性</strong>：</p>
+<ul>
+<li>类声明（class）</li>
+<li>箭头函数（&#x3D;&gt;）</li>
+<li>模板字面量（完整语法）</li>
+<li>解构赋值</li>
+<li>import&#x2F;export</li>
+</ul>
+</li>
+<li><p><strong>ASI的固有限制</strong>：<br>  某些情况下ASI可能导致非预期行为（这是JavaScript语言本身的特性）</p>
+</li>
+<li><p><strong>正则表达式</strong>：<br>  仅基本支持，不解析正则表达式内部语法</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>感谢编译原理课程提供的学习机会，通过这个项目加深了对编译器构造的理解。特别感谢ECMAScript规范文档和开源社区提供的丰富资料。</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/10/18/aisnap/">AISnap——智能格式转换平台、便捷分享工具 Prev →</a></div></div></div><details id="reward"><summary>reward</summary><div><span>微信 | Wechat</span><br><img src="/images/WeChat.jpg"></div></details></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Zenith</a></h1><div id="description"><p>未经审视的人生是不值得过的人生</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">项目介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">技术架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">使用方法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E8%AF%B4%E6%98%8E"><span class="toc-number">4.</span> <span class="toc-text">测试用例说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E8%AF%B4%E6%98%8E"><span class="toc-number">5.</span> <span class="toc-text">测试覆盖说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84-ASI%EF%BC%88%E8%87%AA%E5%8A%A8%E5%88%86%E5%8F%B7%E6%8F%92%E5%85%A5%EF%BC%89%E6%9C%BA%E5%88%B6%E9%AA%8C%E8%AF%81"><span class="toc-number">6.</span> <span class="toc-text">简单的 ASI（自动分号插入）机制验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ASI%E6%9C%BA%E5%88%B6%E5%AE%9E%E7%8E%B0%E8%AF%A6%E8%A7%A3"><span class="toc-number">7.</span> <span class="toc-text">ASI机制实现详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ASI%E7%9A%84%E6%A0%B8%E5%BF%83%E5%8F%98%E9%87%8F"><span class="toc-number">7.1.</span> <span class="toc-text">ASI的核心变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ASI%E8%A7%84%E5%88%99%E6%98%A0%E5%B0%84%E5%88%B0%E4%BB%A3%E7%A0%81"><span class="toc-number">7.2.</span> <span class="toc-text">ASI规则映射到代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%84%E5%88%991%EF%BC%9A%E8%BF%9D%E8%A7%84token-Offending-Token"><span class="toc-number">7.2.1.</span> <span class="toc-text">规则1：违规token (Offending Token)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%84%E5%88%992%EF%BC%9A%E8%BE%93%E5%85%A5%E7%BB%93%E6%9D%9F-EOF"><span class="toc-number">7.2.2.</span> <span class="toc-text">规则2：输入结束 (EOF)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%84%E5%88%993%EF%BC%9A%E5%8F%97%E9%99%90%E4%BA%A7%E7%94%9F%E5%BC%8F-Restricted-Productions"><span class="toc-number">7.2.3.</span> <span class="toc-text">规则3：受限产生式 (Restricted Productions)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%84%E5%88%994%EF%BC%9A%E5%8F%B3%E8%8A%B1%E6%8B%AC%E5%8F%B7%E5%89%8D%E6%8F%92%E5%85%A5%E5%88%86%E5%8F%B7"><span class="toc-number">7.2.4.</span> <span class="toc-text">规则4：右花括号前插入分号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%84%E5%88%995%EF%BC%9Afor%E5%BE%AA%E7%8E%AF%E5%A4%B4%E9%83%A8%E7%89%B9%E6%AE%8A%E5%A4%84%E7%90%86"><span class="toc-number">7.2.5.</span> <span class="toc-text">规则5：for循环头部特殊处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E8%AF%AD%E5%8F%A5%E7%9A%84ASI%E6%94%AF%E6%8C%81"><span class="toc-number">7.3.</span> <span class="toc-text">一般语句的ASI支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ASI%E5%AE%9E%E7%8E%B0%E6%B5%81%E7%A8%8B%E6%80%BB%E7%BB%93"><span class="toc-number">7.4.</span> <span class="toc-text">ASI实现流程总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9"><span class="toc-number">7.5.</span> <span class="toc-text">关键设计要点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%89%B9%E6%80%A7"><span class="toc-number">8.</span> <span class="toc-text">项目特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E5%92%8C%E9%99%90%E5%88%B6"><span class="toc-number">9.</span> <span class="toc-text">性能和限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%B4%E8%B0%A2"><span class="toc-number">10.</span> <span class="toc-text">致谢</span></a></li></ol></div></div><footer><nobr><span class="icp-title">♖</span><a class="icp-content" href="https://smallgoodgood.top/about/">关于本站</a></nobr><br><nobr>Pubulished by <a href="http://smallgoodgood.top">Zenith <br></a></nobr><wbr><!-- 添加网站运行时间 --><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now = new Date();
+
+function createtime() {
+  var grt = new Date("02/09/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间 
+  now.setTime(now.getTime() + 250);
+  days = (now - grt) / 1000 / 60 / 60 / 24;
+  dnum = Math.floor(days);
+  hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+  hnum = Math.floor(hours);
+  if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+  }
+  minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+  mnum = Math.floor(minutes);
+  if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+  }
+  seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+  snum = Math.round(seconds);
+  if (String(snum).length == 1) {
+      snum = "0" + snum;
+  }
+  document.getElementById("timeDate").innerHTML = " | 本站已安全运行 " + dnum + " 天 ";
+  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+}
+setInterval("createtime()", 250);
+<!-- 添加网站运行时间 -->
+
+</script></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
