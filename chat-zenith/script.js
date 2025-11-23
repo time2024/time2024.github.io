@@ -76,18 +76,20 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('处理消息时出错:', error);
             
             // 提供详细的错误信息
-            let errorMessage = '抱歉，出现错误: ';
+            let errorMessage = '博士...... 我好像发生了故障......';
             
             // 根据错误类型提供更具体的错误信息
-            if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
-                errorMessage += '无法连接到服务器，请检查网络连接';
-            } else if (error.message.includes('JSON')) {
-                errorMessage += '服务器响应格式错误';
-            } else if (error.message.includes('API响应格式')) {
-                errorMessage += error.message;
-            } else {
-                errorMessage += error.message || '未知错误';
-            }
+            // if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
+            //     errorMessage += '无法连接到服务器，请检查网络连接';
+            // } else if (error.message.includes('JSON')) {
+            //     errorMessage += '服务器响应格式错误';
+            // } else if (error.message.includes('API响应格式')) {
+            //     errorMessage += error.message;
+            // } else {
+            //     errorMessage += error.message || '未知错误';
+            // }
+
+            errorMessage += ' 我好想你呀 博士......';
             
             addMessageToChat('assistant', errorMessage);
         } finally {
