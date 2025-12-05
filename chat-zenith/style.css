@@ -164,20 +164,17 @@ footer {
     }
 }
 
-/* 加载动画 */
-.loading {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 3px solid rgba(255,255,255,.3);
-    border-radius: 50%;
-    border-top-color: #fff;
-    animation: spin 1s ease-in-out infinite;
-    margin-left: 10px;
+/* 加载动画 - 省略号效果，不影响高度 */
+.loading-dots::after {
+    content: '';
+    animation: dots 1.5s steps(4, end) infinite;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
+@keyframes dots {
+    0%, 20% { content: ''; }
+    40% { content: '.'; }
+    60% { content: '..'; }
+    80%, 100% { content: '...'; }
 }
 
 /* Markdown渲染样式 - 添加防溢出处理 */
@@ -191,6 +188,11 @@ footer {
 
 .message div p {
     margin: 0.5em 0;
+}
+
+/* 消除第一个p标签的顶部margin，避免思考→回复时跳动 */
+.message div p:first-child {
+    margin-top: 0;
 }
 
 .message div ul,
