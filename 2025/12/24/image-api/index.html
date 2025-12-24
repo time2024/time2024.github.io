@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Zenith Blog | Zenith</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+<!DOCTYPE html><html lang="zh-CN" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>使用公开API美化博客：随机封面与一言展示 | Zenith</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
   font-family: Bender;
   src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
 }
@@ -59,7 +59,7 @@ lightGallery(document.getElementById('post-bg'), {
    }
  }
 });
-document.addEventListener("pjax:complete", reset);reset()})</script><meta name="description" content="未经审视的人生是不值得过的人生。&lt;br&gt;大连理工大学软件工程本科在读。&lt;br&gt;本博客用于记录学习与生活点滴。"><meta property="og:description" content="未经审视的人生是不值得过的人生。&lt;br&gt;大连理工大学软件工程本科在读。&lt;br&gt;本博客用于记录学习与生活点滴。"><link rel="canonical" href="https://smallgoodgood.top/chat-zenith//"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss.xml" title="Zenith" type="application/rss+xml">
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="description" content="本文介绍三个在博客里非常好用的轻量API，并给出示例。"><meta property="og:description" content="本文介绍三个在博客里非常好用的轻量API，并给出示例。"><link rel="canonical" href="https://smallgoodgood.top/2025/12/24/image-api/"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss.xml" title="Zenith" type="application/rss+xml">
 </head><body><script>(function () {  
     var a_idx = 0;  
     window.onclick = function (event) {  
@@ -107,72 +107,62 @@ document.addEventListener("pjax:complete", reset);reset()})</script><meta name="
         //- return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";  
         return "(255,240,245)";
     }  
-}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li><li class="navItem"><a class="navBlock" href="/chat-zenith"><span class="navItemTitle">AI</span></a></li><li class="navItem"><a class="navBlock" href="/answer"><span class="navItemTitle">答案之书</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1></h1></div><hr><div id="post-content"><!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>喵呜～</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- 添加highlight.js代码高亮样式 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
-</head>
-<body>
-    <div class="container">
-        <!--
-        <header>
-            <h1>Zenith's AI</h1>
-            
-            <p>基于 DeepSeek 的人工智能助手 </p>
-            
-        </header>
-        -->
-        
-        <div class="chat-container">
-            <div id="chat-history" class="chat-history">
-                <!-- 在chat-history div中添加初始欢迎语 -->
-                    
-                    <div class="message ai-message" class='item-img' data-src='https://smallgoodgood.top/images/23.jpg'><img src="https://smallgoodgood.top/images/23.jpg" class="cat-avatar">
-                        <div>
-                        喵呜～博士终于来啦！小橘等你好久啦(≧▽≦)
-                        <div class="message-time">刚刚</div>
-                        </div>
-                    </div>
-                    
-            </div>
-            
-            <div class="input-area">
-                <textarea id="user-input" placeholder="输入你的问题..." rows="3"></textarea>
-                <div class="button-group">
-                    <button id="send-btn">
-                        <i class="fas fa-paper-plane"></i> 发送
-                    </button>
-                    <button id="clear-btn">
-                        <i class="fas fa-trash"></i> 清空
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--
-    <footer>
-        <p>© 2025 smallgoodgood.top - 基于 DeepSeek 的人工智能助手</p>
-    </footer>
-    -->
+}());</script><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">首页</span></a></li><li class="navItem"><a class="navBlock" href="/about"><span class="navItemTitle">关于</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">归档</span></a></li><li class="navItem"><a class="navBlock" href="/chat-zenith"><span class="navItemTitle">AI</span></a></li><li class="navItem"><a class="navBlock" href="/answer"><span class="navItemTitle">答案之书</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>使用公开API美化博客：随机封面与一言展示</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2025-12-24T12:00:00.000Z" id="date"> 2025-12-24</time></div></span><br><span>Last Update: <div class="control"><time datetime="2025-12-24T04:52:28.017Z" id="updated"> 2025-12-24</time></div></span><br><span>Word Count: <div class="control">333</div></span><br><span>Read Time: <div class="control">1 min</div></span></div></div><hr><div id="post-content"><p>本文介绍三个在博客里非常好用的轻量API，并给出示例。</p>
+<span id="more"></span>
 
-    <footer>
-        <p>© 2025 smallgoodgood.top</p>
-    </footer>
-    
-    <!-- 添加marked.js和highlight.js -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-    <!-- 添加MathJax支持公式渲染 -->
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="script.js"></script>
-</body>
-</html><div id="paginator"></div></div><div id="post-footer"></div><details id="reward"><summary>reward</summary><div><span>微信 | Wechat</span><br><img src="/images/WeChat.jpg"></div></details></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Zenith</a></h1><div id="description"><p>未经审视的人生是不值得过的人生。<br>大连理工大学软件工程本科在读。<br>本博客用于记录学习与生活点滴。</p></div></div><div id="aside-block"></div><footer><nobr><span class="icp-title">♖</span><a class="icp-content" href="https://smallgoodgood.top/about/">关于本站</a></nobr><br><nobr>Pubulished by <a href="http://smallgoodgood.top">Zenith <br></a></nobr><wbr><!-- 添加网站运行时间 --><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now = new Date();
+<span class="hide"><object><p>因为十二月博客空空的不怎么好看，而我又没什么时间，所以水一期</p></object></span>
+
+<p>刷新整页时，所有资源都会重新请求，可以看到随机封面或一言内容的变化。 </p>
+<ol>
+<li><p>随机封面图 API</p>
+<p><a target="_blank" rel="noopener" href="https://lentinel.link/wp-json/sakura/v1/gallery?img=w">https://lentinel.link/wp-json/sakura/v1/gallery?img=w</a></p>
+<p>这个接口来自学长 <a target="_blank" rel="noopener" href="https://lentinel.link/">Lentinel</a> 的博客，是在 WordPress 上由主题注册的自定义 REST 路由，用来返回随机图片。</p>
+<blockquote>
+<p>示例：</p>
+<p class='item-img' data-src='https://lentinel.link/wp-json/sakura/v1/gallery?img=w'><img src="https://lentinel.link/wp-json/sakura/v1/gallery?img=w" alt="今日随机封面"></p>
+</blockquote>
+</li>
+<li><p>一言 API（官方 <code>hitokoto</code>）</p>
+<p><a target="_blank" rel="noopener" href="https://v1.hitokoto.cn/">https://v1.hitokoto.cn/</a></p>
+<p>该接口为 <a target="_blank" rel="noopener" href="https://hitokoto.cn/">Hitokoto</a> 官方提供的一言服务，会返回一句短句及其出处，格式为 JSON。</p>
+<p>示例：</p>
+<p id="hitokoto">加载中…</p>
+<script>
+function renderHitokoto(){
+  fetch("https://v1.hitokoto.cn/")
+    .then(r => r.json())
+    .then(d => {
+      const from = d.from_who ? `${d.from_who} · ${d.from}` : d.from || "";
+      document.getElementById("hitokoto").textContent =
+        `${d.hitokoto}${from ? " —— " + from : ""}`;
+    })
+    .catch(() => document.getElementById("hitokoto").textContent = "获取失败");
+}
+document.addEventListener('DOMContentLoaded', renderHitokoto);
+document.addEventListener('pjax:success', renderHitokoto); 
+</script>
+</li>
+<li><p>一言 API（备用 <code>api.nmxc.ltd</code>）</p>
+<p><a target="_blank" rel="noopener" href="https://api.nmxc.ltd/yiyan/">https://api.nmxc.ltd/yiyan/</a></p>
+<p>该接口与 Hitokoto 官方源结构相同，同样返回 <code>hitokoto</code>、<code>from</code>、<code>from_who</code> 等字段，可在官方源失效时作为备用使用。</p>
+<p>示例：</p>
+<p id="yiyan">加载中…</p>
+<script>
+function renderYiyan(){
+  fetch("https://api.nmxc.ltd/yiyan/")
+    .then(r => r.json())
+    .then(d => {
+      const from = d.from_who ? `${d.from_who} · ${d.from}` : d.from || "";
+      document.getElementById("yiyan").textContent =
+        `${d.hitokoto}${from ? " —— " + from : ""}`;
+    })
+    .catch(() => document.getElementById("yiyan").textContent = "获取失败");
+}
+document.addEventListener('DOMContentLoaded', renderYiyan);
+document.addEventListener('pjax:success', renderYiyan);  
+</script></li>
+</ol>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/11/24/time/">Windows下时钟无法同步解决方案 Prev →</a></div></div></div><details id="reward"><summary>reward</summary><div><span>微信 | Wechat</span><br><img src="/images/WeChat.jpg"></div></details></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Zenith</a></h1><div id="description"><p>未经审视的人生是不值得过的人生。<br>大连理工大学软件工程本科在读。<br>本博客用于记录学习与生活点滴。</p></div></div><div id="aside-block"></div><footer><nobr><span class="icp-title">♖</span><a class="icp-content" href="https://smallgoodgood.top/about/">关于本站</a></nobr><br><nobr>Pubulished by <a href="http://smallgoodgood.top">Zenith <br></a></nobr><wbr><!-- 添加网站运行时间 --><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now = new Date();
 
 function createtime() {
   var grt = new Date("02/09/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间 
