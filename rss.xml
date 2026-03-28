@@ -9,29 +9,8 @@
     <atom:link href="https://smallgoodgood.top/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>未经审视的人生是不值得过的人生。&lt;br&gt;大连理工大学软件工程本科在读。&lt;br&gt;本博客用于记录学习与生活点滴。</description>
-    <pubDate>Tue, 27 Jan 2026 15:42:31 GMT</pubDate>
+    <pubDate>Wed, 24 Dec 2025 04:52:28 GMT</pubDate>
     <generator>http://hexo.io/</generator>
-    
-    <item>
-      <title>寒假打卡</title>
-      <link>https://smallgoodgood.top/2026/01/27/todolist/</link>
-      <guid>https://smallgoodgood.top/2026/01/27/todolist/</guid>
-      <pubDate>Tue, 27 Jan 2026 12:00:00 GMT</pubDate>
-      
-      <description>与云端服务器取得连接时需要KEY</description>
-      
-      
-      
-      
-      <category domain="https://smallgoodgood.top/categories/%E6%89%93%E5%8D%A1/">打卡</category>
-      
-      
-      <category domain="https://smallgoodgood.top/tags/%E6%89%93%E5%8D%A1/">打卡</category>
-      
-      
-      <comments>https://smallgoodgood.top/2026/01/27/todolist/#disqus_thread</comments>
-      
-    </item>
     
     <item>
       <title>使用公开API美化博客：随机封面与一言展示</title>
